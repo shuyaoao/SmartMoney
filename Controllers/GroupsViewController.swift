@@ -28,9 +28,19 @@ class GroupsViewController: UITableViewController {
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "", sender: <#T##Any?#>)
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "goToGroupDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToGroupDetails" {
+            let destinationVC = segue.destination as! GroupDetailsViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                destinationVC.navigationBar.title = groupArray[indexPath.row]
+            }
+        }
+    }
+    
     @IBAction func addButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "createGroup", sender: self)
     }

@@ -24,6 +24,9 @@
 		C043C2E32A1738EA00A1F14D /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2E22A1738EA00A1F14D /* FriendsViewController.swift */; };
 		C043C2E52A1738F700A1F14D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2E42A1738F700A1F14D /* ProfileViewController.swift */; };
 		C043C2E72A17782000A1F14D /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2E62A17782000A1F14D /* CreateGroupViewController.swift */; };
+		C043C2E92A17BAEC00A1F14D /* GroupDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2E82A17BAEC00A1F14D /* GroupDetailsViewController.swift */; };
+		C043C2EB2A17C4FA00A1F14D /* MonthYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2EA2A17C4FA00A1F14D /* MonthYear.swift */; };
+		C043C2F42A17C85700A1F14D /* MonthYearPicker in Frameworks */ = {isa = PBXBuildFile; productRef = C043C2F32A17C85700A1F14D /* MonthYearPicker */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,8 @@
 		C043C2E22A1738EA00A1F14D /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		C043C2E42A1738F700A1F14D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C043C2E62A17782000A1F14D /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		C043C2E82A17BAEC00A1F14D /* GroupDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewController.swift; sourceTree = "<group>"; };
+		C043C2EA2A17C4FA00A1F14D /* MonthYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYear.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C043C2F42A17C85700A1F14D /* MonthYearPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +160,7 @@
 				C043C2E22A1738EA00A1F14D /* FriendsViewController.swift */,
 				C043C2E42A1738F700A1F14D /* ProfileViewController.swift */,
 				C043C2E62A17782000A1F14D /* CreateGroupViewController.swift */,
+				C043C2E82A17BAEC00A1F14D /* GroupDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				C043C2D62A172FFC00A1F14D /* BaseVC.swift */,
+				C043C2EA2A17C4FA00A1F14D /* MonthYear.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +199,9 @@
 			dependencies = (
 			);
 			name = SmartMoney;
+			packageProductDependencies = (
+				C043C2F32A17C85700A1F14D /* MonthYearPicker */,
+			);
 			productName = SmartMoney;
 			productReference = C043C29B2A172C4600A1F14D /* SmartMoney.app */;
 			productType = "com.apple.product-type.application";
@@ -263,6 +274,9 @@
 				Base,
 			);
 			mainGroup = C043C2922A172C4600A1F14D;
+			packageReferences = (
+				C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */,
+			);
 			productRefGroup = C043C29C2A172C4600A1F14D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -312,8 +326,10 @@
 				C043C2DD2A1738C100A1F14D /* ExpensesViewController.swift in Sources */,
 				C043C2D72A172FFC00A1F14D /* BaseVC.swift in Sources */,
 				C043C2DB2A17374000A1F14D /* HomePageViewController.swift in Sources */,
+				C043C2E92A17BAEC00A1F14D /* GroupDetailsViewController.swift in Sources */,
 				C043C2E12A1738E100A1F14D /* GroupsViewController.swift in Sources */,
 				C043C29F2A172C4600A1F14D /* AppDelegate.swift in Sources */,
+				C043C2EB2A17C4FA00A1F14D /* MonthYear.swift in Sources */,
 				C043C2E72A17782000A1F14D /* CreateGroupViewController.swift in Sources */,
 				C043C2A92A172C4600A1F14D /* SmartMoney.xcdatamodeld in Sources */,
 				C043C2A12A172C4600A1F14D /* SceneDelegate.swift in Sources */,
@@ -650,6 +666,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexanderedge/MonthYearPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C043C2F32A17C85700A1F14D /* MonthYearPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */;
+			productName = MonthYearPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C043C2A72A172C4600A1F14D /* SmartMoney.xcdatamodeld */ = {
