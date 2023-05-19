@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C043C29F2A172C4600A1F14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C29E2A172C4600A1F14D /* AppDelegate.swift */; };
+		C043C2A12A172C4600A1F14D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2A02A172C4600A1F14D /* SceneDelegate.swift */; };
+		C043C2A32A172C4600A1F14D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2A22A172C4600A1F14D /* ViewController.swift */; };
+		C043C2A62A172C4600A1F14D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C043C2A42A172C4600A1F14D /* Main.storyboard */; };
+		C043C2A92A172C4600A1F14D /* SmartMoney.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C043C2A72A172C4600A1F14D /* SmartMoney.xcdatamodeld */; };
+		C043C2AB2A172C4600A1F14D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C043C2AA2A172C4600A1F14D /* Assets.xcassets */; };
+		C043C2AE2A172C4600A1F14D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C043C2AC2A172C4600A1F14D /* LaunchScreen.storyboard */; };
+		C043C2B92A172C4600A1F14D /* SmartMoneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2B82A172C4600A1F14D /* SmartMoneyTests.swift */; };
+		C043C2C32A172C4600A1F14D /* SmartMoneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2C22A172C4600A1F14D /* SmartMoneyUITests.swift */; };
+		C043C2C52A172C4600A1F14D /* SmartMoneyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2C42A172C4600A1F14D /* SmartMoneyUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C043C2B52A172C4600A1F14D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C043C2932A172C4600A1F14D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C043C29A2A172C4600A1F14D;
+			remoteInfo = SmartMoney;
+		};
+		C043C2BF2A172C4600A1F14D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C043C2932A172C4600A1F14D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C043C29A2A172C4600A1F14D;
+			remoteInfo = SmartMoney;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C043C29B2A172C4600A1F14D /* SmartMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C043C29E2A172C4600A1F14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C043C2A02A172C4600A1F14D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C043C2A22A172C4600A1F14D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C043C2A52A172C4600A1F14D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C043C2A82A172C4600A1F14D /* SmartMoney.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartMoney.xcdatamodel; sourceTree = "<group>"; };
+		C043C2AA2A172C4600A1F14D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C043C2AD2A172C4600A1F14D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C043C2AF2A172C4600A1F14D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C043C2B42A172C4600A1F14D /* SmartMoneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartMoneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C043C2B82A172C4600A1F14D /* SmartMoneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartMoneyTests.swift; sourceTree = "<group>"; };
+		C043C2BE2A172C4600A1F14D /* SmartMoneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartMoneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C043C2C22A172C4600A1F14D /* SmartMoneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartMoneyUITests.swift; sourceTree = "<group>"; };
+		C043C2C42A172C4600A1F14D /* SmartMoneyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartMoneyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C043C2982A172C4600A1F14D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043C2B12A172C4600A1F14D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043C2BB2A172C4600A1F14D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C043C2922A172C4600A1F14D = {
+			isa = PBXGroup;
+			children = (
+				C043C29D2A172C4600A1F14D /* SmartMoney */,
+				C043C2B72A172C4600A1F14D /* SmartMoneyTests */,
+				C043C2C12A172C4600A1F14D /* SmartMoneyUITests */,
+				C043C29C2A172C4600A1F14D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C043C29C2A172C4600A1F14D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C043C29B2A172C4600A1F14D /* SmartMoney.app */,
+				C043C2B42A172C4600A1F14D /* SmartMoneyTests.xctest */,
+				C043C2BE2A172C4600A1F14D /* SmartMoneyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C043C29D2A172C4600A1F14D /* SmartMoney */ = {
+			isa = PBXGroup;
+			children = (
+				C043C29E2A172C4600A1F14D /* AppDelegate.swift */,
+				C043C2A02A172C4600A1F14D /* SceneDelegate.swift */,
+				C043C2A22A172C4600A1F14D /* ViewController.swift */,
+				C043C2A42A172C4600A1F14D /* Main.storyboard */,
+				C043C2AA2A172C4600A1F14D /* Assets.xcassets */,
+				C043C2AC2A172C4600A1F14D /* LaunchScreen.storyboard */,
+				C043C2AF2A172C4600A1F14D /* Info.plist */,
+				C043C2A72A172C4600A1F14D /* SmartMoney.xcdatamodeld */,
+			);
+			path = SmartMoney;
+			sourceTree = "<group>";
+		};
+		C043C2B72A172C4600A1F14D /* SmartMoneyTests */ = {
+			isa = PBXGroup;
+			children = (
+				C043C2B82A172C4600A1F14D /* SmartMoneyTests.swift */,
+			);
+			path = SmartMoneyTests;
+			sourceTree = "<group>";
+		};
+		C043C2C12A172C4600A1F14D /* SmartMoneyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C043C2C22A172C4600A1F14D /* SmartMoneyUITests.swift */,
+				C043C2C42A172C4600A1F14D /* SmartMoneyUITestsLaunchTests.swift */,
+			);
+			path = SmartMoneyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C043C29A2A172C4600A1F14D /* SmartMoney */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C043C2C82A172C4600A1F14D /* Build configuration list for PBXNativeTarget "SmartMoney" */;
+			buildPhases = (
+				C043C2972A172C4600A1F14D /* Sources */,
+				C043C2982A172C4600A1F14D /* Frameworks */,
+				C043C2992A172C4600A1F14D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartMoney;
+			productName = SmartMoney;
+			productReference = C043C29B2A172C4600A1F14D /* SmartMoney.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C043C2B32A172C4600A1F14D /* SmartMoneyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C043C2CB2A172C4600A1F14D /* Build configuration list for PBXNativeTarget "SmartMoneyTests" */;
+			buildPhases = (
+				C043C2B02A172C4600A1F14D /* Sources */,
+				C043C2B12A172C4600A1F14D /* Frameworks */,
+				C043C2B22A172C4600A1F14D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C043C2B62A172C4600A1F14D /* PBXTargetDependency */,
+			);
+			name = SmartMoneyTests;
+			productName = SmartMoneyTests;
+			productReference = C043C2B42A172C4600A1F14D /* SmartMoneyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C043C2BD2A172C4600A1F14D /* SmartMoneyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C043C2CE2A172C4600A1F14D /* Build configuration list for PBXNativeTarget "SmartMoneyUITests" */;
+			buildPhases = (
+				C043C2BA2A172C4600A1F14D /* Sources */,
+				C043C2BB2A172C4600A1F14D /* Frameworks */,
+				C043C2BC2A172C4600A1F14D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C043C2C02A172C4600A1F14D /* PBXTargetDependency */,
+			);
+			name = SmartMoneyUITests;
+			productName = SmartMoneyUITests;
+			productReference = C043C2BE2A172C4600A1F14D /* SmartMoneyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C043C2932A172C4600A1F14D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					C043C29A2A172C4600A1F14D = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					C043C2B32A172C4600A1F14D = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = C043C29A2A172C4600A1F14D;
+					};
+					C043C2BD2A172C4600A1F14D = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = C043C29A2A172C4600A1F14D;
+					};
+				};
+			};
+			buildConfigurationList = C043C2962A172C4600A1F14D /* Build configuration list for PBXProject "SmartMoney" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C043C2922A172C4600A1F14D;
+			productRefGroup = C043C29C2A172C4600A1F14D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C043C29A2A172C4600A1F14D /* SmartMoney */,
+				C043C2B32A172C4600A1F14D /* SmartMoneyTests */,
+				C043C2BD2A172C4600A1F14D /* SmartMoneyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C043C2992A172C4600A1F14D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043C2AE2A172C4600A1F14D /* LaunchScreen.storyboard in Resources */,
+				C043C2AB2A172C4600A1F14D /* Assets.xcassets in Resources */,
+				C043C2A62A172C4600A1F14D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043C2B22A172C4600A1F14D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043C2BC2A172C4600A1F14D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C043C2972A172C4600A1F14D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043C2A32A172C4600A1F14D /* ViewController.swift in Sources */,
+				C043C29F2A172C4600A1F14D /* AppDelegate.swift in Sources */,
+				C043C2A92A172C4600A1F14D /* SmartMoney.xcdatamodeld in Sources */,
+				C043C2A12A172C4600A1F14D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043C2B02A172C4600A1F14D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043C2B92A172C4600A1F14D /* SmartMoneyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C043C2BA2A172C4600A1F14D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C043C2C32A172C4600A1F14D /* SmartMoneyUITests.swift in Sources */,
+				C043C2C52A172C4600A1F14D /* SmartMoneyUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C043C2B62A172C4600A1F14D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C043C29A2A172C4600A1F14D /* SmartMoney */;
+			targetProxy = C043C2B52A172C4600A1F14D /* PBXContainerItemProxy */;
+		};
+		C043C2C02A172C4600A1F14D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C043C29A2A172C4600A1F14D /* SmartMoney */;
+			targetProxy = C043C2BF2A172C4600A1F14D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C043C2A42A172C4600A1F14D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C043C2A52A172C4600A1F14D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C043C2AC2A172C4600A1F14D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C043C2AD2A172C4600A1F14D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C043C2C62A172C4600A1F14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C043C2C72A172C4600A1F14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C043C2C92A172C4600A1F14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M4SCVRJSR2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartMoney/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = petrichoro7.SmartMoney;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C043C2CA2A172C4600A1F14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M4SCVRJSR2;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SmartMoney/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = petrichoro7.SmartMoney;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C043C2CC2A172C4600A1F14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M4SCVRJSR2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = petrichoro7.SmartMoneyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartMoney.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SmartMoney";
+			};
+			name = Debug;
+		};
+		C043C2CD2A172C4600A1F14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M4SCVRJSR2;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = petrichoro7.SmartMoneyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartMoney.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SmartMoney";
+			};
+			name = Release;
+		};
+		C043C2CF2A172C4600A1F14D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M4SCVRJSR2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = petrichoro7.SmartMoneyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartMoney;
+			};
+			name = Debug;
+		};
+		C043C2D02A172C4600A1F14D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M4SCVRJSR2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = petrichoro7.SmartMoneyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SmartMoney;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C043C2962A172C4600A1F14D /* Build configuration list for PBXProject "SmartMoney" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C043C2C62A172C4600A1F14D /* Debug */,
+				C043C2C72A172C4600A1F14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C043C2C82A172C4600A1F14D /* Build configuration list for PBXNativeTarget "SmartMoney" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C043C2C92A172C4600A1F14D /* Debug */,
+				C043C2CA2A172C4600A1F14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C043C2CB2A172C4600A1F14D /* Build configuration list for PBXNativeTarget "SmartMoneyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C043C2CC2A172C4600A1F14D /* Debug */,
+				C043C2CD2A172C4600A1F14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C043C2CE2A172C4600A1F14D /* Build configuration list for PBXNativeTarget "SmartMoneyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C043C2CF2A172C4600A1F14D /* Debug */,
+				C043C2D02A172C4600A1F14D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C043C2A72A172C4600A1F14D /* SmartMoney.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C043C2A82A172C4600A1F14D /* SmartMoney.xcdatamodel */,
+			);
+			currentVersion = C043C2A82A172C4600A1F14D /* SmartMoney.xcdatamodel */;
+			path = SmartMoney.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C043C2932A172C4600A1F14D /* Project object */;
+}
