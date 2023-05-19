@@ -10,6 +10,7 @@ import SwiftUI
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     
     override func viewDidLoad() {
@@ -18,6 +19,8 @@ class ProfileViewController: UIViewController {
         profilePicture.clipsToBounds = true
         profilePicture.layer.borderWidth = 4
         profilePicture.layer.borderColor = UIColor(named: "Dark Blue")?.cgColor
+        nameLabel.text = "Shuyao" //to be changed to incoporate user input at welcome page
+        
         
         // Do any additional setup after loading the view.
     }
