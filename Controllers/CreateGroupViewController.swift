@@ -10,6 +10,7 @@ import UIKit
 class CreateGroupViewController: UIViewController {
 
     var lastTextFiledFrame: CGFloat = CGFloat.zero
+    @IBOutlet weak var groupNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,17 @@ class CreateGroupViewController: UIViewController {
     
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         //add in functionality to create a new group and update database
-        self.dismiss(animated: true)
+        performSegue(withIdentifier: "createdGroup", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "createdGroup" {
+            let destinationVC = segue.destination as! GroupsViewController
+            if let text = groupNameTextField.text {
+                destinationVC.groupArray.append(text)
+                destinationVC.tableView.reloadData()
+            }
+        }
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {

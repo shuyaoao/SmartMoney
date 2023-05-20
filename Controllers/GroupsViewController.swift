@@ -9,11 +9,11 @@ import UIKit
 
 class GroupsViewController: UITableViewController {
     
-    let groupArray = ["Friends", "Family", "Hall Friends", "School", "Drinking Buddies"]
+    var groupArray = ["Friends", "Family", "Hall Friends", "School", "Drinking Buddies"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
