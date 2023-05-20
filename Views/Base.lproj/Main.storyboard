@@ -68,7 +68,7 @@
             <objects>
                 <viewController id="vqs-bk-2y2" customClass="GroupDetailsViewController" customModule="SmartMoney" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dBy-lH-tR4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yzQ-ON-zyH">
@@ -122,9 +122,7 @@
                             <outlet property="delegate" destination="OVH-Ys-gcY" id="5Ky-is-0uR"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="Osg-0N-h8q"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Groups" id="8tk-vH-bf7">
                         <barButtonItem key="backBarButtonItem" title="Back" id="h07-Gt-HxP"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0sW-JQ-qbu">
@@ -136,13 +134,13 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="O57-9Y-mNE" id="uhl-sJ-geJ"/>
-                        <segue destination="3nh-cy-HRL" kind="presentation" identifier="createGroup" id="PTa-rf-7lf"/>
                         <segue destination="vqs-bk-2y2" kind="show" identifier="goToGroupDetails" id="AuO-6o-Jfd"/>
+                        <segue destination="KeH-Ra-3c5" kind="presentation" identifier="createGroup" id="dcn-00-YJM"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xCp-xx-OuU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962.5954198473282" y="1855.6338028169016"/>
+            <point key="canvasLocation" x="2836" y="1853"/>
         </scene>
         <!--Create New Group-->
         <scene sceneID="uJJ-a3-jyt">
@@ -195,12 +193,34 @@
                                     <action selector="addButtonPressed:" destination="KeH-Ra-3c5" eventType="touchUpInside" id="SSf-Hw-Jke"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yir-YK-vUX">
+                                <rect key="frame" x="0.0" y="43" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Create New Group" id="Zgi-yD-4ED">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="f6s-K8-KML">
+                                            <color key="tintColor" name="Dark Blue"/>
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="KeH-Ra-3c5" id="12A-Vy-gSB"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="lGN-cj-UHW">
+                                            <color key="tintColor" name="Dark Blue"/>
+                                            <connections>
+                                                <action selector="doneButtonPressed:" destination="KeH-Ra-3c5" id="6c3-YD-kmz"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OGl-YE-wu8"/>
                         <color key="backgroundColor" name="Off-white"/>
                         <color key="tintColor" name="Off-white"/>
                     </view>
-                    <toolbarItems/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="Ms7-Fd-Omd"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Create New Group" leftItemsSupplementBackButton="YES" id="XVM-9m-WsB">
                         <barButtonItem key="backBarButtonItem" title="back" id="rsF-KF-BIf"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OSU-w8-Cro">
@@ -217,12 +237,11 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="groupNameTextField" destination="KHj-hL-L1A" id="0Lk-yy-Jcq"/>
-                        <segue destination="OVH-Ys-gcY" kind="show" identifier="createdGroup" id="Ofw-K8-Q6X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Je-v1-AWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="3393"/>
+            <point key="canvasLocation" x="1963" y="2589"/>
         </scene>
         <!--Friends-->
         <scene sceneID="x31-aT-L7g">
@@ -311,17 +330,14 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="a4i-wg-sRt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vHP-SD-njr">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="KeH-Ra-3c5" kind="relationship" relationship="rootViewController" id="8Gv-Ve-fEi"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xll-K5-vxW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="2589"/>
+            <point key="canvasLocation" x="695" y="2571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dt3-e0-eho">
@@ -352,8 +368,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ofw-K8-Q6X"/>
-        <segue reference="7dR-fb-nfP"/>
+        <segue reference="AuO-6o-Jfd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="cat1" width="3024" height="3024"/>
@@ -364,6 +379,9 @@
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
+        <namedColor name="Dark Blue">
+            <color red="0.078000001609325409" green="0.42399999499320984" blue="0.57999998331069946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Light Blue">
             <color red="0.68627450980392157" green="0.82745098039215681" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

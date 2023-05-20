@@ -38,10 +38,23 @@ class GroupsViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 destinationVC.navigationBar.title = groupArray[indexPath.row]
             }
+        } else if segue.identifier == "createGroup" {
+            let destinationVC = segue.destination as! CreateGroupViewController
+            destinationVC.delegate = self
         }
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
         performSegue(withIdentifier: "createGroup", sender: self)
+    }
+}
+
+extension GroupsViewController : CreateGroupViewControllerDelegate {
+    func updateData(_ vc: CreateGroupViewController) {
+        if let text = vc.groupNameTextField.text {
+            self.groupArray.append(text)
+            self.tableView.reloadData()
+        }
+        
     }
 }
