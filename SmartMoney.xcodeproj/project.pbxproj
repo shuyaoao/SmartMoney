@@ -27,6 +27,9 @@
 		C043C2E92A17BAEC00A1F14D /* GroupDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2E82A17BAEC00A1F14D /* GroupDetailsViewController.swift */; };
 		C043C2EB2A17C4FA00A1F14D /* MonthYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = C043C2EA2A17C4FA00A1F14D /* MonthYear.swift */; };
 		C043C2F42A17C85700A1F14D /* MonthYearPicker in Frameworks */ = {isa = PBXBuildFile; productRef = C043C2F32A17C85700A1F14D /* MonthYearPicker */; };
+		D5300E6450FC7AD0E5D86A8C /* Pods_SmartMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FE4A9A0F61B080318EFBDE /* Pods_SmartMoney.framework */; };
+		DC471DB679D0E7C962668A22 /* Pods_SmartMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B01FD637A5246FFB6C5B405 /* Pods_SmartMoneyTests.framework */; };
+		F4F26084F527337704169F07 /* Pods_SmartMoney_SmartMoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873008847319056A4F6A2460 /* Pods_SmartMoney_SmartMoneyUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B01FD637A5246FFB6C5B405 /* Pods_SmartMoneyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartMoneyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F36524AFDD4C1673FC448FA /* Pods-SmartMoney-SmartMoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney-SmartMoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4A1D276909B1BDF6EAB9EF75 /* Pods-SmartMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney.release.xcconfig"; path = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.release.xcconfig"; sourceTree = "<group>"; };
+		873008847319056A4F6A2460 /* Pods_SmartMoney_SmartMoneyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartMoney_SmartMoneyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89EB2FD2C3E768FF149F85B9 /* Pods-SmartMoneyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoneyTests.release.xcconfig"; path = "Target Support Files/Pods-SmartMoneyTests/Pods-SmartMoneyTests.release.xcconfig"; sourceTree = "<group>"; };
+		98FE4A9A0F61B080318EFBDE /* Pods_SmartMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAEA7450EEF07E98DA6126A7 /* Pods-SmartMoney-SmartMoneyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney-SmartMoneyUITests.debug.xcconfig"; path = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC4DF35E59420A8D3B3B1AD0 /* Pods-SmartMoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoneyTests.debug.xcconfig"; path = "Target Support Files/Pods-SmartMoneyTests/Pods-SmartMoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C043C29B2A172C4600A1F14D /* SmartMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C043C29E2A172C4600A1F14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C043C2A02A172C4600A1F14D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +81,7 @@
 		C043C2E62A17782000A1F14D /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		C043C2E82A17BAEC00A1F14D /* GroupDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewController.swift; sourceTree = "<group>"; };
 		C043C2EA2A17C4FA00A1F14D /* MonthYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYear.swift; sourceTree = "<group>"; };
+		D240BAB13ADCBEEABBCFCF9A /* Pods-SmartMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney.debug.xcconfig"; path = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C043C2F42A17C85700A1F14D /* MonthYearPicker in Frameworks */,
+				D5300E6450FC7AD0E5D86A8C /* Pods_SmartMoney.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC471DB679D0E7C962668A22 /* Pods_SmartMoneyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,12 +106,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4F26084F527337704169F07 /* Pods_SmartMoney_SmartMoneyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0125F91EFC2A0A3B905583F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98FE4A9A0F61B080318EFBDE /* Pods_SmartMoney.framework */,
+				873008847319056A4F6A2460 /* Pods_SmartMoney_SmartMoneyUITests.framework */,
+				3B01FD637A5246FFB6C5B405 /* Pods_SmartMoneyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CC1C44BE916C0FBEFA4E66C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D240BAB13ADCBEEABBCFCF9A /* Pods-SmartMoney.debug.xcconfig */,
+				4A1D276909B1BDF6EAB9EF75 /* Pods-SmartMoney.release.xcconfig */,
+				AAEA7450EEF07E98DA6126A7 /* Pods-SmartMoney-SmartMoneyUITests.debug.xcconfig */,
+				3F36524AFDD4C1673FC448FA /* Pods-SmartMoney-SmartMoneyUITests.release.xcconfig */,
+				AC4DF35E59420A8D3B3B1AD0 /* Pods-SmartMoneyTests.debug.xcconfig */,
+				89EB2FD2C3E768FF149F85B9 /* Pods-SmartMoneyTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C043C2922A172C4600A1F14D = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +147,8 @@
 				C043C2B72A172C4600A1F14D /* SmartMoneyTests */,
 				C043C2C12A172C4600A1F14D /* SmartMoneyUITests */,
 				C043C29C2A172C4600A1F14D /* Products */,
+				3CC1C44BE916C0FBEFA4E66C /* Pods */,
+				0125F91EFC2A0A3B905583F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C043C2C82A172C4600A1F14D /* Build configuration list for PBXNativeTarget "SmartMoney" */;
 			buildPhases = (
+				383B08484B5CB014C2987B85 /* [CP] Check Pods Manifest.lock */,
 				C043C2972A172C4600A1F14D /* Sources */,
 				C043C2982A172C4600A1F14D /* Frameworks */,
 				C043C2992A172C4600A1F14D /* Resources */,
+				C1974D81700D37FF1B83A49E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,6 +253,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C043C2CB2A172C4600A1F14D /* Build configuration list for PBXNativeTarget "SmartMoneyTests" */;
 			buildPhases = (
+				D9547DF5D5C8F90BC217A57B /* [CP] Check Pods Manifest.lock */,
 				C043C2B02A172C4600A1F14D /* Sources */,
 				C043C2B12A172C4600A1F14D /* Frameworks */,
 				C043C2B22A172C4600A1F14D /* Resources */,
@@ -228,9 +272,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C043C2CE2A172C4600A1F14D /* Build configuration list for PBXNativeTarget "SmartMoneyUITests" */;
 			buildPhases = (
+				131773E653A9735844C29B0F /* [CP] Check Pods Manifest.lock */,
 				C043C2BA2A172C4600A1F14D /* Sources */,
 				C043C2BB2A172C4600A1F14D /* Frameworks */,
 				C043C2BC2A172C4600A1F14D /* Resources */,
+				9EA12552D3C3022290297208 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -275,7 +321,7 @@
 			);
 			mainGroup = C043C2922A172C4600A1F14D;
 			packageReferences = (
-				C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */,
+				C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker.git" */,
 			);
 			productRefGroup = C043C29C2A172C4600A1F14D /* Products */;
 			projectDirPath = "";
@@ -314,6 +360,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		131773E653A9735844C29B0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartMoney-SmartMoneyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		383B08484B5CB014C2987B85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartMoney-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EA12552D3C3022290297208 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1974D81700D37FF1B83A49E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartMoney/Pods-SmartMoney-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SmartMoney/Pods-SmartMoney-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartMoney/Pods-SmartMoney-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9547DF5D5C8F90BC217A57B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SmartMoneyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C043C2972A172C4600A1F14D /* Sources */ = {
@@ -496,6 +645,7 @@
 		};
 		C043C2C92A172C4600A1F14D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D240BAB13ADCBEEABBCFCF9A /* Pods-SmartMoney.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -524,6 +674,7 @@
 		};
 		C043C2CA2A172C4600A1F14D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A1D276909B1BDF6EAB9EF75 /* Pods-SmartMoney.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -552,6 +703,7 @@
 		};
 		C043C2CC2A172C4600A1F14D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC4DF35E59420A8D3B3B1AD0 /* Pods-SmartMoneyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -572,6 +724,7 @@
 		};
 		C043C2CD2A172C4600A1F14D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89EB2FD2C3E768FF149F85B9 /* Pods-SmartMoneyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -592,6 +745,7 @@
 		};
 		C043C2CF2A172C4600A1F14D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAEA7450EEF07E98DA6126A7 /* Pods-SmartMoney-SmartMoneyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -610,6 +764,7 @@
 		};
 		C043C2D02A172C4600A1F14D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F36524AFDD4C1673FC448FA /* Pods-SmartMoney-SmartMoneyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -668,7 +823,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */ = {
+		C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexanderedge/MonthYearPicker.git";
 			requirement = {
@@ -681,7 +836,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		C043C2F32A17C85700A1F14D /* MonthYearPicker */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */;
+			package = C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker.git" */;
 			productName = MonthYearPicker;
 		};
 /* End XCSwiftPackageProductDependency section */
