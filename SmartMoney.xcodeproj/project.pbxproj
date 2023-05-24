@@ -133,7 +133,6 @@
 				AC4DF35E59420A8D3B3B1AD0 /* Pods-SmartMoneyTests.debug.xcconfig */,
 				89EB2FD2C3E768FF149F85B9 /* Pods-SmartMoneyTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -321,7 +320,7 @@
 			);
 			mainGroup = C043C2922A172C4600A1F14D;
 			packageReferences = (
-				C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker.git" */,
+				C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */,
 			);
 			productRefGroup = C043C29C2A172C4600A1F14D /* Products */;
 			projectDirPath = "";
@@ -654,6 +653,8 @@
 				DEVELOPMENT_TEAM = M4SCVRJSR2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartMoney/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SmartMoney;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -666,9 +667,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = petrichoro7.SmartMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -683,6 +687,8 @@
 				DEVELOPMENT_TEAM = M4SCVRJSR2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SmartMoney/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SmartMoney;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -695,9 +701,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = petrichoro7.SmartMoney;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -823,7 +832,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker.git" */ = {
+		C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexanderedge/MonthYearPicker.git";
 			requirement = {
@@ -836,7 +845,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		C043C2F32A17C85700A1F14D /* MonthYearPicker */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker.git" */;
+			package = C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */;
 			productName = MonthYearPicker;
 		};
 /* End XCSwiftPackageProductDependency section */
