@@ -1,14 +1,17 @@
 # SmartMoney
 
-## Installation Guide
-
 As this is an IOS application that is being developed on Apple's XCode, a Mac Device is required to run the Simulation on Apple XCode.
+
+## Installation Guide for Milestone 1
 
 ### Step 1: Search and Install XCode from the App Store
 <img width="1167" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/6cd47b9a-e937-477d-8530-9febc6dc8da2">
 
 
-### Step 2: Clone the Project 
+### Step 2: Launch XCode and click clone an existing project
+<img width="806" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/85bc4f70-c6b2-46f6-9780-f9329747e26d">
+
+
 
 
 ### Step 3: All you need to do is to ensure that iPhone 14 Pro has been selected!
