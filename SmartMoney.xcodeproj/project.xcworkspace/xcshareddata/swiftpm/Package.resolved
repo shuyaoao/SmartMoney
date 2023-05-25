@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "monthyearpicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alexanderedge/MonthYearPicker.git",
+      "state" : {
+        "revision" : "29ed9661d841305c4f6d186efe82436a763c4af3",
+        "version" : "4.0.3"
+      }
+    }
+  ],
+  "version" : 2
+}
