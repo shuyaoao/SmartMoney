@@ -54,3 +54,7 @@ The Simulator will begin to load (please give it awhile) and the app will automa
 As you can see, a Simulator interface will be launched.
 
 <img width="366" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/676d9910-9599-4271-9b94-e64d081a9dfa">
+
+The application will begin to run. Home Screen is currently blank for now. Refer to Milestone 1 Update above for details on implemented features.
+
+<img width="369" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/c779f49d-7a1f-415d-8f75-404ee3c8bbdb">
