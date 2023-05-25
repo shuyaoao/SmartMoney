@@ -34,7 +34,9 @@ After XCode has automatically opened, if its not, open the SmartMoney.xcworkspac
 Next, focus on the upper section of XCode.
 
 Ensure that SmartMoney is selected!
+
 <img width="1388" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/a3dcb9ea-a141-4bb2-8a68-17ff7195d5d0">
+
 
 Next, ensure that iPhone 14 Pro has been selected!
 <img width="1100" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/0bad647d-f779-4312-b914-1f8961083bb1">
@@ -43,5 +45,7 @@ Next, ensure that iPhone 14 Pro has been selected!
 The Simulator will begin to load (please give it awhile) and the app will automatically open! 
 <img width="1234" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/338843fa-3e29-443d-b6f3-88ad91f092f0">
 
+
 As you can see, a Simulator interface will be launched.
+
 <img width="366" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/676d9910-9599-4271-9b94-e64d081a9dfa">
