@@ -1,11 +1,18 @@
-# SmartMoney
+# SmartMoney Milestone 1 Update
 
-As this is an IOS application that is being developed on Apple's XCode, a Mac Device is required to run the Simulation on Apple XCode.
+As this is an IOS application that is being developed on Apple's XCode, a Mac Device is required to run the Simulation on Apple XCode. Installation Instructions can be found below.
 
 # Milestone 1 Update (Technical Proof of Concept)
-Currently, our Application is only able to display the “Group Summary” (i.e. Group Icon) Page and “Create a New Group” (+ Icon in the Group Summary page) page, you can try to add a new group at the “Create a New Group” page and it should be reflected in the “Group Summary” Page. You can also delete a group by swiping on the group at the “Group Summary” Page. You can also check out the “Profile” Page but for now it does not have any functionality.
+Currently, our Application is only able to display the “Group Summary” (i.e. Group Icon) Page and “Create a New Group” (+ Icon in the Group Summary page) page, you can try to add a new group at the “Create a New Group” page and it should be reflected in the “Group Summary” Page. You can also delete a group by swiping on the group at the “Group Summary” Page. You can also check out the “Profile” Page but for now it does not have any functionality. (View the below screenshot for further clarity)
 
-## Installation Guide for Milestone 1
+### Group Summary Page
+<img width="370" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/6037ed8a-4a9d-4d66-b944-50e016b11156">
+
+### Create a New Group Page
+<img width="368" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/5a983f3d-42f7-49d5-add0-5ac7599a5b73">
+
+
+# Installation Guide for Milestone 1
 
 ### Step 1: Search and Install XCode from the App Store
 <img width="1167" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/6cd47b9a-e937-477d-8530-9febc6dc8da2">
