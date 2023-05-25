@@ -23,12 +23,15 @@ Launch XCode and click clone an existing project
 <img width="806" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/85bc4f70-c6b2-46f6-9780-f9329747e26d">
 
 
+
 Paste the Github URL as shown
 <img width="692" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/434b9257-2f4a-4e3f-828d-7a1e101b6913">
 
 
+
 Choose any appropriate directory (can be anything!) and click clone
 <img width="794" alt="image" src="https://github.com/shuyaoao/SmartMoney/assets/100820436/cc2e74f8-b4fd-4a7b-98ec-a9acb1435300">
+
 
 ### Step 3: Launching the Simulator
 After XCode has automatically opened, if its not, open the SmartMoney.xcworkspace file!
