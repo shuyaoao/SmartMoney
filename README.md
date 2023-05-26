@@ -1,5 +1,7 @@
 # SmartMoney Milestone 1 Update
 
+Link to Milestone 1 Docs: https://docs.google.com/document/d/1kI1QLK9BfmS_VX049j0zVSh2FtMj_NdmEZd7ZrbNzjI/edit?usp=sharing
+
 As this is an IOS application that is being developed on Apple's XCode, a Mac Device is required to run the Simulation on Apple XCode. Installation Instructions can be found below.
 
 # Milestone 1 Update (Technical Proof of Concept)
