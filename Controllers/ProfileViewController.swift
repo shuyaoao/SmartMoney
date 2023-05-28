@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //in the future, this part will incorporate with the database to display user information
         profilePicture.layer.cornerRadius = profilePicture.frame.size.width / 2
         profilePicture.clipsToBounds = true
         profilePicture.layer.borderWidth = 4
@@ -36,6 +37,7 @@ class ProfileViewController: UIViewController {
     }
     */
     
+    //makes the profile picture round
     func round(image: UIImage) -> UIImage {
         let imageWidth = image.size.width
         let imageHeight = image.size.height

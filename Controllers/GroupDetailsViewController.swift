@@ -15,6 +15,7 @@ class GroupDetailsViewController: UIViewController {
     var picker : MonthYearPickerView?
     
     override func viewDidLoad() {
+        //adds a scroll selector to allow users to select a specific month and year to display expenses in that selected timeframe
         super.viewDidLoad()
         dateTextField.delegate = self
         picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: (view.bounds.height - 216) / 2), size: CGSize(width: view.bounds.width, height: 216)))

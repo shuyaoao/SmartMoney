@@ -18,10 +18,12 @@ class CreateGroupViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    //if user presses cancel, dismiss this screen and show the GroupsViewController
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true)
     }
     
+    //dismiss this screen and show the GroupsViewController with the new group
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         //add in functionality to create a new group and update database
         delegate?.updateData(self)
@@ -29,11 +31,12 @@ class CreateGroupViewController: UIViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        //some function to add another textfield below
+        //some function to add another textfield to add more group members
     }
     
 }
 
 protocol CreateGroupViewControllerDelegate : AnyObject {
     func updateData(_ vc: CreateGroupViewController)
+    //call back to GroupsViewContoller
 }
