@@ -10,7 +10,6 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
     let array = ["Dylan", "Shuyao", "Shi Han", "Bernice", "Ana", "Jiang En"]
     
     static let identifier = "CollectionViewCell"

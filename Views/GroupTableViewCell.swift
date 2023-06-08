@@ -2,12 +2,15 @@
 //  GroupTableViewCell.swift
 //  SmartMoney
 //
-//  Created by Shuyao Li on 7/6/23.
+//  Created by Shuyao Li on 4/6/23.
 //
 
 import UIKit
+import SwipeCellKit
 
-class GroupTableViewCell: UITableViewCell {
+class GroupTableViewCell: SwipeTableViewCell {
+    
+    @IBOutlet var amtLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

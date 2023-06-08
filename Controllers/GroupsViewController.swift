@@ -8,9 +8,10 @@
 import UIKit
 import SwipeCellKit
 
-class GroupsViewController: UITableViewController{
+class GroupsViewController: UITableViewController {
     
-    var groupArray = ["Friends", "Family", "Hall Friends", "School", "Drinking Buddies"]
+    var groupArray = [Group(10.00, "Friends"), Group(20.00, "Family"), Group(-30.50, "Hall Friends"), Group(20.25, "School"), Group(100.20, "Drinking Buddies")]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,9 @@ class GroupsViewController: UITableViewController{
         if segue.identifier == "goToGroupDetails" {
             let destinationVC = segue.destination as! GroupDetailsViewController
             if let indexPath = tableView.indexPathForSelectedRow {
-                destinationVC.navigationBar.title = groupArray[indexPath.row]
+                //destinationVC.navigationBar.title = groupArray[indexPath.row].groupName
+                destinationVC.groupName = groupArray[indexPath.row].groupName
+                destinationVC.amount = groupArray[indexPath.row].owedAmount
             }
         //else if user presses on the plus button, prepare for navigation to CreateGroupViewController
         } else if segue.identifier == "createGroup" {
@@ -49,7 +52,7 @@ class GroupsViewController: UITableViewController{
 extension GroupsViewController : CreateGroupViewControllerDelegate {
     func updateData(_ vc: CreateGroupViewController) {
         if let text = vc.groupNameTextField.text {
-            self.groupArray.append(text)
+            self.groupArray.append(Group(0, text))
             self.tableView.reloadData()
         //retrieve date from CreateGroupViewController and add the group to existing array, then refresh the tableview
         }
@@ -74,9 +77,20 @@ extension GroupsViewController : SwipeTableViewCellDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! SwipeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
         cell.delegate = self
-        cell.textLabel?.text = groupArray[indexPath.row]
+        cell.textLabel?.text = groupArray[indexPath.row].groupName
+        let amt = groupArray[indexPath.row].owedAmount
+        if amt < 0 {
+            cell.amtLabel.text = String(format: "$%.2f", -amt)
+            cell.amtLabel.textColor = UIColor.green
+        } else if amt == 0 {
+            cell.amtLabel.text = String(format: "$%.2f", amt)
+            cell.amtLabel.textColor = UIColor.black
+        } else {
+            cell.amtLabel.text = String(format: "$%.2f", amt)
+            cell.amtLabel.textColor = UIColor.red
+        }
         cell.accessoryType = .disclosureIndicator
         return cell
     }
