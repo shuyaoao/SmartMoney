@@ -1,6 +1,0 @@
-framework module Pods_SmartMoney_SmartMoneyUITests {
-  umbrella header "Pods-SmartMoney-SmartMoneyUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
