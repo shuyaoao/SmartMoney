@@ -17,7 +17,7 @@ class ExpensesViewController: UIViewController {
         confirmButton = initConfirmButton()
     }
     
-    
+    // When YearMonth Button is pressed
     @IBAction func yearMonthButton2Pressed(_ sender: UIButton) {
         picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 500), size: CGSize(width: view.bounds.width, height: 216)))
         picker!.minimumDate = Date()
@@ -27,7 +27,7 @@ class ExpensesViewController: UIViewController {
         // Add Year Month Picker to the main View
         view.addSubview(picker!)
         
-        // Add the button to the view
+        // Add the Confirmation Button to the main View
         view.addSubview(confirmButton)
     }
     
@@ -36,7 +36,7 @@ class ExpensesViewController: UIViewController {
     @objc func dateChanged(_ picker: MonthYearPickerView) {
         print("date changed: \(picker.date)")
         
-        // Implement Functionality to Store Year and Month
+        // Implement Functionality to Store Year and Month data from date
     }
     
     // Date Formatter to Display Month and Year
