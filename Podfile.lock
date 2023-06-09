@@ -1,8 +1,14 @@
 PODS:
+  - IQKeyboardManagerSwift (6.5.11)
   - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift
   - SwipeCellKit (from `https://github.com/SwipeCellKit/SwipeCellKit.git`, branch `develop`)
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
 
 EXTERNAL SOURCES:
   SwipeCellKit:
@@ -15,8 +21,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SwipeCellKit/SwipeCellKit.git
 
 SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 763068e9be7635963c8c34dd9e3eed728da3edf6
+PODFILE CHECKSUM: 79dff61a4ffbb5df23f154561656b2f63ab59beb
 
 COCOAPODS: 1.12.1

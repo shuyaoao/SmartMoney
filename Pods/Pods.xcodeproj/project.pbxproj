@@ -7,131 +7,216 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		018E3D07F4E4FA759DA4C32B8B8B3A0F /* SwipeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE18C345CED420E968082C553DA557A /* SwipeOptions.swift */; };
-		0548AE65FBFD564D54884DD843733295 /* SwipeTransitionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A573D410DFD70C818A0CABE74766B /* SwipeTransitionLayout.swift */; };
-		08A38CEEA106D4FA30EACE9652C7B9C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		179DA004EB2727CC8E47A857B9A7C8BE /* SwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 028B12F815F02FC277752D84702FD618 /* SwipeController.swift */; };
-		17DDEF26F0BDCDC2CCBAA21FB3721A5A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B9965F66906D396A97806F7C35A7BD /* Extensions.swift */; };
-		1B132D59BDD8541BD90F0E7FA2785EC9 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFAB44C13D91C4AA03E872A380DF9481 /* SwipeAction.swift */; };
-		1F87838D7CA5A004A4D339A85BFF71B0 /* Pods-SmartMoney-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFD4B408474989FC60ECA4E4DFE2AF60 /* Pods-SmartMoney-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		206F240944E9F5D7E0741FADB0F7B66F /* SwipeCollectionViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 511030B1ACC66D02DFF032E7F6B3F41A /* SwipeCollectionViewCell+Accessibility.swift */; };
-		27DDB328EA5A28F7FBE21AFC1B594C8E /* SwipeTableViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37757062654713386EB742BFE1509C40 /* SwipeTableViewCell+Accessibility.swift */; };
-		302D218976A9A55C13B861E9FF4090BB /* SwipeCellKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F40EC90551D5E2A1769FFBECDDD5D0D /* SwipeCellKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		311EFC1239B0C7C5480C02B4B85413B0 /* SwipeExpansionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC1B4A12BD5CB0CD0C348EFE9CF5DED /* SwipeExpansionStyle.swift */; };
-		3A0EFA6C47553E56008B8CE22EC206B6 /* SwipeCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11883F905F2FA3AE8234FE78AC2588 /* SwipeCollectionViewCellDelegate.swift */; };
-		46A7DC020969EEBDB68E87CA595B50A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		4910261A5A661EF013AFABBA998EFDE3 /* SwipeCollectionViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19EAF0B69D81000D2AF7DEBE41E96DE /* SwipeCollectionViewCell+Display.swift */; };
-		4B275CF4EF68CFEBD7FF5C5EBCAF64EE /* Swipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C332EB59EF16677CB30DA30FEE8271 /* Swipeable.swift */; };
-		512280EC41384D4C1B8367EE84E333C7 /* Pods-SmartMoney-SmartMoneyUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 271B4B7AF641691E8C36FA1DF791BE77 /* Pods-SmartMoney-SmartMoneyUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54AB29654E6FC7A1CD3DAC7C0EB9DA1F /* SwipeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B884B78B164AB62A113031935002CB8 /* SwipeAnimator.swift */; };
-		55EC8A9DA519A3C73E41128EDE44E3F4 /* SwipeTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597742AC28C6F782DF3216E0B16E63C7 /* SwipeTableViewCellDelegate.swift */; };
-		6176C0BE28782FE95B19BFCCDA6A0D8D /* SwipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBB74AE6140F721D1B52B84A31CDCC6 /* SwipeCollectionViewCell.swift */; };
+		018E3D07F4E4FA759DA4C32B8B8B3A0F /* SwipeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA1A57A3EFB309472F097AB758015C4 /* SwipeOptions.swift */; };
+		041B655D7F5932F03A65C154BC02BDAA /* IQInvocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 708D59D80719F73A7200E785AFA47C2A /* IQInvocation.swift */; };
+		04B0884964D9592302CA654E0B67E80E /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D07CFD423DEE57EFC4606E2EBE1640 /* IQUIView+Hierarchy.swift */; };
+		0548AE65FBFD564D54884DD843733295 /* SwipeTransitionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4720132ABE2C79E1D8C7B76181BFF0FB /* SwipeTransitionLayout.swift */; };
+		08A38CEEA106D4FA30EACE9652C7B9C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		08B185E08278AE7EC55F8BBB19693AC5 /* IQKeyboardManager+OrientationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741ED5C667FF48A5887EE9A8B7FA1D70 /* IQKeyboardManager+OrientationNotification.swift */; };
+		0F94B2449CA1ADA76AE79C0BF6A08549 /* IQKeyboardManagerConstantsInternal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F753451EF668DE1A3758E99EB14E462 /* IQKeyboardManagerConstantsInternal.swift */; };
+		1740CBB33D469AEDD5D7291A9268FA97 /* IQToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA2DB9A5D8DBF9F7D733CFD8BE65F2 /* IQToolbar.swift */; };
+		179DA004EB2727CC8E47A857B9A7C8BE /* SwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0307A59E1DFCB4BF23069919BA94F8DB /* SwipeController.swift */; };
+		17DDEF26F0BDCDC2CCBAA21FB3721A5A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51765C0D4DBE0806E630043D81A2547A /* Extensions.swift */; };
+		1A9B9579E46EFBA63C5F57A6B17B5ECA /* IQKeyboardManagerSwift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CC3B7103AC8E014F8746125F9C263C98 /* IQKeyboardManagerSwift-dummy.m */; };
+		1B132D59BDD8541BD90F0E7FA2785EC9 /* SwipeAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E6DACACEDB9B33CD13F6941E148AB0 /* SwipeAction.swift */; };
+		1D8031C86A94D32E00ED55B80428A0F3 /* IQKeyboardManager+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5C337C2E2866750838FE1469518204 /* IQKeyboardManager+Toolbar.swift */; };
+		20616A47873318F80BFFEABAC9730122 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459CE55F36B2DD61B71548E4DC47F4DF /* IQTitleBarButtonItem.swift */; };
+		206F240944E9F5D7E0741FADB0F7B66F /* SwipeCollectionViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF22B5C4BE4C161F0EDE915E4193B1AA /* SwipeCollectionViewCell+Accessibility.swift */; };
+		24EC44FF102C2635A476CEF7567F89DA /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CFFF4551864051A1F2C17B89EA53A4 /* IQPreviousNextView.swift */; };
+		27DDB328EA5A28F7FBE21AFC1B594C8E /* SwipeTableViewCell+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C58C57C9AFC29647F33145DCFABB5E /* SwipeTableViewCell+Accessibility.swift */; };
+		2CA0B3B43A972DF3AD79F58092E3403E /* IQKeyboardManager+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E25D547B42D368C55197D42A94DBDA /* IQKeyboardManager+Internal.swift */; };
+		2E5138271A6C79BDA3C0835F2596219B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
+		2EC96162DD6740ECE67FF38B8400A7C5 /* IQKeyboardManager+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B7B2891178DF7822C8D304CA36E2FB /* IQKeyboardManager+Debug.swift */; };
+		302D218976A9A55C13B861E9FF4090BB /* SwipeCellKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 52DCA518668B8561197DBDAB8B5F8BEB /* SwipeCellKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		311EFC1239B0C7C5480C02B4B85413B0 /* SwipeExpansionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A707C3A3228040D08ED7302730AB28 /* SwipeExpansionStyle.swift */; };
+		34C39BDBFE7A2CC585787F5AFCA39FDE /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605F826B4A150E600C43BF4FE5EF7D44 /* IQUIView+IQKeyboardToolbar.swift */; };
+		3A0EFA6C47553E56008B8CE22EC206B6 /* SwipeCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5EE99D9F1E50437EE83EA02562E0D3 /* SwipeCollectionViewCellDelegate.swift */; };
+		3F01EED6380B596E1D0C1497CBCF9B95 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59F857C513976DA090BA4E02450F796 /* IQUITextFieldView+Additions.swift */; };
+		41CD40F5713CD71AD5AB1471E81C97E1 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A51AF9DC3CFA97DB844D1D506486F5 /* IQBarButtonItem.swift */; };
+		4910261A5A661EF013AFABBA998EFDE3 /* SwipeCollectionViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711985C3FC6F9FD823AD4A96A0E9DEA /* SwipeCollectionViewCell+Display.swift */; };
+		4B275CF4EF68CFEBD7FF5C5EBCAF64EE /* Swipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63BD062FC308857D385948BE0C9CA27 /* Swipeable.swift */; };
+		54AB29654E6FC7A1CD3DAC7C0EB9DA1F /* SwipeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3539BF8EC3993E7B710C3AF1377C4B53 /* SwipeAnimator.swift */; };
+		55EC8A9DA519A3C73E41128EDE44E3F4 /* SwipeTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345CC06D7F1DE23EF7A4F5C09FF363C1 /* SwipeTableViewCellDelegate.swift */; };
+		5FA0FCC7B2F13A05DB5DAA5E9193B314 /* Pods-SmartMoney-SmartMoneyUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 271B4B7AF641691E8C36FA1DF791BE77 /* Pods-SmartMoney-SmartMoneyUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60C6606FF8176EE5A38870CFD9F649C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		6176C0BE28782FE95B19BFCCDA6A0D8D /* SwipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03C5CC6C631CE93ADB65CC7022C1BB8 /* SwipeCollectionViewCell.swift */; };
 		688C34E3E1CE1A2E23CAE0678C6A7A57 /* Pods-SmartMoneyTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0B6EA2D27F97904AD5338EFC5F39BAB /* Pods-SmartMoneyTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6CD8025A8F768B5908C24187949E1E2A /* SwipeFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55D566EE14CF3196537D335011E254F /* SwipeFeedback.swift */; };
+		6CD8025A8F768B5908C24187949E1E2A /* SwipeFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831804859E652B3DB74E799B43566D93 /* SwipeFeedback.swift */; };
+		7AC995F567A776FC1A80A9FA0733F3D1 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B3344819ACF58C297B0AE1100D262D /* IQNSArray+Sort.swift */; };
 		83BE8DB11E620A71F2270C7E0B1A2DF3 /* Pods-SmartMoneyTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B852F2469E6689416C219BE994ED1D5B /* Pods-SmartMoneyTests-dummy.m */; };
-		90A282D559F6B602CC819EA557F422DF /* SwipeTableViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668EB2DBC629EF0C2A936AE5E1213578 /* SwipeTableViewCell+Display.swift */; };
-		9D1432BACBF3349C6B4BACE3EEDB1391 /* SwipeActionTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D51BE8ED05EE13E766E495F2677D47 /* SwipeActionTransitioning.swift */; };
-		9EFB9CE930EFCFF821A56868C99C8966 /* SwipeExpanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4EE6E554DD264CA738D74AD4BFFA1F /* SwipeExpanding.swift */; };
-		A180416E4EE5B6217B12900A99D30E21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		AB5E888B065545CE6198DBB442EB0045 /* SwipeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6793C105BF4BBDF7BCAE216C51538 /* SwipeActionsView.swift */; };
-		B09B157B52AE1995CEB1689D00D2FBD8 /* SwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F17491CB8ABCE368096944D103FD55 /* SwipeTableViewCell.swift */; };
-		B9743A957DBE9A97ED5C6D2E45EC5480 /* SwipeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B7D2E25639C505C9304AFC77EFD11 /* SwipeActionButton.swift */; };
-		C2EC19B1B1BC40F9E02DE363940151F8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		C4E062883F3700D6E761F2D9A8FBB829 /* SwipeAccessibilityCustomAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F576ABDE6B3A1FD533E6461E81730E /* SwipeAccessibilityCustomAction.swift */; };
-		C9B05BF235F235AC3086663BDA453992 /* Pods-SmartMoney-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C271960E467F102E8C8EB235C2301C /* Pods-SmartMoney-dummy.m */; };
-		E446393FA2A81F4F90BD48A16C98F2C0 /* Pods-SmartMoney-SmartMoneyUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212433F5803A890B4AA04CC77C6D16C /* Pods-SmartMoney-SmartMoneyUITests-dummy.m */; };
-		F254264789A1EC31F8B4D1D31277A3A7 /* SwipeCellKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDBBEA415A355B593C7AADA75A1F405E /* SwipeCellKit-dummy.m */; };
+		85F13B069B06ADF2B6DCA622E4645110 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73788AE16D0D4E102EC8E0647A8AC50 /* IQKeyboardManagerConstants.swift */; };
+		86A03DE9366D1BE94EB99AA387EACD1F /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79C7F20541286E46952F59B60012C7 /* IQKeyboardManager.swift */; };
+		90A282D559F6B602CC819EA557F422DF /* SwipeTableViewCell+Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A685647F62006D6114501867B6EDAB /* SwipeTableViewCell+Display.swift */; };
+		9568D0F5C06D09077937E98F495247B2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		9D1432BACBF3349C6B4BACE3EEDB1391 /* SwipeActionTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B0081167D737029D5C657ABDD25678 /* SwipeActionTransitioning.swift */; };
+		9EFB9CE930EFCFF821A56868C99C8966 /* SwipeExpanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39A74DE66BE90EC83C6A47A1F5B2B631 /* SwipeExpanding.swift */; };
+		A180416E4EE5B6217B12900A99D30E21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		A4BAEE317BFF650DCC888FC67BFBF7EF /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F9C0E995399429B999FE290C2E80F /* IQKeyboardManager+UIKeyboardNotification.swift */; };
+		AB5E888B065545CE6198DBB442EB0045 /* SwipeActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0534D6EF25CF2E81115413A2C3F7E301 /* SwipeActionsView.swift */; };
+		AC0F4417BF934CED13885CA24721557B /* Pods-SmartMoney-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFD4B408474989FC60ECA4E4DFE2AF60 /* Pods-SmartMoney-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B09B157B52AE1995CEB1689D00D2FBD8 /* SwipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27A7EBDBEFEE1A7B0B7114DBD8F8D87 /* SwipeTableViewCell.swift */; };
+		B1B6A2491AC437909DABE20C71BECDBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */; };
+		B6B43B1B78EC0E52CC08F82841A22A31 /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 08A7BCD05D3B01CFF22850E6D623D69E /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6EC6D40823E66D5B389ACEAC9FD7AAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */; };
+		B9743A957DBE9A97ED5C6D2E45EC5480 /* SwipeActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEC286DB3A4AB76ACF65F21F13C6A95 /* SwipeActionButton.swift */; };
+		BBC2EB38508D63F75451300B69F6B42D /* Pods-SmartMoney-SmartMoneyUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8212433F5803A890B4AA04CC77C6D16C /* Pods-SmartMoney-SmartMoneyUITests-dummy.m */; };
+		C4E062883F3700D6E761F2D9A8FBB829 /* SwipeAccessibilityCustomAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53800767BCBF73B31BB88785C8878F2 /* SwipeAccessibilityCustomAction.swift */; };
+		C81CB3B5D25BDBCB6D3A3632BE408229 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7ADD55EF076F0B6D0F9FF5EE8F05A8A /* IQKeyboardReturnKeyHandler.swift */; };
+		D31356D54A39420DB91C892502CFFD57 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FC8ECE77D97BCF5CE410EAFEDD7772 /* IQUIViewController+Additions.swift */; };
+		D3BF0F0831A1F0AD960332B4AD4F8CF8 /* Pods-SmartMoney-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C271960E467F102E8C8EB235C2301C /* Pods-SmartMoney-dummy.m */; };
+		D6516B5451008BF1ABA150E6482F6325 /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C27317B0727CC3565F17C8BF38B0B40 /* IQKeyboardManager+UITextFieldViewNotification.swift */; };
+		DF33C3DE068D6116B3F551B0453ACD23 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76583922FA5CC6A0B6B83028E9CD0997 /* IQUIScrollView+Additions.swift */; };
+		E72E1BDDFF31003BD089544FC112FAAC /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1317760DF80F9CB145AA7C3DA60BC41F /* IQTextView.swift */; };
+		F254264789A1EC31F8B4D1D31277A3A7 /* SwipeCellKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4F4B37099C0AD5721CEDABDF8A3C3 /* SwipeCellKit-dummy.m */; };
+		F2B1C1D70C629AE19C0D5121B1BBA891 /* IQKeyboardManager+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8FEC66BC378D79A3269BE3853CD9C6 /* IQKeyboardManager+Position.swift */; };
+		F813459BBD08351C705B16E685D5ACDF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5807E617E0DA99FFEA88C2AD8031A78F /* PBXContainerItemProxy */ = {
+		18BA34EEA5327B3B9294E44E4C9454C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
+			remoteInfo = IQKeyboardManagerSwift;
+		};
+		7B6EB2FDD556C64FDEFBEE8B07CBA1C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DE44C23B82E6671E9E1541D06DE0E87;
+			remoteInfo = SwipeCellKit;
+		};
+		8ABA2D22EEE64A3E45D8C5F425809DBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DE44C23B82E6671E9E1541D06DE0E87;
+			remoteInfo = SwipeCellKit;
+		};
+		AEF0DB4E99711BF3997A1458B04E482C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
+			remoteInfo = IQKeyboardManagerSwift;
+		};
+		DD8C3BA346B37148AE91ADF8E1DFA004 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 744F13CE9BDFDF4DA74FDA663CABD755;
 			remoteInfo = "Pods-SmartMoney";
 		};
-		7798EB23EA1DEE4D80C84EBF85A4CDFF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1DE44C23B82E6671E9E1541D06DE0E87;
-			remoteInfo = SwipeCellKit;
-		};
-		E382DA9E2E146113B8642E57A9108562 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1DE44C23B82E6671E9E1541D06DE0E87;
-			remoteInfo = SwipeCellKit;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		028B12F815F02FC277752D84702FD618 /* SwipeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeController.swift; path = Source/SwipeController.swift; sourceTree = "<group>"; };
+		01E25D547B42D368C55197D42A94DBDA /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Internal.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
+		0307A59E1DFCB4BF23069919BA94F8DB /* SwipeController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeController.swift; path = Source/SwipeController.swift; sourceTree = "<group>"; };
+		04D60AC13D33197690A05C641925DDDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		0534D6EF25CF2E81115413A2C3F7E301 /* SwipeActionsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionsView.swift; path = Source/SwipeActionsView.swift; sourceTree = "<group>"; };
+		06D07CFD423DEE57EFC4606E2EBE1640 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		073933DBC0D68901DD20B93869497528 /* Pods-SmartMoney-SmartMoneyUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SmartMoney-SmartMoneyUITests.modulemap"; sourceTree = "<group>"; };
-		0A11883F905F2FA3AE8234FE78AC2588 /* SwipeCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCollectionViewCellDelegate.swift; path = Source/SwipeCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
+		08A7BCD05D3B01CFF22850E6D623D69E /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
+		09EA2DB9A5D8DBF9F7D733CFD8BE65F2 /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
 		0AC4037BCA609BEA4E235F97C2B3186C /* Pods-SmartMoney-SmartMoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmartMoney-SmartMoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		0BB765F2022D9216FD64C00AA0F36151 /* Pods-SmartMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmartMoney.release.xcconfig"; sourceTree = "<group>"; };
-		0E468EA807B171EAB0F3071DC11C9548 /* SwipeCellKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipeCellKit.debug.xcconfig; sourceTree = "<group>"; };
-		0EBB74AE6140F721D1B52B84A31CDCC6 /* SwipeCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCollectionViewCell.swift; path = Source/SwipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		11CFFF4551864051A1F2C17B89EA53A4 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
+		1317760DF80F9CB145AA7C3DA60BC41F /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
+		1357044FDF582887D371742E42671668 /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.release.xcconfig; sourceTree = "<group>"; };
 		18A776E1F5168D3BEDF68E74101B087A /* Pods-SmartMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmartMoney.debug.xcconfig"; sourceTree = "<group>"; };
 		1A7383D06DE83CA6487BD0A44DDD0F1C /* Pods-SmartMoneyTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SmartMoneyTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1F40EC90551D5E2A1769FFBECDDD5D0D /* SwipeCellKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeCellKit-umbrella.h"; sourceTree = "<group>"; };
+		1FA545255D55C2BD3ED35A72953BA294 /* SwipeCellKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwipeCellKit-Info.plist"; sourceTree = "<group>"; };
 		22DD08976A031C81DEECDAF4735DECB3 /* Pods-SmartMoney-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SmartMoney-acknowledgements.plist"; sourceTree = "<group>"; };
 		23F3F4D2956CF8C9558C0FDCCC9AB8C2 /* Pods-SmartMoney-SmartMoneyUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SmartMoney-SmartMoneyUITests-Info.plist"; sourceTree = "<group>"; };
 		243C9F67226028903C1975B7B9386246 /* Pods-SmartMoney.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SmartMoney.modulemap"; sourceTree = "<group>"; };
 		271B4B7AF641691E8C36FA1DF791BE77 /* Pods-SmartMoney-SmartMoneyUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SmartMoney-SmartMoneyUITests-umbrella.h"; sourceTree = "<group>"; };
 		28453B6B3409859119FB1E4B9C2714C2 /* Pods-SmartMoney-SmartMoneyUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SmartMoney-SmartMoneyUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		33C6793C105BF4BBDF7BCAE216C51538 /* SwipeActionsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionsView.swift; path = Source/SwipeActionsView.swift; sourceTree = "<group>"; };
-		37757062654713386EB742BFE1509C40 /* SwipeTableViewCell+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeTableViewCell+Accessibility.swift"; path = "Source/SwipeTableViewCell+Accessibility.swift"; sourceTree = "<group>"; };
-		3E1B7D2E25639C505C9304AFC77EFD11 /* SwipeActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionButton.swift; path = Source/SwipeActionButton.swift; sourceTree = "<group>"; };
-		3E4EE6E554DD264CA738D74AD4BFFA1F /* SwipeExpanding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeExpanding.swift; path = Source/SwipeExpanding.swift; sourceTree = "<group>"; };
-		3FE18C345CED420E968082C553DA557A /* SwipeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeOptions.swift; path = Source/SwipeOptions.swift; sourceTree = "<group>"; };
+		2FB4F4B37099C0AD5721CEDABDF8A3C3 /* SwipeCellKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwipeCellKit-dummy.m"; sourceTree = "<group>"; };
+		30FC8ECE77D97BCF5CE410EAFEDD7772 /* IQUIViewController+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIViewController+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIViewController+Additions.swift"; sourceTree = "<group>"; };
+		345CC06D7F1DE23EF7A4F5C09FF363C1 /* SwipeTableViewCellDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableViewCellDelegate.swift; path = Source/SwipeTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		34B0081167D737029D5C657ABDD25678 /* SwipeActionTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionTransitioning.swift; path = Source/SwipeActionTransitioning.swift; sourceTree = "<group>"; };
+		3539BF8EC3993E7B710C3AF1377C4B53 /* SwipeAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAnimator.swift; path = Source/SwipeAnimator.swift; sourceTree = "<group>"; };
+		39A74DE66BE90EC83C6A47A1F5B2B631 /* SwipeExpanding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeExpanding.swift; path = Source/SwipeExpanding.swift; sourceTree = "<group>"; };
+		3F753451EF668DE1A3758E99EB14E462 /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
+		459CE55F36B2DD61B71548E4DC47F4DF /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
+		45E6DACACEDB9B33CD13F6941E148AB0 /* SwipeAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAction.swift; path = Source/SwipeAction.swift; sourceTree = "<group>"; };
+		4720132ABE2C79E1D8C7B76181BFF0FB /* SwipeTransitionLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTransitionLayout.swift; path = Source/SwipeTransitionLayout.swift; sourceTree = "<group>"; };
 		4968547C28CA62CFEF8FD6888CEF9FB9 /* Pods-SmartMoneyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SmartMoneyTests.modulemap"; sourceTree = "<group>"; };
-		50325621779C5BD3FEBB10C0C3929A69 /* SwipeCellKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipeCellKit.release.xcconfig; sourceTree = "<group>"; };
-		511030B1ACC66D02DFF032E7F6B3F41A /* SwipeCollectionViewCell+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeCollectionViewCell+Accessibility.swift"; path = "Source/SwipeCollectionViewCell+Accessibility.swift"; sourceTree = "<group>"; };
+		4A5EE99D9F1E50437EE83EA02562E0D3 /* SwipeCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCollectionViewCellDelegate.swift; path = Source/SwipeCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
+		51765C0D4DBE0806E630043D81A2547A /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Source/Extensions.swift; sourceTree = "<group>"; };
+		52DCA518668B8561197DBDAB8B5F8BEB /* SwipeCellKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeCellKit-umbrella.h"; sourceTree = "<group>"; };
 		54899EDE540896AB1F5925F09EC4B7CF /* Pods-SmartMoney-SmartMoneyUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SmartMoney-SmartMoneyUITests"; path = Pods_SmartMoney_SmartMoneyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C271960E467F102E8C8EB235C2301C /* Pods-SmartMoney-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SmartMoney-dummy.m"; sourceTree = "<group>"; };
-		597742AC28C6F782DF3216E0B16E63C7 /* SwipeTableViewCellDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableViewCellDelegate.swift; path = Source/SwipeTableViewCellDelegate.swift; sourceTree = "<group>"; };
-		60AD70F5CAA0302C7C020E977A54854A /* SwipeCellKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwipeCellKit.modulemap; sourceTree = "<group>"; };
+		5C27317B0727CC3565F17C8BF38B0B40 /* IQKeyboardManager+UITextFieldViewNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UITextFieldViewNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UITextFieldViewNotification.swift"; sourceTree = "<group>"; };
+		605F826B4A150E600C43BF4FE5EF7D44 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
+		63B7B2891178DF7822C8D304CA36E2FB /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
 		6492FFCCAC3DF0CE4A237DDAFFBC0638 /* Pods-SmartMoney-SmartMoneyUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SmartMoney-SmartMoneyUITests-frameworks.sh"; sourceTree = "<group>"; };
-		668EB2DBC629EF0C2A936AE5E1213578 /* SwipeTableViewCell+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeTableViewCell+Display.swift"; path = "Source/SwipeTableViewCell+Display.swift"; sourceTree = "<group>"; };
-		66F17491CB8ABCE368096944D103FD55 /* SwipeTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableViewCell.swift; path = Source/SwipeTableViewCell.swift; sourceTree = "<group>"; };
-		675288082A30EA7D8D7F111AB44D86A2 /* SwipeCellKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwipeCellKit-Info.plist"; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7B884B78B164AB62A113031935002CB8 /* SwipeAnimator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAnimator.swift; path = Source/SwipeAnimator.swift; sourceTree = "<group>"; };
+		708D59D80719F73A7200E785AFA47C2A /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
+		741ED5C667FF48A5887EE9A8B7FA1D70 /* IQKeyboardManager+OrientationNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+OrientationNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+OrientationNotification.swift"; sourceTree = "<group>"; };
+		76583922FA5CC6A0B6B83028E9CD0997 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
+		79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7C5E6081FC8DE411F729AF9BA0552706 /* Pods-SmartMoney-SmartMoneyUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SmartMoney-SmartMoneyUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7F015A53688752EFB2CDD718E4EB1B57 /* Pods-SmartMoney-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SmartMoney-acknowledgements.markdown"; sourceTree = "<group>"; };
+		81C58C57C9AFC29647F33145DCFABB5E /* SwipeTableViewCell+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeTableViewCell+Accessibility.swift"; path = "Source/SwipeTableViewCell+Accessibility.swift"; sourceTree = "<group>"; };
 		8212433F5803A890B4AA04CC77C6D16C /* Pods-SmartMoney-SmartMoneyUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SmartMoney-SmartMoneyUITests-dummy.m"; sourceTree = "<group>"; };
+		831804859E652B3DB74E799B43566D93 /* SwipeFeedback.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeFeedback.swift; path = Source/SwipeFeedback.swift; sourceTree = "<group>"; };
+		840A9994C3B7EFCD237DD4BD79B6194C /* SwipeCellKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwipeCellKit.modulemap; sourceTree = "<group>"; };
+		840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		84201A9E88C8EF767667649C44A37BCD /* Pods-SmartMoney-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SmartMoney-frameworks.sh"; sourceTree = "<group>"; };
-		87F576ABDE6B3A1FD533E6461E81730E /* SwipeAccessibilityCustomAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAccessibilityCustomAction.swift; path = Source/SwipeAccessibilityCustomAction.swift; sourceTree = "<group>"; };
+		85A707C3A3228040D08ED7302730AB28 /* SwipeExpansionStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeExpansionStyle.swift; path = Source/SwipeExpansionStyle.swift; sourceTree = "<group>"; };
+		86F4EE044BE1EA1C06E2DC37988521DC /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
+		8A39E852971DF33A69A55B3B90BA4A62 /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
+		8C5C337C2E2866750838FE1469518204 /* IQKeyboardManager+Toolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Toolbar.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Toolbar.swift"; sourceTree = "<group>"; };
 		91A9673A6CC78F38E9705A700BCDBAA5 /* Pods-SmartMoney-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SmartMoney-Info.plist"; sourceTree = "<group>"; };
-		91C332EB59EF16677CB30DA30FEE8271 /* Swipeable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swipeable.swift; path = Source/Swipeable.swift; sourceTree = "<group>"; };
-		92D51BE8ED05EE13E766E495F2677D47 /* SwipeActionTransitioning.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionTransitioning.swift; path = Source/SwipeActionTransitioning.swift; sourceTree = "<group>"; };
+		96A685647F62006D6114501867B6EDAB /* SwipeTableViewCell+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeTableViewCell+Display.swift"; path = "Source/SwipeTableViewCell+Display.swift"; sourceTree = "<group>"; };
+		9D0F9C0E995399429B999FE290C2E80F /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
 		9D443E759FE97A6C0CA5A3B5E4142EBA /* SwipeCellKit */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwipeCellKit; path = SwipeCellKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A00FAB5A122EFC9628A1757E338DE1CE /* Pods-SmartMoneyTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SmartMoneyTests-Info.plist"; sourceTree = "<group>"; };
-		A6B9965F66906D396A97806F7C35A7BD /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Source/Extensions.swift; sourceTree = "<group>"; };
+		A27A7EBDBEFEE1A7B0B7114DBD8F8D87 /* SwipeTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTableViewCell.swift; path = Source/SwipeTableViewCell.swift; sourceTree = "<group>"; };
+		A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		A53800767BCBF73B31BB88785C8878F2 /* SwipeAccessibilityCustomAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAccessibilityCustomAction.swift; path = Source/SwipeAccessibilityCustomAction.swift; sourceTree = "<group>"; };
+		A59F857C513976DA090BA4E02450F796 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
+		A67BF802A2AB3E538277356A0C495A6E /* SwipeCellKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipeCellKit.debug.xcconfig; sourceTree = "<group>"; };
+		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A2549D13A5BF688A8BBE4616D11F24 /* Pods-SmartMoneyTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SmartMoneyTests"; path = Pods_SmartMoneyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD4B408474989FC60ECA4E4DFE2AF60 /* Pods-SmartMoney-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SmartMoney-umbrella.h"; sourceTree = "<group>"; };
+		B07D5D2257A461F65C06ED64156C29B0 /* SwipeCellKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeCellKit-prefix.pch"; sourceTree = "<group>"; };
+		B6A51AF9DC3CFA97DB844D1D506486F5 /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
+		B6B3344819ACF58C297B0AE1100D262D /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		B852F2469E6689416C219BE994ED1D5B /* Pods-SmartMoneyTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SmartMoneyTests-dummy.m"; sourceTree = "<group>"; };
+		BE79C7F20541286E46952F59B60012C7 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
+		C66EBD8AABF6C6981987FE26A74DD957 /* IQKeyboardManagerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.debug.xcconfig; sourceTree = "<group>"; };
 		C6E92A273FE4B263B5352D8652A816C4 /* Pods-SmartMoney-SmartMoneyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmartMoney-SmartMoneyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C711985C3FC6F9FD823AD4A96A0E9DEA /* SwipeCollectionViewCell+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeCollectionViewCell+Display.swift"; path = "Source/SwipeCollectionViewCell+Display.swift"; sourceTree = "<group>"; };
+		C7ADD55EF076F0B6D0F9FF5EE8F05A8A /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
 		C8A2BD18AAC9C61CC4075D1DDE24F5D9 /* Pods-SmartMoneyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmartMoneyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CCC1B4A12BD5CB0CD0C348EFE9CF5DED /* SwipeExpansionStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeExpansionStyle.swift; path = Source/SwipeExpansionStyle.swift; sourceTree = "<group>"; };
-		CFAB44C13D91C4AA03E872A380DF9481 /* SwipeAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeAction.swift; path = Source/SwipeAction.swift; sourceTree = "<group>"; };
-		D19EAF0B69D81000D2AF7DEBE41E96DE /* SwipeCollectionViewCell+Display.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeCollectionViewCell+Display.swift"; path = "Source/SwipeCollectionViewCell+Display.swift"; sourceTree = "<group>"; };
-		DDBBEA415A355B593C7AADA75A1F405E /* SwipeCellKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwipeCellKit-dummy.m"; sourceTree = "<group>"; };
+		CC3B7103AC8E014F8746125F9C263C98 /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
+		CC8FEC66BC378D79A3269BE3853CD9C6 /* IQKeyboardManager+Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Position.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Position.swift"; sourceTree = "<group>"; };
+		CCA1A57A3EFB309472F097AB758015C4 /* SwipeOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeOptions.swift; path = Source/SwipeOptions.swift; sourceTree = "<group>"; };
+		CEACD62EB8681A2FD79D7308E040CBC0 /* IQKeyboardManagerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IQKeyboardManagerSwift-Info.plist"; sourceTree = "<group>"; };
+		D73788AE16D0D4E102EC8E0647A8AC50 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
+		E03C5CC6C631CE93ADB65CC7022C1BB8 /* SwipeCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeCollectionViewCell.swift; path = Source/SwipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E0B6EA2D27F97904AD5338EFC5F39BAB /* Pods-SmartMoneyTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SmartMoneyTests-umbrella.h"; sourceTree = "<group>"; };
-		E55D566EE14CF3196537D335011E254F /* SwipeFeedback.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeFeedback.swift; path = Source/SwipeFeedback.swift; sourceTree = "<group>"; };
+		E474EC9E724DBBD5F6B54777DB9B1AB1 /* SwipeCellKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipeCellKit.release.xcconfig; sourceTree = "<group>"; };
+		ECEC286DB3A4AB76ACF65F21F13C6A95 /* SwipeActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeActionButton.swift; path = Source/SwipeActionButton.swift; sourceTree = "<group>"; };
+		EF22B5C4BE4C161F0EDE915E4193B1AA /* SwipeCollectionViewCell+Accessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwipeCollectionViewCell+Accessibility.swift"; path = "Source/SwipeCollectionViewCell+Accessibility.swift"; sourceTree = "<group>"; };
 		F024B36582230E7E5C641B726F78A125 /* Pods-SmartMoneyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SmartMoneyTests.release.xcconfig"; sourceTree = "<group>"; };
-		F30529E826C2CA81E58BDB6F7ECFAD1C /* SwipeCellKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeCellKit-prefix.pch"; sourceTree = "<group>"; };
 		F5573B101F47AB1DBAB2E24F46395C0D /* Pods-SmartMoneyTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SmartMoneyTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		F99A573D410DFD70C818A0CABE74766B /* SwipeTransitionLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeTransitionLayout.swift; path = Source/SwipeTransitionLayout.swift; sourceTree = "<group>"; };
+		F63BD062FC308857D385948BE0C9CA27 /* Swipeable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swipeable.swift; path = Source/Swipeable.swift; sourceTree = "<group>"; };
 		FB8EC6D9563836C2EC8CFAB78BAC3AD0 /* Pods-SmartMoney */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-SmartMoney"; path = Pods_SmartMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		10860334D6638D1F61A93CEB5FC65F42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F813459BBD08351C705B16E685D5ACDF /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6043A68C2BAE9F5F39265F65208A45C1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,19 +225,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		60AF02C71883C74ABC0D3CF8512010E6 /* Frameworks */ = {
+		951B2A02E86905D44D5868CCFF9E27FB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46A7DC020969EEBDB68E87CA595B50A1 /* Foundation.framework in Frameworks */,
+				9568D0F5C06D09077937E98F495247B2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AFFCDFAA622F2CA7569D228C053C0E8F /* Frameworks */ = {
+		A3B77577C54970218F8F8340516D00F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2EC19B1B1BC40F9E02DE363940151F8 /* Foundation.framework in Frameworks */,
+				B1B6A2491AC437909DABE20C71BECDBC /* CoreGraphics.framework in Frameworks */,
+				60C6606FF8176EE5A38870CFD9F649C8 /* Foundation.framework in Frameworks */,
+				B6EC6D40823E66D5B389ACEAC9FD7AAE /* QuartzCore.framework in Frameworks */,
+				2E5138271A6C79BDA3C0835F2596219B /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,23 +288,13 @@
 			path = "Target Support Files/Pods-SmartMoneyTests";
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		3EF560EDBA668FBB74E2C4E0FD79CC5A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				F30FB72558D9C5F6C6F7AF94A4AE37C7 /* IQKeyboardManagerSwift */,
+				B9590C64ED55EA7595EBAC42BBE9CA2B /* SwipeCellKit */,
 			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		59650FEA3D6BE9C631919D8B6196219E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FB8EC6D9563836C2EC8CFAB78BAC3AD0 /* Pods-SmartMoney */,
-				54899EDE540896AB1F5925F09EC4B7CF /* Pods-SmartMoney-SmartMoneyUITests */,
-				A9A2549D13A5BF688A8BBE4616D11F24 /* Pods-SmartMoneyTests */,
-				9D443E759FE97A6C0CA5A3B5E4142EBA /* SwipeCellKit */,
-			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		6EAC7AAD18431AD43B4D3E1967BF1776 /* Targets Support Files */ = {
@@ -229,38 +307,84 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		AF3B8FFA0175528B5760F5852AE163F3 /* Support Files */ = {
+		88C30E843D31F4EF508E4F4F187161B9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				60AD70F5CAA0302C7C020E977A54854A /* SwipeCellKit.modulemap */,
-				DDBBEA415A355B593C7AADA75A1F405E /* SwipeCellKit-dummy.m */,
-				675288082A30EA7D8D7F111AB44D86A2 /* SwipeCellKit-Info.plist */,
-				F30529E826C2CA81E58BDB6F7ECFAD1C /* SwipeCellKit-prefix.pch */,
-				1F40EC90551D5E2A1769FFBECDDD5D0D /* SwipeCellKit-umbrella.h */,
-				0E468EA807B171EAB0F3071DC11C9548 /* SwipeCellKit.debug.xcconfig */,
-				50325621779C5BD3FEBB10C0C3929A69 /* SwipeCellKit.release.xcconfig */,
+				840A9994C3B7EFCD237DD4BD79B6194C /* SwipeCellKit.modulemap */,
+				2FB4F4B37099C0AD5721CEDABDF8A3C3 /* SwipeCellKit-dummy.m */,
+				1FA545255D55C2BD3ED35A72953BA294 /* SwipeCellKit-Info.plist */,
+				B07D5D2257A461F65C06ED64156C29B0 /* SwipeCellKit-prefix.pch */,
+				52DCA518668B8561197DBDAB8B5F8BEB /* SwipeCellKit-umbrella.h */,
+				A67BF802A2AB3E538277356A0C495A6E /* SwipeCellKit.debug.xcconfig */,
+				E474EC9E724DBBD5F6B54777DB9B1AB1 /* SwipeCellKit.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwipeCellKit";
+			sourceTree = "<group>";
+		};
+		9F155CFBC8F72B151E33A545FEC50EB7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				86F4EE044BE1EA1C06E2DC37988521DC /* IQKeyboardManagerSwift.modulemap */,
+				CC3B7103AC8E014F8746125F9C263C98 /* IQKeyboardManagerSwift-dummy.m */,
+				CEACD62EB8681A2FD79D7308E040CBC0 /* IQKeyboardManagerSwift-Info.plist */,
+				8A39E852971DF33A69A55B3B90BA4A62 /* IQKeyboardManagerSwift-prefix.pch */,
+				08A7BCD05D3B01CFF22850E6D623D69E /* IQKeyboardManagerSwift-umbrella.h */,
+				C66EBD8AABF6C6981987FE26A74DD957 /* IQKeyboardManagerSwift.debug.xcconfig */,
+				1357044FDF582887D371742E42671668 /* IQKeyboardManagerSwift.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/IQKeyboardManagerSwift";
+			sourceTree = "<group>";
+		};
+		B9590C64ED55EA7595EBAC42BBE9CA2B /* SwipeCellKit */ = {
+			isa = PBXGroup;
+			children = (
+				51765C0D4DBE0806E630043D81A2547A /* Extensions.swift */,
+				F63BD062FC308857D385948BE0C9CA27 /* Swipeable.swift */,
+				A53800767BCBF73B31BB88785C8878F2 /* SwipeAccessibilityCustomAction.swift */,
+				45E6DACACEDB9B33CD13F6941E148AB0 /* SwipeAction.swift */,
+				ECEC286DB3A4AB76ACF65F21F13C6A95 /* SwipeActionButton.swift */,
+				0534D6EF25CF2E81115413A2C3F7E301 /* SwipeActionsView.swift */,
+				34B0081167D737029D5C657ABDD25678 /* SwipeActionTransitioning.swift */,
+				3539BF8EC3993E7B710C3AF1377C4B53 /* SwipeAnimator.swift */,
+				E03C5CC6C631CE93ADB65CC7022C1BB8 /* SwipeCollectionViewCell.swift */,
+				EF22B5C4BE4C161F0EDE915E4193B1AA /* SwipeCollectionViewCell+Accessibility.swift */,
+				C711985C3FC6F9FD823AD4A96A0E9DEA /* SwipeCollectionViewCell+Display.swift */,
+				4A5EE99D9F1E50437EE83EA02562E0D3 /* SwipeCollectionViewCellDelegate.swift */,
+				0307A59E1DFCB4BF23069919BA94F8DB /* SwipeController.swift */,
+				39A74DE66BE90EC83C6A47A1F5B2B631 /* SwipeExpanding.swift */,
+				85A707C3A3228040D08ED7302730AB28 /* SwipeExpansionStyle.swift */,
+				831804859E652B3DB74E799B43566D93 /* SwipeFeedback.swift */,
+				CCA1A57A3EFB309472F097AB758015C4 /* SwipeOptions.swift */,
+				A27A7EBDBEFEE1A7B0B7114DBD8F8D87 /* SwipeTableViewCell.swift */,
+				81C58C57C9AFC29647F33145DCFABB5E /* SwipeTableViewCell+Accessibility.swift */,
+				96A685647F62006D6114501867B6EDAB /* SwipeTableViewCell+Display.swift */,
+				345CC06D7F1DE23EF7A4F5C09FF363C1 /* SwipeTableViewCellDelegate.swift */,
+				4720132ABE2C79E1D8C7B76181BFF0FB /* SwipeTransitionLayout.swift */,
+				88C30E843D31F4EF508E4F4F187161B9 /* Support Files */,
+			);
+			name = SwipeCellKit;
+			path = SwipeCellKit;
+			sourceTree = "<group>";
+		};
+		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9D206BABE81E6BF0B9B23880B238CC7 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				E214FA7A70A848A1DAAC7393BC4A9B5D /* Pods */,
-				59650FEA3D6BE9C631919D8B6196219E /* Products */,
+				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
+				3EF560EDBA668FBB74E2C4E0FD79CC5A /* Pods */,
+				F3303D2600F49101987B4C964B0E4382 /* Products */,
 				6EAC7AAD18431AD43B4D3E1967BF1776 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D3B232739515D0C008EAC803EA24ADCE /* Pods-SmartMoney-SmartMoneyUITests */ = {
@@ -280,43 +404,59 @@
 			path = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests";
 			sourceTree = "<group>";
 		};
-		D75FCB517ED0C69DD1CE15208C955672 /* SwipeCellKit */ = {
+		F30FB72558D9C5F6C6F7AF94A4AE37C7 /* IQKeyboardManagerSwift */ = {
 			isa = PBXGroup;
 			children = (
-				A6B9965F66906D396A97806F7C35A7BD /* Extensions.swift */,
-				91C332EB59EF16677CB30DA30FEE8271 /* Swipeable.swift */,
-				87F576ABDE6B3A1FD533E6461E81730E /* SwipeAccessibilityCustomAction.swift */,
-				CFAB44C13D91C4AA03E872A380DF9481 /* SwipeAction.swift */,
-				3E1B7D2E25639C505C9304AFC77EFD11 /* SwipeActionButton.swift */,
-				33C6793C105BF4BBDF7BCAE216C51538 /* SwipeActionsView.swift */,
-				92D51BE8ED05EE13E766E495F2677D47 /* SwipeActionTransitioning.swift */,
-				7B884B78B164AB62A113031935002CB8 /* SwipeAnimator.swift */,
-				0EBB74AE6140F721D1B52B84A31CDCC6 /* SwipeCollectionViewCell.swift */,
-				511030B1ACC66D02DFF032E7F6B3F41A /* SwipeCollectionViewCell+Accessibility.swift */,
-				D19EAF0B69D81000D2AF7DEBE41E96DE /* SwipeCollectionViewCell+Display.swift */,
-				0A11883F905F2FA3AE8234FE78AC2588 /* SwipeCollectionViewCellDelegate.swift */,
-				028B12F815F02FC277752D84702FD618 /* SwipeController.swift */,
-				3E4EE6E554DD264CA738D74AD4BFFA1F /* SwipeExpanding.swift */,
-				CCC1B4A12BD5CB0CD0C348EFE9CF5DED /* SwipeExpansionStyle.swift */,
-				E55D566EE14CF3196537D335011E254F /* SwipeFeedback.swift */,
-				3FE18C345CED420E968082C553DA557A /* SwipeOptions.swift */,
-				66F17491CB8ABCE368096944D103FD55 /* SwipeTableViewCell.swift */,
-				37757062654713386EB742BFE1509C40 /* SwipeTableViewCell+Accessibility.swift */,
-				668EB2DBC629EF0C2A936AE5E1213578 /* SwipeTableViewCell+Display.swift */,
-				597742AC28C6F782DF3216E0B16E63C7 /* SwipeTableViewCellDelegate.swift */,
-				F99A573D410DFD70C818A0CABE74766B /* SwipeTransitionLayout.swift */,
-				AF3B8FFA0175528B5760F5852AE163F3 /* Support Files */,
+				B6A51AF9DC3CFA97DB844D1D506486F5 /* IQBarButtonItem.swift */,
+				708D59D80719F73A7200E785AFA47C2A /* IQInvocation.swift */,
+				BE79C7F20541286E46952F59B60012C7 /* IQKeyboardManager.swift */,
+				63B7B2891178DF7822C8D304CA36E2FB /* IQKeyboardManager+Debug.swift */,
+				01E25D547B42D368C55197D42A94DBDA /* IQKeyboardManager+Internal.swift */,
+				741ED5C667FF48A5887EE9A8B7FA1D70 /* IQKeyboardManager+OrientationNotification.swift */,
+				CC8FEC66BC378D79A3269BE3853CD9C6 /* IQKeyboardManager+Position.swift */,
+				8C5C337C2E2866750838FE1469518204 /* IQKeyboardManager+Toolbar.swift */,
+				9D0F9C0E995399429B999FE290C2E80F /* IQKeyboardManager+UIKeyboardNotification.swift */,
+				5C27317B0727CC3565F17C8BF38B0B40 /* IQKeyboardManager+UITextFieldViewNotification.swift */,
+				D73788AE16D0D4E102EC8E0647A8AC50 /* IQKeyboardManagerConstants.swift */,
+				3F753451EF668DE1A3758E99EB14E462 /* IQKeyboardManagerConstantsInternal.swift */,
+				C7ADD55EF076F0B6D0F9FF5EE8F05A8A /* IQKeyboardReturnKeyHandler.swift */,
+				B6B3344819ACF58C297B0AE1100D262D /* IQNSArray+Sort.swift */,
+				11CFFF4551864051A1F2C17B89EA53A4 /* IQPreviousNextView.swift */,
+				1317760DF80F9CB145AA7C3DA60BC41F /* IQTextView.swift */,
+				459CE55F36B2DD61B71548E4DC47F4DF /* IQTitleBarButtonItem.swift */,
+				09EA2DB9A5D8DBF9F7D733CFD8BE65F2 /* IQToolbar.swift */,
+				76583922FA5CC6A0B6B83028E9CD0997 /* IQUIScrollView+Additions.swift */,
+				A59F857C513976DA090BA4E02450F796 /* IQUITextFieldView+Additions.swift */,
+				06D07CFD423DEE57EFC4606E2EBE1640 /* IQUIView+Hierarchy.swift */,
+				605F826B4A150E600C43BF4FE5EF7D44 /* IQUIView+IQKeyboardToolbar.swift */,
+				30FC8ECE77D97BCF5CE410EAFEDD7772 /* IQUIViewController+Additions.swift */,
+				9F155CFBC8F72B151E33A545FEC50EB7 /* Support Files */,
 			);
-			name = SwipeCellKit;
-			path = SwipeCellKit;
+			name = IQKeyboardManagerSwift;
+			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
-		E214FA7A70A848A1DAAC7393BC4A9B5D /* Pods */ = {
+		F3303D2600F49101987B4C964B0E4382 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D75FCB517ED0C69DD1CE15208C955672 /* SwipeCellKit */,
+				A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */,
+				FB8EC6D9563836C2EC8CFAB78BAC3AD0 /* Pods-SmartMoney */,
+				54899EDE540896AB1F5925F09EC4B7CF /* Pods-SmartMoney-SmartMoneyUITests */,
+				A9A2549D13A5BF688A8BBE4616D11F24 /* Pods-SmartMoneyTests */,
+				9D443E759FE97A6C0CA5A3B5E4142EBA /* SwipeCellKit */,
 			);
-			name = Pods;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9D206BABE81E6BF0B9B23880B238CC7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */,
+				79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */,
+				A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */,
+				04D60AC13D33197690A05C641925DDDA /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,11 +470,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		555AED6E064AB4B955ECD3E36A050390 /* Headers */ = {
+		4F2DE727EA91A93CAB46FE92A50EEE28 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				512280EC41384D4C1B8367EE84E333C7 /* Pods-SmartMoney-SmartMoneyUITests-umbrella.h in Headers */,
+				AC0F4417BF934CED13885CA24721557B /* Pods-SmartMoney-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9260FC892703AC2723B3AA0D1BDDA871 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FA0FCC7B2F13A05DB5DAA5E9193B314 /* Pods-SmartMoney-SmartMoneyUITests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,11 +494,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCD8ACF9EF58CFD9BF0CB12DA7C30056 /* Headers */ = {
+		CCEEFAA8C63580C9CB8978EDA9312BDF /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F87838D7CA5A004A4D339A85BFF71B0 /* Pods-SmartMoney-umbrella.h in Headers */,
+				B6B43B1B78EC0E52CC08F82841A22A31 /* IQKeyboardManagerSwift-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +535,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				F5F5F0682FBD761C0140D1249EAE6C9D /* PBXTargetDependency */,
+				0272D6D306DB76028FEFC1A83E8110EF /* PBXTargetDependency */,
 			);
 			name = "Pods-SmartMoneyTests";
 			productName = Pods_SmartMoneyTests;
@@ -396,17 +544,18 @@
 		};
 		744F13CE9BDFDF4DA74FDA663CABD755 /* Pods-SmartMoney */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BD03B53E891ABA593CA0DF00A45AB47C /* Build configuration list for PBXNativeTarget "Pods-SmartMoney" */;
+			buildConfigurationList = F0B4636CC2E59EF8F5640A6F3FCD8D42 /* Build configuration list for PBXNativeTarget "Pods-SmartMoney" */;
 			buildPhases = (
-				FCD8ACF9EF58CFD9BF0CB12DA7C30056 /* Headers */,
-				5CF65F479CFF3ED737791E6A7648E466 /* Sources */,
-				60AF02C71883C74ABC0D3CF8512010E6 /* Frameworks */,
-				E303BAED1E78B7968124C9F40AB6FBB4 /* Resources */,
+				4F2DE727EA91A93CAB46FE92A50EEE28 /* Headers */,
+				2EB461E3762649C828A3EED1A4E0463E /* Sources */,
+				951B2A02E86905D44D5868CCFF9E27FB /* Frameworks */,
+				1DC92FE1EB03F9318E2C0712D0D8B7AB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				851DCF52A8912ECB53D4584A05289898 /* PBXTargetDependency */,
+				0857289A0B579732C602A95D3367DB02 /* PBXTargetDependency */,
+				AED8224FB7E3A5CD05ED13B84381461E /* PBXTargetDependency */,
 			);
 			name = "Pods-SmartMoney";
 			productName = Pods_SmartMoney;
@@ -415,21 +564,40 @@
 		};
 		9F197D770C21D4F8F409E3167AC572DA /* Pods-SmartMoney-SmartMoneyUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 90003A80A89FE0708BE165FC86E6F681 /* Build configuration list for PBXNativeTarget "Pods-SmartMoney-SmartMoneyUITests" */;
+			buildConfigurationList = 81C61A69C35CD88393827713E31F6257 /* Build configuration list for PBXNativeTarget "Pods-SmartMoney-SmartMoneyUITests" */;
 			buildPhases = (
-				555AED6E064AB4B955ECD3E36A050390 /* Headers */,
-				18EB0F7327E62F55E88567771331FE98 /* Sources */,
-				AFFCDFAA622F2CA7569D228C053C0E8F /* Frameworks */,
-				BC5B91DD33DB23902834078242F650DD /* Resources */,
+				9260FC892703AC2723B3AA0D1BDDA871 /* Headers */,
+				257A190C77FE2E937FE8573FDE86B8F6 /* Sources */,
+				10860334D6638D1F61A93CEB5FC65F42 /* Frameworks */,
+				24649BDBABB9EEAEAF83C060E0A326DE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A11583BBC62A97C901BA65AF4BC5CA9A /* PBXTargetDependency */,
+				74B9D99E9B516D5D2C5A4333226D0506 /* PBXTargetDependency */,
+				10CF11F21F264B5E6276ECBB2E5206C0 /* PBXTargetDependency */,
 			);
 			name = "Pods-SmartMoney-SmartMoneyUITests";
 			productName = Pods_SmartMoney_SmartMoneyUITests;
 			productReference = 54899EDE540896AB1F5925F09EC4B7CF /* Pods-SmartMoney-SmartMoneyUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42F76AA8E84D32E2DED70BBA35321CB1 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */;
+			buildPhases = (
+				CCEEFAA8C63580C9CB8978EDA9312BDF /* Headers */,
+				AC7850B8AD058752CD0E80D5A5B07A42 /* Sources */,
+				A3B77577C54970218F8F8340516D00F2 /* Frameworks */,
+				DAEA1F953296419744C852BAA2739BA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IQKeyboardManagerSwift;
+			productName = IQKeyboardManagerSwift;
+			productReference = A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -450,10 +618,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 59650FEA3D6BE9C631919D8B6196219E /* Products */;
+			productRefGroup = F3303D2600F49101987B4C964B0E4382 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */,
 				744F13CE9BDFDF4DA74FDA663CABD755 /* Pods-SmartMoney */,
 				9F197D770C21D4F8F409E3167AC572DA /* Pods-SmartMoney-SmartMoneyUITests */,
 				2B3651AB0EFB3703F99AE19613243EFB /* Pods-SmartMoneyTests */,
@@ -463,6 +632,20 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1DC92FE1EB03F9318E2C0712D0D8B7AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24649BDBABB9EEAEAF83C060E0A326DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		693B667A3505BE32D7B243F2EE8A8E5E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -477,14 +660,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC5B91DD33DB23902834078242F650DD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E303BAED1E78B7968124C9F40AB6FBB4 /* Resources */ = {
+		DAEA1F953296419744C852BAA2739BA1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -494,19 +670,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		18EB0F7327E62F55E88567771331FE98 /* Sources */ = {
+		257A190C77FE2E937FE8573FDE86B8F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E446393FA2A81F4F90BD48A16C98F2C0 /* Pods-SmartMoney-SmartMoneyUITests-dummy.m in Sources */,
+				BBC2EB38508D63F75451300B69F6B42D /* Pods-SmartMoney-SmartMoneyUITests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5CF65F479CFF3ED737791E6A7648E466 /* Sources */ = {
+		2EB461E3762649C828A3EED1A4E0463E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9B05BF235F235AC3086663BDA453992 /* Pods-SmartMoney-dummy.m in Sources */,
+				D3BF0F0831A1F0AD960332B4AD4F8CF8 /* Pods-SmartMoney-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +716,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AC7850B8AD058752CD0E80D5A5B07A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41CD40F5713CD71AD5AB1471E81C97E1 /* IQBarButtonItem.swift in Sources */,
+				041B655D7F5932F03A65C154BC02BDAA /* IQInvocation.swift in Sources */,
+				86A03DE9366D1BE94EB99AA387EACD1F /* IQKeyboardManager.swift in Sources */,
+				2EC96162DD6740ECE67FF38B8400A7C5 /* IQKeyboardManager+Debug.swift in Sources */,
+				2CA0B3B43A972DF3AD79F58092E3403E /* IQKeyboardManager+Internal.swift in Sources */,
+				08B185E08278AE7EC55F8BBB19693AC5 /* IQKeyboardManager+OrientationNotification.swift in Sources */,
+				F2B1C1D70C629AE19C0D5121B1BBA891 /* IQKeyboardManager+Position.swift in Sources */,
+				1D8031C86A94D32E00ED55B80428A0F3 /* IQKeyboardManager+Toolbar.swift in Sources */,
+				A4BAEE317BFF650DCC888FC67BFBF7EF /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */,
+				D6516B5451008BF1ABA150E6482F6325 /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */,
+				85F13B069B06ADF2B6DCA622E4645110 /* IQKeyboardManagerConstants.swift in Sources */,
+				0F94B2449CA1ADA76AE79C0BF6A08549 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				1A9B9579E46EFBA63C5F57A6B17B5ECA /* IQKeyboardManagerSwift-dummy.m in Sources */,
+				C81CB3B5D25BDBCB6D3A3632BE408229 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				7AC995F567A776FC1A80A9FA0733F3D1 /* IQNSArray+Sort.swift in Sources */,
+				24EC44FF102C2635A476CEF7567F89DA /* IQPreviousNextView.swift in Sources */,
+				E72E1BDDFF31003BD089544FC112FAAC /* IQTextView.swift in Sources */,
+				20616A47873318F80BFFEABAC9730122 /* IQTitleBarButtonItem.swift in Sources */,
+				1740CBB33D469AEDD5D7291A9268FA97 /* IQToolbar.swift in Sources */,
+				DF33C3DE068D6116B3F551B0453ACD23 /* IQUIScrollView+Additions.swift in Sources */,
+				3F01EED6380B596E1D0C1497CBCF9B95 /* IQUITextFieldView+Additions.swift in Sources */,
+				04B0884964D9592302CA654E0B67E80E /* IQUIView+Hierarchy.swift in Sources */,
+				34C39BDBFE7A2CC585787F5AFCA39FDE /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				D31356D54A39420DB91C892502CFFD57 /* IQUIViewController+Additions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F77EA96FF66B3FBE64A4234F49459E97 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -551,30 +758,42 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		851DCF52A8912ECB53D4584A05289898 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwipeCellKit;
-			target = 1DE44C23B82E6671E9E1541D06DE0E87 /* SwipeCellKit */;
-			targetProxy = E382DA9E2E146113B8642E57A9108562 /* PBXContainerItemProxy */;
-		};
-		A11583BBC62A97C901BA65AF4BC5CA9A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwipeCellKit;
-			target = 1DE44C23B82E6671E9E1541D06DE0E87 /* SwipeCellKit */;
-			targetProxy = 7798EB23EA1DEE4D80C84EBF85A4CDFF /* PBXContainerItemProxy */;
-		};
-		F5F5F0682FBD761C0140D1249EAE6C9D /* PBXTargetDependency */ = {
+		0272D6D306DB76028FEFC1A83E8110EF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-SmartMoney";
 			target = 744F13CE9BDFDF4DA74FDA663CABD755 /* Pods-SmartMoney */;
-			targetProxy = 5807E617E0DA99FFEA88C2AD8031A78F /* PBXContainerItemProxy */;
+			targetProxy = DD8C3BA346B37148AE91ADF8E1DFA004 /* PBXContainerItemProxy */;
+		};
+		0857289A0B579732C602A95D3367DB02 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
+			targetProxy = 18BA34EEA5327B3B9294E44E4C9454C6 /* PBXContainerItemProxy */;
+		};
+		10CF11F21F264B5E6276ECBB2E5206C0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwipeCellKit;
+			target = 1DE44C23B82E6671E9E1541D06DE0E87 /* SwipeCellKit */;
+			targetProxy = 8ABA2D22EEE64A3E45D8C5F425809DBB /* PBXContainerItemProxy */;
+		};
+		74B9D99E9B516D5D2C5A4333226D0506 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
+			targetProxy = AEF0DB4E99711BF3997A1458B04E482C /* PBXContainerItemProxy */;
+		};
+		AED8224FB7E3A5CD05ED13B84381461E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwipeCellKit;
+			target = 1DE44C23B82E6671E9E1541D06DE0E87 /* SwipeCellKit */;
+			targetProxy = 7B6EB2FDD556C64FDEFBEE8B07CBA1C4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1AC41ABEE64C623596DBC5766763AB54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50325621779C5BD3FEBB10C0C3929A69 /* SwipeCellKit.release.xcconfig */;
+			baseConfigurationReference = E474EC9E724DBBD5F6B54777DB9B1AB1 /* SwipeCellKit.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -606,42 +825,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		22C9DCD68FB66A98E6DEA222E5676918 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18A776E1F5168D3BEDF68E74101B087A /* Pods-SmartMoney.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -709,6 +892,79 @@
 			};
 			name = Debug;
 		};
+		376A8727AB6B30D5917C8A42EF686186 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6E92A273FE4B263B5352D8652A816C4 /* Pods-SmartMoney-SmartMoneyUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3E7E48E5ACC4C38D4220BCE235EDF82C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BB765F2022D9216FD64C00AA0F36151 /* Pods-SmartMoney.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		536D23AFC90E0CEB0D5978E6CF321C3A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8A2BD18AAC9C61CC4075D1DDE24F5D9 /* Pods-SmartMoneyTests.debug.xcconfig */;
@@ -745,9 +1001,117 @@
 			};
 			name = Debug;
 		};
+		583164C1836436074A7A0881AD9E4E88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AC4037BCA609BEA4E235F97C2B3186C /* Pods-SmartMoney-SmartMoneyUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9D8C08F259B4E57381CFE8BC28467628 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1357044FDF582887D371742E42671668 /* IQKeyboardManagerSwift.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
+				PRODUCT_MODULE_NAME = IQKeyboardManagerSwift;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.6;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A60B2C0C2F92E2CBD0FE72823FBB0120 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18A776E1F5168D3BEDF68E74101B087A /* Pods-SmartMoney.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		B365E1CAEEB3DAE92CD63CCAF561CBEF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E468EA807B171EAB0F3071DC11C9548 /* SwipeCellKit.debug.xcconfig */;
+			baseConfigurationReference = A67BF802A2AB3E538277356A0C495A6E /* SwipeCellKit.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -841,11 +1205,10 @@
 			};
 			name = Release;
 		};
-		CAFD756E9B1A2BAB8994D4C14A0D06BA /* Release */ = {
+		F0377F003E77F0F91AC8FEE0F297E927 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BB765F2022D9216FD64C00AA0F36151 /* Pods-SmartMoney.release.xcconfig */;
+			baseConfigurationReference = C66EBD8AABF6C6981987FE26A74DD957 /* IQKeyboardManagerSwift.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -854,7 +1217,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -862,94 +1226,18 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/IQKeyboardManagerSwift/IQKeyboardManagerSwift.modulemap";
+				PRODUCT_MODULE_NAME = IQKeyboardManagerSwift;
+				PRODUCT_NAME = IQKeyboardManagerSwift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D09E4B5D5A472F8A5BCECF456B2F4841 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C6E92A273FE4B263B5352D8652A816C4 /* Pods-SmartMoney-SmartMoneyUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.6;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		D2EF19173BC92DC359AA598501A79D0A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AC4037BCA609BEA4E235F97C2B3186C /* Pods-SmartMoney-SmartMoneyUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		F1383EE8226E4EC437606BB14AE2192E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1000,6 +1288,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		42F76AA8E84D32E2DED70BBA35321CB1 /* Build configuration list for PBXNativeTarget "IQKeyboardManagerSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0377F003E77F0F91AC8FEE0F297E927 /* Debug */,
+				9D8C08F259B4E57381CFE8BC28467628 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1018,20 +1315,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		90003A80A89FE0708BE165FC86E6F681 /* Build configuration list for PBXNativeTarget "Pods-SmartMoney-SmartMoneyUITests" */ = {
+		81C61A69C35CD88393827713E31F6257 /* Build configuration list for PBXNativeTarget "Pods-SmartMoney-SmartMoneyUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D09E4B5D5A472F8A5BCECF456B2F4841 /* Debug */,
-				D2EF19173BC92DC359AA598501A79D0A /* Release */,
+				376A8727AB6B30D5917C8A42EF686186 /* Debug */,
+				583164C1836436074A7A0881AD9E4E88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BD03B53E891ABA593CA0DF00A45AB47C /* Build configuration list for PBXNativeTarget "Pods-SmartMoney" */ = {
+		F0B4636CC2E59EF8F5640A6F3FCD8D42 /* Build configuration list for PBXNativeTarget "Pods-SmartMoney" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				22C9DCD68FB66A98E6DEA222E5676918 /* Debug */,
-				CAFD756E9B1A2BAB8994D4C14A0D06BA /* Release */,
+				A60B2C0C2F92E2CBD0FE72823FBB0120 /* Debug */,
+				3E7E48E5ACC4C38D4220BCE235EDF82C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
