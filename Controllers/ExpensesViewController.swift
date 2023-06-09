@@ -71,6 +71,11 @@ class ExpensesViewController: UIViewController {
         confirmButton.isHidden = true
     }
     
+    
+    @IBSegueAction func TransactionsScrollView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: TransactionScrollView())
+    }
+    
     // Circular Budget Progress View
     @IBSegueAction func embedBudgetProgressBarView(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(coder: coder, rootView: CircularProgressView(progress: 0.7).frame(width: 120, height: 120))

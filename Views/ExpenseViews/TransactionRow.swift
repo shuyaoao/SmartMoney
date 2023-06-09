@@ -38,7 +38,7 @@ struct TransactionRow: View {
             // MARK: Transaction Amount
             Text(String(format: "$%.2f", transaction.amount))
         }
-        .padding([.top, .bottom], 8)
+        .padding([.all], 8)
     }
 }
 
