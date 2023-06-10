@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k3K-0Y-5GY">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -563,9 +563,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="decimalPad"/>
-                                <connections>
-                                    <segue destination="m0M-Nn-Ba6" kind="presentation" identifier="goToUnequalGroupExpensesPage" id="zfK-lO-naM"/>
-                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Split" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiU-2i-PHu">
                                 <rect key="frame" x="37" y="540" width="36" height="21"/>
@@ -617,6 +614,7 @@
                         <outlet property="splitByWho" destination="qLL-LW-4fj" id="5da-wa-lhw"/>
                         <outlet property="splitHowCV" destination="1x3-jG-Gwy" id="5eW-qe-5Xb"/>
                         <outlet property="whoPaidScrollView" destination="bdY-Il-QhV" id="c8A-bK-nwB"/>
+                        <segue destination="m0M-Nn-Ba6" kind="presentation" identifier="goToUnequalGroupExpensesPage" id="S3i-rV-Qgh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wo0-fc-1z0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
