@@ -164,6 +164,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
             let destinationVC = segue.destination as! UnequalGroupExpensesTableViewController
             destinationVC.array = splitBtw
             destinationVC.amt = Double(amtTextField.text!)
+            destinationVC.remainingAmtLabel.text
         }
     }
     
