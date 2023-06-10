@@ -176,11 +176,11 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //if !splitEqually && textField.hasText {
+        if !splitEqually && textField.hasText {
             self.resignFirstResponder()
             performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: self)
             print("segue triggered")
-        //}
+        }
         return true
     }
     
