@@ -136,9 +136,9 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                     array[lastIndexPath.row].paidBySelected = false
                     if cell.nameLabel.text == "Unequally" {
                         splitEqually = false
-                        //if amtTextField.hasText {
+                        if amtTextField.hasText {
                         performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: collectionView.delegate)
-                        //}
+                        }
                         print(splitEqually)
                     } else {
                         splitEqually = true
@@ -164,7 +164,6 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
             let destinationVC = segue.destination as! UnequalGroupExpensesTableViewController
             destinationVC.array = splitBtw
             destinationVC.amt = Double(amtTextField.text!)
-            destinationVC.remainingAmtLabel.text
         }
     }
     
@@ -177,15 +176,11 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if !splitEqually && textField.hasText {
+        if !splitEqually {
             self.resignFirstResponder()
             performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: self)
             print("segue triggered")
         }
-        return true
-    }
-    
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
         return true
     }
 }
