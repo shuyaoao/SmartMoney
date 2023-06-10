@@ -21,11 +21,6 @@ class GroupMemberTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-//    @IBAction func deleteButtonPressed(_ sender: UIButton) {
-//        delete = true
-//        print("delete state is true now")
-//
-//    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

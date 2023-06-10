@@ -18,8 +18,8 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //_ = UINib(nibName: GroupMemberTableViewCell.id, bundle: nil)
-        //groupMembersTableView.register(nib, forCellReuseIdentifier: GroupMemberTableViewCell.id)
+        let nib = UINib(nibName: GroupMemberTableViewCell.id, bundle: nil)
+        groupMembersTableView.register(nib, forCellReuseIdentifier: GroupMemberTableViewCell.id)
         groupMembersTableView.dataSource = self
         groupMembersTableView.delegate = self
         groupMembersTableView.reloadData()
