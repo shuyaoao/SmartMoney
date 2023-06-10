@@ -393,11 +393,19 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Input Exact Amounts" id="IcL-OG-hs6">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BGX-az-LYY"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BGX-az-LYY">
+                                            <connections>
+                                                <action selector="cancelButtonPressed:" destination="m0M-Nn-Ba6" id="j5Q-GU-OKT"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <centerItemGroups>
                                             <barButtonItemGroup customizationDisposition="fixed" id="CGu-4r-Jhg"/>
                                         </centerItemGroups>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YAW-GA-STr"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YAW-GA-STr">
+                                            <connections>
+                                                <action selector="saveButtonPressed:" destination="m0M-Nn-Ba6" id="i5y-HO-C2q"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

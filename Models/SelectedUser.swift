@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SelectedUser {
+struct SelectedUser: Hashable {
     var name: String
     var paidBySelected = false
     var splitBtwSelected = false

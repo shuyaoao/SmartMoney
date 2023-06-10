@@ -11,11 +11,12 @@ class UnequalExpensesTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var amountTextField: UITextField!
-    //@IBOutlet weak var nameLabel: UILabel!
     static var id = "UnequalExpensesCell"
+    var amt = 0.0
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        //amountTextField.delegate = self
         // Initialization code
     }
 

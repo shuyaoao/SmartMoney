@@ -87,7 +87,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //performs selection of the cells
+        //performs selection of the cells, depending on which collection view is triggered
         let cell = collectionView.cellForItem(at: indexPath) as! GroupMemberCollectionViewCell
         if collectionView == splitByWho {
             if array[indexPath.row].splitBtwSelected == true {
@@ -110,9 +110,9 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                 }
             }
             splitHowCV.reloadData()
-            print(splitBtw.map({ user in
-                user.name
-            }))
+//            print(splitBtw.map({ user in
+//                user.name
+//            }))
         } else {
             if collectionView == whoPaidScrollView && array[indexPath.row].name != paidBy?.name {
                 array[indexPath.row].paidBySelected = true
@@ -127,8 +127,6 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                 }
                 paidBy = array[indexPath.row]
                 whoPaidScrollView.reloadData()
-                print(paidBy!.name)
-                
             }
             if collectionView == splitHowCV {
                 if indexPath != lastIndexPath {
@@ -145,10 +143,8 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                             performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: collectionView.delegate)
                             }
                             print("unequally selected")
-                            //print(splitEqually)
                         } else {
                             splitEqually = true
-                            //print(splitEqually)
                         }
                     
                     lastIndexPath = indexPath
@@ -157,15 +153,13 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                     cell.nameLabel.backgroundColor = UIColor(named: "Dark Blue")
                     if cell.nameLabel.text == "Unequally" {
                         splitEqually = false
-                        if amtTextField.hasText {
+                        if amtTextField.hasText && !splitBtw.isEmpty {
                         performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: collectionView.delegate)
                         }
                     } else {
                         splitEqually = true
-                        //print(splitEqually)
                     }
                 }
-                
             }
         }
     }
@@ -180,6 +174,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //prepare for segue by passing in the necessary properties
         if segue.identifier == "goToUnequalGroupExpensesPage" {
             let destinationVC = segue.destination as! UnequalGroupExpensesTableViewController
             destinationVC.array = splitBtw
@@ -188,18 +183,20 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if !splitEqually && textField.text != "" {
+        //triggeres segue when textField has stopped editing
+        if !splitEqually && textField.text != "" && !splitBtw.isEmpty {
             self.resignFirstResponder()
             performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: self)
-            print("segue triggered")
+            //print("segue triggered")
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if !splitEqually && textField.text != "" {
+        //triggeres segue when return button is pressed
+        if !splitEqually && textField.text != "" && !splitBtw.isEmpty{
             self.resignFirstResponder()
             performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: self)
-            print("segue triggered")
+            //print("segue triggered")
         }
         return true
     }
