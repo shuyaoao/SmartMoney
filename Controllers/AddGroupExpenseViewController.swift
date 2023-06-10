@@ -56,6 +56,8 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GroupMemberCollectionViewCell", for: indexPath) as! GroupMemberCollectionViewCell
         if collectionView == splitHowCV {
             cell.configure(splitHow[indexPath.row])
+            cell.rectangleView.backgroundColor = UIColor(named: "Medium Blue")
+            cell.nameLabel.backgroundColor = UIColor(named: "Medium Blue")
         }
         if collectionView == whoPaidScrollView {
             cell.configure(array[indexPath.row].name)
@@ -107,6 +109,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                     }
                 }
             }
+            splitHowCV.reloadData()
             print(splitBtw.map({ user in
                 user.name
             }))
@@ -127,25 +130,42 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                 print(paidBy!.name)
                 
             }
-            if collectionView == splitHowCV && indexPath != lastIndexPath {
-                cell.rectangleView.backgroundColor = UIColor(named: "Dark Blue")
-                cell.nameLabel.backgroundColor = UIColor(named: "Dark Blue")
-                if let prevCell = collectionView.cellForItem(at: lastIndexPath) as? GroupMemberCollectionViewCell {
-                    prevCell.rectangleView.backgroundColor = UIColor(named: "Medium Blue")
-                    prevCell.nameLabel.backgroundColor = UIColor(named: "Medium Blue")
-                    array[lastIndexPath.row].paidBySelected = false
+            if collectionView == splitHowCV {
+                if indexPath != lastIndexPath {
+                    cell.rectangleView.backgroundColor = UIColor(named: "Dark Blue")
+                    cell.nameLabel.backgroundColor = UIColor(named: "Dark Blue")
+                    if let prevCell = collectionView.cellForItem(at: lastIndexPath) as? GroupMemberCollectionViewCell {
+                        prevCell.rectangleView.backgroundColor = UIColor(named: "Medium Blue")
+                        prevCell.nameLabel.backgroundColor = UIColor(named: "Medium Blue")
+                        array[lastIndexPath.row].paidBySelected = false
+                    }
+                        if cell.nameLabel.text == "Unequally" {
+                            splitEqually = false
+                            if amtTextField.hasText {
+                            performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: collectionView.delegate)
+                            }
+                            print("unequally selected")
+                            //print(splitEqually)
+                        } else {
+                            splitEqually = true
+                            //print(splitEqually)
+                        }
+                    
+                    lastIndexPath = indexPath
+                } else {
+                    cell.rectangleView.backgroundColor = UIColor(named: "Dark Blue")
+                    cell.nameLabel.backgroundColor = UIColor(named: "Dark Blue")
                     if cell.nameLabel.text == "Unequally" {
                         splitEqually = false
                         if amtTextField.hasText {
                         performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: collectionView.delegate)
                         }
-                        print(splitEqually)
                     } else {
                         splitEqually = true
-                        print(splitEqually)
+                        //print(splitEqually)
                     }
                 }
-                lastIndexPath = indexPath
+                
             }
         }
     }
@@ -167,16 +187,16 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
         }
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.resignFirstResponder()
+        if !splitEqually && textField.text != "" {
+            self.resignFirstResponder()
+            performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: self)
+            print("segue triggered")
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if !splitEqually {
+        if !splitEqually && textField.text != "" {
             self.resignFirstResponder()
             performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: self)
             print("segue triggered")

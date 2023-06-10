@@ -14,7 +14,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var groupNameTextField: UITextField!
     weak var delegate : CreateGroupViewControllerDelegate?
     @IBOutlet weak var editButton: UIButton!
-    var array = [0, 1]
+    var count = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         //some function to add another textfield to add more group members
-        array.append(array.count)
+        count += 1
         groupMembersTableView.reloadData()
     }
     
@@ -56,13 +56,13 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            array.remove(at: indexPath.row)
+            count -= 1
             groupMembersTableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -404,7 +404,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Xim-sC-QoJ">
                                 <rect key="frame" x="0.0" y="115" width="393" height="614"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Off-white"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UnequalExpensesCell" id="mpw-Wn-0S7" customClass="UnequalExpensesTableViewCell" customModule="SmartMoney" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="90"/>
@@ -427,6 +427,7 @@
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
+                                            <color key="backgroundColor" name="Off-white"/>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="amountTextField" destination="A7r-fN-76a" id="aOJ-cK-xDE"/>
@@ -645,32 +646,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v9r-kX-amI">
-                                <rect key="frame" x="51" y="266" width="290" height="527"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Off-white"/>
-                                <color key="tintColor" name="Off-white"/>
-                                <color key="separatorColor" name="Off-white"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupMemberTableViewCell" id="qf8-Cl-DCp" customClass="GroupMemberTableViewCell" customModule="SmartMoney" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="290" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qf8-Cl-DCp" id="Ooe-d9-5zF">
-                                            <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTB-TW-3wT">
-                                                    <rect key="frame" x="0.0" y="8" width="290" height="34"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" name="Off-white"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxr-yP-tIs">
                                 <rect key="frame" x="271" y="228" width="43" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -682,14 +657,42 @@
                                     <action selector="editButtonPressed:" destination="KeH-Ra-3c5" eventType="touchUpInside" id="FfF-bE-Ju9"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v9r-kX-amI">
+                                <rect key="frame" x="43" y="266" width="307" height="527"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Off-white"/>
+                                <color key="separatorColor" name="Off-white"/>
+                                <color key="sectionIndexColor" name="Off-white"/>
+                                <color key="sectionIndexBackgroundColor" name="Off-white"/>
+                                <color key="sectionIndexTrackingBackgroundColor" name="Off-white"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupMemberTableViewCell" rowHeight="34" id="qf8-Cl-DCp" customClass="GroupMemberTableViewCell" customModule="SmartMoney" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="307" height="34"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qf8-Cl-DCp" id="Ooe-d9-5zF">
+                                            <rect key="frame" x="0.0" y="0.0" width="307" height="34"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTB-TW-3wT">
+                                                    <rect key="frame" x="8" y="0.0" width="290" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" name="Off-white"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Off-white"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OGl-YE-wu8"/>
                         <color key="backgroundColor" name="Off-white"/>
                         <color key="tintColor" name="Off-white"/>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="fo8-Qk-cLh"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Create New Group" leftItemsSupplementBackButton="YES" id="XVM-9m-WsB">
                         <barButtonItem key="backBarButtonItem" title="back" id="rsF-KF-BIf"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OSU-w8-Cro">

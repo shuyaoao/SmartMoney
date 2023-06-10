@@ -13,6 +13,7 @@ class GroupMemberTableViewCell: UITableViewCell {
     static var id = "GroupMemberTableViewCell"
     //@IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var memberNameTextField: UITextField!
+    var time = Date()
     
     //var delete = false
     
