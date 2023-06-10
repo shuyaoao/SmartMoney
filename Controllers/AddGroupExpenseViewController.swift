@@ -183,4 +183,8 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
         //}
         return true
     }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
 }
