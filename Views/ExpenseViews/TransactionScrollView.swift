@@ -14,7 +14,6 @@ struct TransactionScrollView: View {
                 ForEach(transactionPreviewDataList) { trans in
                     TransactionRow(transaction: trans)
                 }
-                
             }
         }
         .frame(height: 350)

@@ -12,6 +12,7 @@
 		69C8CDFB2A332DDE004A0382 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */; };
 		69C8CDFD2A332EB1004A0382 /* TransactionPreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDFC2A332EB1004A0382 /* TransactionPreviewData.swift */; };
 		69C8CDFF2A3332AC004A0382 /* TransactionScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDFE2A3332AC004A0382 /* TransactionScrollView.swift */; };
+		69C8CE092A37420F004A0382 /* CreateNewExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CE082A37420F004A0382 /* CreateNewExpenseViewController.swift */; };
 		C00EEE502A2C544A00EF1A13 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00EEE4F2A2C544A00EF1A13 /* Expense.swift */; };
 		C00EEE522A2C545700EF1A13 /* GroupExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00EEE512A2C545700EF1A13 /* GroupExpense.swift */; };
 		C00EEE562A2C8E1100EF1A13 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00EEE552A2C8E1100EF1A13 /* Group.swift */; };
@@ -81,6 +82,7 @@
 		69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		69C8CDFC2A332EB1004A0382 /* TransactionPreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPreviewData.swift; sourceTree = "<group>"; };
 		69C8CDFE2A3332AC004A0382 /* TransactionScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionScrollView.swift; sourceTree = "<group>"; };
+		69C8CE082A37420F004A0382 /* CreateNewExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewExpenseViewController.swift; sourceTree = "<group>"; };
 		873008847319056A4F6A2460 /* Pods_SmartMoney_SmartMoneyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartMoney_SmartMoneyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89EB2FD2C3E768FF149F85B9 /* Pods-SmartMoneyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoneyTests.release.xcconfig"; path = "Target Support Files/Pods-SmartMoneyTests/Pods-SmartMoneyTests.release.xcconfig"; sourceTree = "<group>"; };
 		98FE4A9A0F61B080318EFBDE /* Pods_SmartMoney.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartMoney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +264,7 @@
 				C0931A382A33812F001E19B9 /* UnequalGroupExpensesTableViewController.swift */,
 				C0CD63592A3701F70056EFE0 /* PayUpViewController.swift */,
 				C0CD635D2A3721FB0056EFE0 /* BalancesTableTableViewController.swift */,
+				69C8CE082A37420F004A0382 /* CreateNewExpenseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 				C043C29F2A172C4600A1F14D /* AppDelegate.swift in Sources */,
 				69C8CDFF2A3332AC004A0382 /* TransactionScrollView.swift in Sources */,
 				C043C2EB2A17C4FA00A1F14D /* MonthYear.swift in Sources */,
+				69C8CE092A37420F004A0382 /* CreateNewExpenseViewController.swift in Sources */,
 				C043C2E72A17782000A1F14D /* CreateGroupViewController.swift in Sources */,
 				C0CD63562A3700E40056EFE0 /* PayUpTableViewCell.swift in Sources */,
 				69C8CDFB2A332DDE004A0382 /* TransactionRow.swift in Sources */,
