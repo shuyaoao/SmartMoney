@@ -110,9 +110,6 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                 }
             }
             splitHowCV.reloadData()
-//            print(splitBtw.map({ user in
-//                user.name
-//            }))
         } else {
             if collectionView == whoPaidScrollView && array[indexPath.row].name != paidBy?.name {
                 array[indexPath.row].paidBySelected = true

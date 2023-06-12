@@ -49,6 +49,10 @@ class GroupDetailsViewController: UIViewController {
         dateTextField.text = formatDate(date: Date())
     }
     
+    @IBAction func payUpButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToPayUp", sender: self)
+    }
+    
     @objc func dateChanged(_ datePicker: MonthYearPickerView) {
         dateTextField.text = formatDate(date: datePicker.date)
         datePicker.resignFirstResponder()
@@ -64,8 +68,12 @@ class GroupDetailsViewController: UIViewController {
         performSegue(withIdentifier: "addGroupExpense", sender: self)
     }
     
+    @IBAction func balancesButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "goToBalances", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "addGroupExpense" {
+//        if segue.identifier == "goToPayUp" {
 //
 //        }
     }

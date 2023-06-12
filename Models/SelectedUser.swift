@@ -11,6 +11,9 @@ struct SelectedUser: Hashable {
     var name: String
     var paidBySelected = false
     var splitBtwSelected = false
+    var from = false
+    var to = false
+    
     
     init(_ name: String) {
         self.name = name
