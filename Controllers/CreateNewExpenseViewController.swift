@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class CreateNewExpenseViewController: UIViewController {
 
@@ -35,12 +36,15 @@ class CreateNewExpenseViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        
         // Create Transaction Data
         // let newTransaction = Transaction(name: <#T##String#>, date: <#T##String#>, category: <#T##String#>, amount: <#T##Double#>, isExpense: <#T##Bool#>)
         
         // Close Popup
         dismiss(animated: true)
+    }
+    
+    @IBSegueAction func embedHorizontalScrollView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: categoryHorizontalScrollView(listCatStack: listCatStack))
     }
     
 

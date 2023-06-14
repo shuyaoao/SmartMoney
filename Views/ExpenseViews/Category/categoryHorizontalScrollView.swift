@@ -17,8 +17,7 @@ struct categoryHorizontalScrollView: View {
                 }
             }
         }
-        .frame(height: 350)
-        .padding()
+        .frame(height: 400)
     }
 }
 

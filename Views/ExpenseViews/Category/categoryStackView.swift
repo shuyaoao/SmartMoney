@@ -11,11 +11,10 @@ struct categoryStackView: View {
     var catStack : CategoryStack
     
     var body: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 10) {
             categoryDataCellView(category: catStack.stack[0])
             categoryDataCellView(category: catStack.stack[1])
             categoryDataCellView(category: catStack.stack[2])
-            
         }
     }
 }

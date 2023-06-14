@@ -99,5 +99,6 @@ class ExpensesViewController: UIViewController {
     @IBSegueAction func embedBudgetProgressBarView(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(coder: coder, rootView: CircularProgressView(progress: 0.7).frame(width: 120, height: 120))
     }
+    
 }
 

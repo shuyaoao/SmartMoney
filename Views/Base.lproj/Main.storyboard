@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mq5-0e-1wt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1958" y="1089"/>
+            <point key="canvasLocation" x="-2573" y="1089"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="h1X-Xd-Nh3">
@@ -63,10 +63,17 @@
             </objects>
             <point key="canvasLocation" x="405" y="1229"/>
         </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="yPx-HC-4mR">
+            <objects>
+                <hostingController id="9HO-bH-0h1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="szx-hn-0sS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1910" y="919"/>
+        </scene>
         <!--Create New Expense View Controller-->
         <scene sceneID="fX0-Bt-w6l">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7t-ft-bnm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="6VB-hS-rOD" customClass="CreateNewExpenseViewController" customModule="SmartMoney" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r53-ia-jnA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
@@ -91,7 +98,7 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvU-kB-nLv">
-                                <rect key="frame" x="277" y="356" width="97" height="38"/>
+                                <rect key="frame" x="277" y="339" width="97" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Cancel">
@@ -103,12 +110,12 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Y53-Vd-EkT">
-                                <rect key="frame" x="18" y="347" width="123" height="56"/>
+                                <rect key="frame" x="17" y="330" width="123" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="0.10000000000000001" y="0.55000000000000004" width="1" height="1"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsk-Kp-mZi">
-                                <rect key="frame" x="164" y="356" width="97" height="38"/>
+                                <rect key="frame" x="164" y="339" width="97" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save">
@@ -120,37 +127,44 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXt-G1-nEw">
-                                <rect key="frame" x="164" y="406" width="210" height="32"/>
+                                <rect key="frame" x="164" y="389" width="210" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4C-5r-Tbt">
-                                <rect key="frame" x="18" y="402" width="127" height="40"/>
+                                <rect key="frame" x="17" y="385" width="127" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Expense" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nah-64-DZb">
-                                <rect key="frame" x="18" y="313" width="356" height="34"/>
+                                <rect key="frame" x="17" y="296" width="356" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpf-L5-8VW">
+                                <rect key="frame" x="18" y="171" width="356" height="151"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="9HO-bH-0h1" kind="embed" destinationCreationSelector="embedHorizontalScrollView:" id="zpd-Hh-gVS"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iky-wx-nxu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7t-ft-bnm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1147.3282442748091" y="1088.7323943661972"/>
         </scene>
         <!--Expenses-->
         <scene sceneID="wy2-Ew-rNU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="d66-wa-nWy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="YGi-iN-9xP" customClass="ExpensesViewController" customModule="SmartMoney" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OIW-9k-FM5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
@@ -299,6 +313,7 @@
                         <outlet property="yearMonthButton2" destination="I5g-g6-2TR" id="fUy-8B-z3H"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d66-wa-nWy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-376" y="1089"/>
         </scene>
