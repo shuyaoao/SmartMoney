@@ -11,13 +11,15 @@ struct categoryDataCellView: View {
     @State var category : Category
     
     var body: some View {
+        // Category Button Actions
         Button(action: {
-            if category.selected == true {
-                category.buttonunSelected()
-            } else {
-                category.buttonSelected()
+            // Reset all other category buttons
+            for i in stride(from: 0, to: listCategory.count, by: 1) {
+                listCategory[i].buttonunSelected()
             }
             
+            // Select the category
+            category.buttonSelected()
         }) {
             ZStack() {
                 RoundedRectangle(cornerRadius: 15)

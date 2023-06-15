@@ -95,6 +95,9 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" name="Medium Blue"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="expenseButtonSelected:" destination="6VB-hS-rOD" eventType="touchUpInside" id="CSl-NE-tJi"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0YB-oN-t1g">
                                 <rect key="frame" x="200" y="32" width="177" height="45"/>
@@ -104,6 +107,9 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="incomeButtonSelected:" destination="6VB-hS-rOD" eventType="touchUpInside" id="7oD-03-jr2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvU-kB-nLv">
                                 <rect key="frame" x="274" y="307" width="97" height="38"/>
@@ -121,6 +127,9 @@
                                 <rect key="frame" x="17" y="296" width="123" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <rect key="contentStretch" x="0.10000000000000001" y="0.55000000000000004" width="1" height="1"/>
+                                <connections>
+                                    <action selector="datePickerValueChanged:" destination="6VB-hS-rOD" eventType="valueChanged" id="1cg-gv-hcx"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsk-Kp-mZi">
                                 <rect key="frame" x="169" y="306" width="97" height="38"/>
@@ -139,6 +148,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="transactNameChanged:" destination="6VB-hS-rOD" eventType="editingChanged" id="cT2-a5-dZv"/>
+                                    <action selector="transactionNameChanged:" destination="6VB-hS-rOD" eventType="editingDidEnd" id="OIS-M6-stN"/>
+                                    <action selector="transactionNameChanged:" destination="6VB-hS-rOD" eventType="valueChanged" id="gnS-bn-7hW"/>
+                                </connections>
                             </textField>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sya-8u-38h">
                                 <rect key="frame" x="17" y="413" width="352" height="372"/>
@@ -158,6 +172,12 @@
                         <viewLayoutGuide key="safeArea" id="Iky-wx-nxu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Y53-Vd-EkT" id="fR1-vr-IEN"/>
+                        <outlet property="expenseButton" destination="SVi-sY-oed" id="Aky-tu-TTC"/>
+                        <outlet property="incomeButton" destination="0YB-oN-t1g" id="wBr-T0-GqI"/>
+                        <outlet property="transactionNameTextField" destination="nah-64-DZb" id="t5k-Th-MP5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z7t-ft-bnm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

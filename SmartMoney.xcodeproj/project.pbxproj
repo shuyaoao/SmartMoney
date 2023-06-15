@@ -219,6 +219,7 @@
 		69E719A52A39B302002EA577 /* Transactions */ = {
 			isa = PBXGroup;
 			children = (
+				69C8CDF52A332C74004A0382 /* TransactionModel.swift */,
 				69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */,
 				69C8CDFC2A332EB1004A0382 /* TransactionData.swift */,
 				69C8CDFE2A3332AC004A0382 /* TransactionScrollView.swift */,
@@ -316,7 +317,6 @@
 				C00EEE4F2A2C544A00EF1A13 /* Expense.swift */,
 				C00EEE512A2C545700EF1A13 /* GroupExpense.swift */,
 				C00EEE552A2C8E1100EF1A13 /* Group.swift */,
-				69C8CDF52A332C74004A0382 /* TransactionModel.swift */,
 				C04E27972A3356AE00964161 /* SelectedUser.swift */,
 			);
 			path = Models;

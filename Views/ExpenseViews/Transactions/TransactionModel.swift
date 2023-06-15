@@ -16,4 +16,12 @@ struct Transaction: Identifiable {
     let isExpense : Bool // if false, then income
 }
 
-
+// This transaction class is used to monitor the pending transaction that is about to be added.
+struct selectedTransaction {
+    var id: Int?
+    var name: String?
+    var date : String?
+    var category : Category?
+    var amount : Double?
+    var isExpense : Bool? // if false, then income
+}

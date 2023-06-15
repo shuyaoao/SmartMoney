@@ -40,7 +40,7 @@ struct CategoryStack: Identifiable {
     let stack : [Category]
 }
 
-// MARK: Data Source
+// MARK: Category Data Source
 var foodCategory = Category(id: 0, category: "Food", icon: Image("food"))
 var transportCategory = Category(id: 1, category: "Transport", icon: Image("transport"))
 var groceriesCategory = Category(id: 2, category: "Groceries", icon: Image("groceries"))
@@ -57,6 +57,12 @@ var educationCategory = Category(id: 10, category: "Education", icon: Image("edu
 var unfilledCategory = Category(id: 11, category: "", icon: Image("questionmark"))
 
 
+// The list of all Categories specified
+// Allows for looping to modify states.
+var listCategory = [foodCategory, transportCategory, groceriesCategory, entertainmentCategory, utilitiesCategory, clothingCategory, healthCategory, workCategory, taxCategory, insuranceCategory, educationCategory]
+
+
+// Constructing the Stacks of Categories for UI Purposes
 var listCatStack = [CategoryStack(id: 0 , stack: [foodCategory, transportCategory, groceriesCategory]),
                     CategoryStack(id: 1 , stack: [entertainmentCategory, utilitiesCategory, clothingCategory]),
                     CategoryStack(id: 2 , stack: [healthCategory, workCategory, taxCategory]),

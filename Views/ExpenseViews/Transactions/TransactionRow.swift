@@ -34,7 +34,7 @@ struct TransactionRow: View {
                 
                 
                 // MARK: Transaction Date
-                Text(Date(), format: .dateTime.day().month().year())
+                Text(transaction.date)
                     .font(.footnote)
                     .foregroundColor(.secondary)
                     .lineLimit(1)

@@ -10,10 +10,11 @@ import SwiftUI
 
 var transactionPreviewData = Transaction(id: 0,
                                          name: "Apple",
-                                         date: "01/24/2023",
+                                         date: "01 Jun 2023",
                                          category: utilitiesCategory,
                                          amount: 30.00,
                                          isExpense: true)
 
-var transactionPreviewDataList = [Transaction](repeating: transactionPreviewData, count: 10)
+var transactionPreviewDataList = [Transaction](repeating: transactionPreviewData, count: 3)
+
 
