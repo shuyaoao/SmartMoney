@@ -17,7 +17,7 @@ struct CircularProgressView: View {
             Circle()
                 .stroke(
                     Color.pink.opacity(0.5),
-                    lineWidth: 15
+                    lineWidth: 5
                 )
             Circle()
                 // 2
@@ -25,21 +25,23 @@ struct CircularProgressView: View {
                 .stroke(
                     Color.pink,
                     style: StrokeStyle(
-                        lineWidth: 15,
+                        lineWidth: 5,
                         lineCap: .round
                     )
                 )
                 .rotationEffect(.degrees(-90))
                 .animation(.easeOut, value: progress)
             Text(String(format: "%.0f%%", progress * 100))
+                .font(Font.system(size: 12))
             
         }
+        
     }
 }
 
 struct CircularProgressView_Previews: PreviewProvider {
     static var previews: some View {
         CircularProgressView(progress: 0.7)
-            .frame(width: 100, height: 100)
+            .frame(width: 50, height: 50)
     }
 }
