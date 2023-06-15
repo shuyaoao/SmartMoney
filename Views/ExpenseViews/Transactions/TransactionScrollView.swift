@@ -16,7 +16,8 @@ struct TransactionScrollView: View {
                 }
             }
         }
-        .frame(height: 350)
+        .frame(height: 405)
+        .background(Color(red: 242/255, green: 242/255, blue: 242/255))
     }
 }
 

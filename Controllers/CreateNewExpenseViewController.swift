@@ -41,8 +41,12 @@ class CreateNewExpenseViewController: UIViewController {
         dismiss(animated: true)
     }
     
+    
     @IBSegueAction func embedHorizontalScrollView(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(coder: coder, rootView: categoryHorizontalScrollView(listCatStack: listCatStack))
+    }
+    @IBSegueAction func embedNumPad(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: numberPad())
     }
     
 
