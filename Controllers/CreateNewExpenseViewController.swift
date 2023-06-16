@@ -10,11 +10,13 @@ import SwiftUI
 
 class CreateNewExpenseViewController: UIViewController {
     var newTransaction = selectedTransaction()
+    var categorySelectedLabelvar = ""
     
     @IBOutlet weak var incomeButton: UIButton!
     @IBOutlet weak var expenseButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var transactionNameTextField: UITextField!
+    @IBOutlet weak var categorySelectedLabel: UITextField!
     
     var numPad = numberPad()
     
@@ -60,14 +62,9 @@ class CreateNewExpenseViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        // Accessing which category is selected
-        for cat in listCategory {
-            if cat.selected == true {
-                newTransaction.category = cat
-            }
-        }
+        // Category
         
-        // Accessing user-inputted Amount and formatting to 2dp
+        // Amount
         if let doubleValue = Double(numPad.enteredNumber) {
             let numberFormatter = NumberFormatter()
             numberFormatter.numberStyle = .decimal
@@ -78,6 +75,7 @@ class CreateNewExpenseViewController: UIViewController {
                 print(formattedDouble) // output
             }
         }
+        
         
         let id = 0 // Naive id
         
@@ -117,7 +115,7 @@ class CreateNewExpenseViewController: UIViewController {
     }
     
     @IBSegueAction func embedHorizontalScrollView(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: categoryHorizontalScrollView(listCatStack: listCatStack))
+        return UIHostingController(coder: coder, rootView: CategoryHorizontalScrollView(CategoryDataSource : catDataSource))
     }
     
     @IBSegueAction func embedNumPad(_ coder: NSCoder) -> UIViewController? {

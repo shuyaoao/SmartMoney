@@ -14,12 +14,13 @@ struct categoryDataCellView: View {
         // Category Button Actions
         Button(action: {
             // Reset all other category buttons
-            for i in stride(from: 0, to: listCategory.count, by: 1) {
-                listCategory[i].buttonunSelected()
+            for index in 0..<catDataSource.listofCategories.count {
+                catDataSource.listofCategories[index].buttonSelected()
             }
             
-            // Select the category
-            category.buttonSelected()
+           
+            
+            
         }) {
             ZStack() {
                 RoundedRectangle(cornerRadius: 15)
@@ -41,14 +42,12 @@ struct categoryDataCellView: View {
                         .padding(.bottom, 5)
                 }
             }
-            
         }
-        
     }
 }
 
 struct categoryDataCellView_Previews: PreviewProvider {
     static var previews: some View {
-        categoryDataCellView(category: insuranceCategory)
+        categoryDataCellView(category: catDataSource.listofCategories[0])
     }
 }

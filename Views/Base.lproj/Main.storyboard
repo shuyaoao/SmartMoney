@@ -154,13 +154,6 @@
                                     <action selector="transactionNameChanged:" destination="6VB-hS-rOD" eventType="valueChanged" id="gnS-bn-7hW"/>
                                 </connections>
                             </textField>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sya-8u-38h">
-                                <rect key="frame" x="17" y="413" width="352" height="372"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="V4y-QX-kq0" kind="embed" destinationCreationSelector="embedNumPad:" id="5WG-le-ba6"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpf-L5-8VW">
                                 <rect key="frame" x="15" y="156" width="356" height="112"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -168,11 +161,25 @@
                                     <segue destination="9HO-bH-0h1" kind="embed" destinationCreationSelector="embedHorizontalScrollView:" id="zpd-Hh-gVS"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sya-8u-38h">
+                                <rect key="frame" x="17" y="413" width="352" height="372"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="V4y-QX-kq0" kind="embed" destinationCreationSelector="embedNumPad:" id="5WG-le-ba6"/>
+                                </connections>
+                            </containerView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHy-VJ-FrW">
+                                <rect key="frame" x="145" y="219" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iky-wx-nxu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="categorySelectedLabel" destination="eHy-VJ-FrW" id="Kot-XI-efk"/>
                         <outlet property="datePicker" destination="Y53-Vd-EkT" id="fR1-vr-IEN"/>
                         <outlet property="expenseButton" destination="SVi-sY-oed" id="Aky-tu-TTC"/>
                         <outlet property="incomeButton" destination="0YB-oN-t1g" id="wBr-T0-GqI"/>

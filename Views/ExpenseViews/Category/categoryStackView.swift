@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct categoryStackView: View {
-    var catStack : CategoryStack
+    var first : Category
+    var second : Category
+    var third : Category
     
     var body: some View {
         VStack(spacing: 10) {
-            categoryDataCellView(category: catStack.stack[0])
-            categoryDataCellView(category: catStack.stack[1])
-            categoryDataCellView(category: catStack.stack[2])
+            categoryDataCellView(category: first)
+            categoryDataCellView(category: second)
+            categoryDataCellView(category: third)
         }
     }
 }
 
 struct categoryStackView_Previews: PreviewProvider {
     static var previews: some View {
-        categoryStackView(catStack: listCatStack[0])
+        categoryStackView(first: catDataSource.listofCategories[0],
+                          second: catDataSource.listofCategories[1],
+                          third: catDataSource.listofCategories[2])
     }
 }
