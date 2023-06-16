@@ -15,10 +15,13 @@ struct categoryDataCellView: View {
         Button(action: {
             // Reset all other category buttons
             for index in 0..<catDataSource.listofCategories.count {
-                catDataSource.listofCategories[index].buttonSelected()
+                catDataSource.listofCategories[index].buttonunSelected()
             }
             
-           
+            let catIndex = category.id
+            catDataSource.listofCategories[catIndex].buttonSelected()
+            
+            
             
             
         }) {

@@ -9,6 +9,8 @@ import UIKit
 import SwiftUI
 
 class CreateNewExpenseViewController: UIViewController {
+    static private var enteredNumber: String = ""
+    
     var newTransaction = selectedTransaction()
     var categorySelectedLabelvar = ""
     
@@ -16,7 +18,7 @@ class CreateNewExpenseViewController: UIViewController {
     @IBOutlet weak var expenseButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var transactionNameTextField: UITextField!
-    @IBOutlet weak var categorySelectedLabel: UITextField!
+    @IBOutlet weak var categorySelectedLabel: UILabel!
     
     var numPad = numberPad()
     
@@ -63,20 +65,17 @@ class CreateNewExpenseViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         // Category
-        
-        // Amount
-        if let doubleValue = Double(numPad.enteredNumber) {
-            let numberFormatter = NumberFormatter()
-            numberFormatter.numberStyle = .decimal
-            numberFormatter.maximumFractionDigits = 2
-            
-            if let formattedNumber = numberFormatter.number(from: numPad.enteredNumber) {
-                let formattedDouble = formattedNumber.doubleValue
-                print(formattedDouble) // output
+        for index in 0..<catDataSource.listofCategories.count {
+            if catDataSource.listofCategories[index].selected == true {
+                newTransaction.category = catDataSource.listofCategories[index]
             }
+            
+            catDataSource.listofCategories[index].buttonunSelected()
         }
         
-        
+        // Amount
+        print("this is empty?" + numPad.enteredNumber)
+    
         let id = 0 // Naive id
         
         // Unwrapping of Optionals
