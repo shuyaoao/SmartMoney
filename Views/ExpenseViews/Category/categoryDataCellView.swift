@@ -21,9 +21,6 @@ struct categoryDataCellView: View {
             let catIndex = category.id
             catDataSource.listofCategories[catIndex].buttonSelected()
             
-            
-            
-            
         }) {
             ZStack() {
                 RoundedRectangle(cornerRadius: 15)

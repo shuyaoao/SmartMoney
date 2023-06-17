@@ -222,8 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				69C8CDF52A332C74004A0382 /* TransactionModel.swift */,
-				69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */,
 				69C8CDFC2A332EB1004A0382 /* TransactionData.swift */,
+				69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */,
 				69C8CDFE2A3332AC004A0382 /* TransactionScrollView.swift */,
 			);
 			path = Transactions;

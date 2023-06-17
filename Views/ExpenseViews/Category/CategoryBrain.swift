@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SwiftUI
 
-// MARK: Default Category Class
+// MARK: Default Category Struct
 struct Category: Identifiable {
     let id: Int
     let category: String
@@ -37,6 +37,7 @@ struct CategoryStack: Identifiable {
     var third : Category
 }
 
+// MARK: Main Category Data Model
 class CategoryDataModel : ObservableObject {
     @Published var listofCategories : [Category]
     
@@ -45,6 +46,11 @@ class CategoryDataModel : ObservableObject {
     }
 }
 
+// MARK: Category Data Source
+var catDataSource = CategoryDataModel(listofCategories: [foodCategory, transportCategory, groceriesCategory, entertainmentCategory, utilitiesCategory, clothingCategory, healthCategory, workCategory, taxCategory, insuranceCategory, educationCategory])
+
+
+// MARK: Categories
 var foodCategory = Category(id: 0, category: "Food", icon: Image("food"))
 var transportCategory = Category(id: 1, category: "Transport", icon: Image("transport"))
 var groceriesCategory = Category(id: 2, category: "Groceries", icon: Image("groceries"))
@@ -57,24 +63,8 @@ var taxCategory = Category(id: 8, category: "Tax", icon: Image("tax"))
 var insuranceCategory = Category(id: 9, category: "Insurance", icon: Image("insurance"))
 var educationCategory = Category(id: 10, category: "Education", icon: Image("education"))
 
-var catDataSource = CategoryDataModel(listofCategories: [foodCategory, transportCategory, groceriesCategory, entertainmentCategory, utilitiesCategory, clothingCategory, healthCategory, workCategory, taxCategory, insuranceCategory, educationCategory])
-
-// MARK: Category Data Source
 // Filler Category
 var unfilledCategory = Category(id: 11, category: "", icon: Image("questionmark"))
-
-
-// Constructing the Stacks of Categories for UI Purposes
-/*
-var listCatStack = [CategoryStack(id: 0 ,
-                                  first: catDataSource.listofCategories[0],
-                                  second: catDataSource.listofCategories[1],
-                                  third: catDataSource.listofCategories[2]),
-                    CategoryStack(id: 1 , first: catDataSource.listofCategories[3],
-                                  second: catDataSource.listofCategories[4],
-                                  third: catDataSource.listofCategories[5])
- */
-                    
 
 
 

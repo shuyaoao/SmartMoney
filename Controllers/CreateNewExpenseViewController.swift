@@ -64,7 +64,7 @@ class CreateNewExpenseViewController: UIViewController {
         // Amount
         newTransaction.amount = convertToDouble(numPad.numPadNumber)
         
-        let id = 0 // Naive id
+        let id = transactionDataModel.transactionDataList.count // Naive id
         
         // Unwrapping of Optionals
         let name = newTransaction.name!
@@ -73,16 +73,12 @@ class CreateNewExpenseViewController: UIViewController {
         let amount = newTransaction.amount!
         let isExpense = newTransaction.isExpense!
         
-        print(name)
-        print(date)
-        print(category)
-        print(amount)
-        print(isExpense)
+        let currentTransactionList = transactionDataModel.transactionDataList
+        let unwrappedNewTransaction = Transaction(id: id, name: name, date: date, category: category, amount: amount, isExpense: isExpense)
         
         // Add new transaction to the DataSource
-        transactionPreviewDataList.append(Transaction(id: id, name: name,
-                                                      date: date, category: category,
-                                                      amount: amount, isExpense: isExpense))
+        transactionDataModel.updateTransactionDataList(with: currentTransactionList + [unwrappedNewTransaction])
+        print(transactionDataModel.transactionDataList)
         // Resetting of Model Variables
         newTransaction = selectedTransaction()
         numPad.reset()

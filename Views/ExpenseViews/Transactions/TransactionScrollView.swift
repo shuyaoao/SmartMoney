@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct TransactionScrollView: View {
+    @ObservedObject var transactionDataModel : TransactionDataModel
+    
     var body: some View {
         ScrollView {
             VStack(spacing: 20) {
-                ForEach(transactionPreviewDataList) { trans in
+                // For each transaction in the transaction data model
+                ForEach(transactionDataModel.transactionDataList) { trans in
                     TransactionRow(transaction: trans)
                 }
             }
@@ -23,6 +26,6 @@ struct TransactionScrollView: View {
 
 struct TransactionScrollView_Previews: PreviewProvider {
     static var previews: some View {
-        TransactionScrollView()
+        TransactionScrollView(transactionDataModel : transactionDataModel)
     }
 }

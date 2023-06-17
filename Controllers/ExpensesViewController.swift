@@ -92,7 +92,7 @@ class ExpensesViewController: UIViewController {
     
     
     @IBSegueAction func TransactionsScrollView(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: TransactionScrollView())
+        return UIHostingController(coder: coder, rootView: TransactionScrollView(transactionDataModel: transactionDataModel))
     }
     
     // Circular Budget Progress View

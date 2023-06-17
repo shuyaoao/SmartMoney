@@ -11,18 +11,25 @@ struct CategoryHorizontalScrollView: View {
     @ObservedObject var CategoryDataSource : CategoryDataModel
     
     var body: some View {
-        ScrollView(.horizontal) {
-            HStack(spacing: 20) {
-                ForEach(0..<CategoryDataSource.listofCategories.count - 2, id: \.self) { index in
-                    if index % 3 == 0 {
-                        categoryStackView(first: CategoryDataSource.listofCategories[index],
-                                          second: CategoryDataSource.listofCategories[index + 1],
-                                          third: CategoryDataSource.listofCategories[index + 2])
+        VStack(spacing: 0) {
+            ScrollView(.horizontal) {
+                HStack(spacing: 20) {
+                    ForEach(0..<CategoryDataSource.listofCategories.count - 2, id: \.self) { index in
+                        if index % 3 == 0 {
+                            categoryStackView(first: CategoryDataSource.listofCategories[index],
+                                              second: CategoryDataSource.listofCategories[index + 1],
+                                              third: CategoryDataSource.listofCategories[index + 2])
+                        }
                     }
                 }
             }
+            .frame(height: 150)
+            
+            Text("Category Selected:")
+            
+            
         }
-        .frame(height: 400)
+        
     }
 }
 
