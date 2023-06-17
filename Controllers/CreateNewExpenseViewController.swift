@@ -11,16 +11,18 @@ import SwiftUI
 class CreateNewExpenseViewController: UIViewController {
     static private var enteredNumber: String = ""
     
+    // Transaction
     var newTransaction = selectedTransaction()
+    
+    // Category
     var categorySelectedLabelvar = ""
     
+    // UI Buttons
     @IBOutlet weak var incomeButton: UIButton!
     @IBOutlet weak var expenseButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var transactionNameTextField: UITextField!
     @IBOutlet weak var categorySelectedLabel: UILabel!
-    
-    var numPad = numberPad()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,21 +34,7 @@ class CreateNewExpenseViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy"
         newTransaction.date = dateFormatter.string(from: datePicker.date)
-
     }
-    
-    
-    /*
-     struct Transaction: Identifiable {
-         let id: Int
-         let name: String
-         let date : String
-         let category : String
-         let amount : Double
-         let isExpense : Bool // if false, then income
-     }
-
-     */
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
@@ -74,8 +62,8 @@ class CreateNewExpenseViewController: UIViewController {
         }
         
         // Amount
-        print("this is empty?" + numPad.enteredNumber)
-    
+        newTransaction.amount = convertToDouble(numPad.numPadNumber)
+        
         let id = 0 // Naive id
         
         // Unwrapping of Optionals
@@ -85,19 +73,31 @@ class CreateNewExpenseViewController: UIViewController {
         let amount = newTransaction.amount!
         let isExpense = newTransaction.isExpense!
         
+        print(name)
+        print(date)
+        print(category)
+        print(amount)
+        print(isExpense)
+        
         // Add new transaction to the DataSource
         transactionPreviewDataList.append(Transaction(id: id, name: name,
                                                       date: date, category: category,
                                                       amount: amount, isExpense: isExpense))
-        // Reset new Transaction instance
+        // Resetting of Model Variables
         newTransaction = selectedTransaction()
+        numPad.reset()
+        
         
         // Close popup
         dismiss(animated: true)
         
     }
-    
     @IBAction func transactNameChanged(_ sender: UITextField) {
+        newTransaction.name = transactionNameTextField.text
+    }
+    
+    
+    @IBAction func transactionNameChanged(_ sender: UITextField) {
         newTransaction.name = transactionNameTextField.text
     }
 
@@ -118,6 +118,19 @@ class CreateNewExpenseViewController: UIViewController {
     }
     
     @IBSegueAction func embedNumPad(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: numPad)
+        return UIHostingController(coder: coder, rootView: numberPad())
     }
+}
+
+
+func convertToDouble(_ string: String) -> Double? {
+    let numberFormatter = NumberFormatter()
+    numberFormatter.numberStyle = .decimal
+    numberFormatter.maximumFractionDigits = 2
+    
+    if let formattedNumber = numberFormatter.number(from: string) {
+        return formattedNumber.doubleValue
+    }
+    
+    return nil
 }

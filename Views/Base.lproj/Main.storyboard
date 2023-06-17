@@ -149,8 +149,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="transactNameChanged:" destination="6VB-hS-rOD" eventType="editingChanged" id="cT2-a5-dZv"/>
-                                    <action selector="transactionNameChanged:" destination="6VB-hS-rOD" eventType="editingDidEnd" id="OIS-M6-stN"/>
+                                    <action selector="transactNameChanged:" destination="6VB-hS-rOD" eventType="editingChanged" id="kKE-kr-R6o"/>
+                                    <action selector="transactionNameChanged:" destination="6VB-hS-rOD" eventType="editingDidEnd" id="CMZ-X8-CSQ"/>
                                     <action selector="transactionNameChanged:" destination="6VB-hS-rOD" eventType="valueChanged" id="gnS-bn-7hW"/>
                                 </connections>
                             </textField>

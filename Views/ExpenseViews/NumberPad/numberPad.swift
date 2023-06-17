@@ -59,7 +59,11 @@ struct numberPad: View {
     
     private func createNumberButton(_ number: String) -> some View {
         Button(action: {
+            // For Text Label of "Amount"
             enteredNumber += number
+            
+            // Concurrent Update to numPadModel
+            numPad.numPadNumber += number
         }) {
             Text(number)
                 .font(.title)
@@ -73,6 +77,7 @@ struct numberPad: View {
     private func createDeleteButton() -> some View {
         Button(action: {
             enteredNumber = String(enteredNumber.dropLast())
+            numPad.numPadNumber = String(numPad.numPadNumber.dropLast())
         }) {
             Image(systemName: "delete.left")
                 .font(.title)
