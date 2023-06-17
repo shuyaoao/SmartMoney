@@ -10,10 +10,10 @@ import UIKit
 class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var remainingAmtLabel: UILabel!
-    var array = [SelectedUser]()
+    var array = [User]()
     @IBOutlet weak var tableView: UITableView!
     var amt : Double?
-    var exactAmounts : [SelectedUser: Double] = [:]
+    var exactAmounts : [String: Double] = [:]
     var count = 0.0
     var remainingAmt : Double?
     

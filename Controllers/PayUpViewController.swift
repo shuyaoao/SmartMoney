@@ -9,12 +9,12 @@ import UIKit
 
 class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
-    var array = [SelectedUser("Dylan"), SelectedUser("Shuyao"), SelectedUser("Bernice"), SelectedUser("Ana"), SelectedUser("Shi Han"), SelectedUser("Jiang En")]
+    var array = [User("Dylan"), User("Shuyao"), User("Bernice"), User("Ana"), User("Shi Han"), User("Jiang En")]
     @IBOutlet weak var fromTableView: UITableView!
     @IBOutlet weak var toTableView: UITableView!
     @IBOutlet weak var amountTextField: UITextField!
-    var from: SelectedUser?
-    var to: SelectedUser?
+    var from: User?
+    var to: User?
     var payUpAmount: Double?
     
     override func viewDidLoad() {

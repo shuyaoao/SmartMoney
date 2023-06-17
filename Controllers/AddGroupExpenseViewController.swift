@@ -14,12 +14,12 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var splitByWho: UICollectionView!
     @IBOutlet weak var splitHowCV: UICollectionView!
     
-    var array = [SelectedUser("Dylan"), SelectedUser("Shuyao"), SelectedUser("Bernice"), SelectedUser("Ana"), SelectedUser("Shi Han"), SelectedUser("Jiang En")]
+    var array = [User("Dylan"), User("Shuyao"), User("Bernice"), User("Ana"), User("Shi Han"), User("Jiang En")]
     let splitHow = ["Equally", "Unequally"]
     var splitEqually = true
-    var paidBy: SelectedUser?
+    var paidBy: User?
     var paidByIndexPath: IndexPath?
-    var splitBtw = [SelectedUser]()
+    var splitBtw = [User]()
     //var amount = 0.0
     var lastIndexPath: IndexPath = [1, 0]
     
@@ -167,6 +167,8 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         //saves and updates debts
+        let simplifier = GroupDebtSimplifier()
+        simplifier.demo()
         self.dismiss(animated: true)
     }
     
