@@ -58,7 +58,7 @@ class CreateNewExpenseViewController: UIViewController {
                 newTransaction.category = catDataSource.listofCategories[index]
             }
             
-            catDataSource.listofCategories[index].buttonunSelected()
+            catDataSource.listofCategories[index] = catDataSource.listofCategories[index].buttonunSelected()
         }
         
         // Amount

@@ -161,15 +161,8 @@
                                     <segue destination="V4y-QX-kq0" kind="embed" destinationCreationSelector="embedNumPad:" id="5WG-le-ba6"/>
                                 </connections>
                             </containerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category Selected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fE-16-zyd">
-                                <rect key="frame" x="122" y="233" width="142" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xpf-L5-8VW">
-                                <rect key="frame" x="15" y="164" width="356" height="112"/>
+                                <rect key="frame" x="15" y="176" width="356" height="112"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="9HO-bH-0h1" kind="embed" destinationCreationSelector="embedHorizontalScrollView:" id="zpd-Hh-gVS"/>
@@ -180,7 +173,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="categorySelectedLabel" destination="7fE-16-zyd" id="AzZ-Or-1p7"/>
                         <outlet property="datePicker" destination="Y53-Vd-EkT" id="fR1-vr-IEN"/>
                         <outlet property="expenseButton" destination="SVi-sY-oed" id="Aky-tu-TTC"/>
                         <outlet property="incomeButton" destination="0YB-oN-t1g" id="wBr-T0-GqI"/>
@@ -300,8 +292,8 @@
                                         <rect key="frame" x="206" y="126" width="54" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0r-I6-yVr">
-                                        <rect key="frame" x="22" y="321" width="86" height="33"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Transactions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0r-I6-yVr">
+                                        <rect key="frame" x="22" y="321" width="152" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                         <nil key="textColor"/>

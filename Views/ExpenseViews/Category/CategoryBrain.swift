@@ -17,15 +17,31 @@ struct Category: Identifiable {
     var selected = false
     var selectedColor = Color(.systemTeal)
     
-    mutating func buttonSelected() {
-        selected = true
-        selectedColor = Color(.systemPink)
+    // Default Category
+    init(id: Int, category: String, icon: Image) {
+        self.id = id
+        self.category = category
+        self.icon = icon
+        self.selected = false
+        self.selectedColor = Color(.systemTeal)
     }
     
-    mutating func buttonunSelected() {
-        selected = false
-        selectedColor = Color(.systemTeal)
+    // Selected Category Selection
+    init(id: Int, category: String, icon: Image, selected: Bool, selectedColor: Color) {
+        self.id = id
+        self.category = category
+        self.icon = icon
+        self.selected = selected
+        self.selectedColor = selectedColor
+    }
+    
+    func buttonSelected() -> Category {
+        return Category(id: self.id, category: self.category, icon: self.icon, selected: true, selectedColor: Color(.systemPink))
         
+    }
+    
+    func buttonunSelected() -> Category {
+        return Category(id: self.id, category: self.category, icon: self.icon)
     }
 }
 
@@ -45,6 +61,7 @@ class CategoryDataModel : ObservableObject {
         self.listofCategories = listofCategories
     }
 }
+
 
 // MARK: Category Data Source
 var catDataSource = CategoryDataModel(listofCategories: [foodCategory, transportCategory, groceriesCategory, entertainmentCategory, utilitiesCategory, clothingCategory, healthCategory, workCategory, taxCategory, insuranceCategory, educationCategory])

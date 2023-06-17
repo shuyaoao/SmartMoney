@@ -24,10 +24,6 @@ struct CategoryHorizontalScrollView: View {
                 }
             }
             .frame(height: 150)
-            
-            Text("Category Selected:")
-            
-            
         }
         
     }

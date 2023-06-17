@@ -15,11 +15,11 @@ struct categoryDataCellView: View {
         Button(action: {
             // Reset all other category buttons
             for index in 0..<catDataSource.listofCategories.count {
-                catDataSource.listofCategories[index].buttonunSelected()
+                catDataSource.listofCategories[index] = catDataSource.listofCategories[index].buttonunSelected()
             }
             
             let catIndex = category.id
-            catDataSource.listofCategories[catIndex].buttonSelected()
+            catDataSource.listofCategories[catIndex] = catDataSource.listofCategories[catIndex].buttonSelected()
             
         }) {
             ZStack() {
