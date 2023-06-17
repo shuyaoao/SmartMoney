@@ -20,6 +20,7 @@ class CreateNewExpenseViewController: UIViewController {
     // UI Buttons
     @IBOutlet weak var incomeButton: UIButton!
     @IBOutlet weak var expenseButton: UIButton!
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var transactionNameTextField: UITextField!
     @IBOutlet weak var categorySelectedLabel: UILabel!
@@ -27,7 +28,7 @@ class CreateNewExpenseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        // Expense preselected
+        // Expense Preselected
         newTransaction.isExpense = true
         
         // Date (Today) preselected
@@ -104,7 +105,7 @@ class CreateNewExpenseViewController: UIViewController {
     }
     
     @IBAction func incomeButtonSelected(_ sender: UIButton) {
-        expenseButton.backgroundColor = .systemTeal
+        sender.backgroundColor = .systemTeal
         expenseButton.backgroundColor = .white
         newTransaction.isExpense = false
     }
