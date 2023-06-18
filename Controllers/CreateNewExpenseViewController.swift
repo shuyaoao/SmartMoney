@@ -20,11 +20,11 @@ class CreateNewExpenseViewController: UIViewController {
     // UI Buttons
     @IBOutlet weak var incomeButton: UIButton!
     @IBOutlet weak var expenseButton: UIButton!
-    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var transactionNameTextField: UITextField!
-    @IBOutlet weak var categorySelectedLabel: UILabel!
     
+    var alertController: UIAlertController?
+        
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -53,7 +53,8 @@ class CreateNewExpenseViewController: UIViewController {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        // Category
+        
+        // Category Selection
         for index in 0..<catDataSource.listofCategories.count {
             if catDataSource.listofCategories[index].selected == true {
                 newTransaction.category = catDataSource.listofCategories[index]
@@ -62,31 +63,43 @@ class CreateNewExpenseViewController: UIViewController {
             catDataSource.listofCategories[index] = catDataSource.listofCategories[index].buttonunSelected()
         }
         
-        // Amount
+        // Amount Selection
         newTransaction.amount = convertToDouble(numPad.numPadNumber)
         
-        let id = transactionDataModel.transactionDataList.count // Naive id
+        // new Unique id of Transaction
+        let id = transactionDataModel.transactionDataList.count
         
         // Unwrapping of Optionals
-        let name = newTransaction.name!
-        let date = newTransaction.date!
-        let category = newTransaction.category!
-        let amount = newTransaction.amount!
-        let isExpense = newTransaction.isExpense!
+        // Checks if any of the Optionals are empty
+        // if Empty: Show a Warning Message
+        if let name = newTransaction.name,
+           let date = newTransaction.date,
+           let category = newTransaction.category,
+           let amount = newTransaction.amount,
+           let isExpense = newTransaction.isExpense {
+            
+            let currentTransactionList = transactionDataModel.transactionDataList
+            let unwrappedNewTransaction = Transaction(id: id, name: name, date: date, category: category, amount: amount, isExpense: isExpense)
+            
+            // Add new transaction to the DataSource
+            transactionDataModel.updateTransactionDataList(with: currentTransactionList + [unwrappedNewTransaction])
+            print(transactionDataModel.transactionDataList)
+            // Resetting of Model Variables
+            newTransaction = selectedTransaction()
+            numPad.reset()
+            
+            // Close popup
+            dismiss(animated: true)
+            
+        } else {
+            // if any of the field has not been specified
+            // Present the alert controller
+            showAlert()
+            
+            
+        }
         
-        let currentTransactionList = transactionDataModel.transactionDataList
-        let unwrappedNewTransaction = Transaction(id: id, name: name, date: date, category: category, amount: amount, isExpense: isExpense)
-        
-        // Add new transaction to the DataSource
-        transactionDataModel.updateTransactionDataList(with: currentTransactionList + [unwrappedNewTransaction])
-        print(transactionDataModel.transactionDataList)
-        // Resetting of Model Variables
-        newTransaction = selectedTransaction()
-        numPad.reset()
-        
-        
-        // Close popup
-        dismiss(animated: true)
+
         
     }
     @IBAction func transactNameChanged(_ sender: UITextField) {
@@ -98,6 +111,7 @@ class CreateNewExpenseViewController: UIViewController {
         newTransaction.name = transactionNameTextField.text
     }
 
+    // Income and Expense Buttons
     @IBAction func expenseButtonSelected(_ sender: UIButton) {
         expenseButton.backgroundColor = .systemTeal
         incomeButton.backgroundColor = .white
@@ -110,13 +124,36 @@ class CreateNewExpenseViewController: UIViewController {
         newTransaction.isExpense = false
     }
     
+    // Category Scroll View
     @IBSegueAction func embedHorizontalScrollView(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(coder: coder, rootView: CategoryHorizontalScrollView(CategoryDataSource : catDataSource))
     }
     
+    // NumPad View
     @IBSegueAction func embedNumPad(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(coder: coder, rootView: numberPad())
     }
+    
+    // Alert Warning Popup
+    func showAlert() {
+        alertController = UIAlertController(title: "Message", message: "Please check that you have filled in all fields before saving.", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            // Handle OK button action (if needed)
+            self?.dismissAlert()
+        }
+        
+        alertController?.addAction(okAction)
+        
+        // Present the alert controller
+        present(alertController!, animated: true, completion: nil)
+    }
+    
+    func dismissAlert() {
+        alertController?.dismiss(animated: true, completion: nil)
+        alertController = nil
+    }
+    
 }
 
 
@@ -128,6 +165,7 @@ func convertToDouble(_ string: String) -> Double? {
     if let formattedNumber = numberFormatter.number(from: string) {
         return formattedNumber.doubleValue
     }
-    
     return nil
 }
+
+

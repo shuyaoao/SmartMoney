@@ -32,6 +32,7 @@ var transactionPreviewDataList = [
     Transaction(id: 2, name: "Orange", date: "03 Jun 2023", category: groceriesCategory, amount: 10.00, isExpense: true)
 ]
 
-
+// MARK: The main DataModel used for holding transactions
 var transactionDataModel = TransactionDataModel(transactionDataList : transactionPreviewDataList)
+
 
