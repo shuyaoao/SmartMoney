@@ -73,6 +73,8 @@
 		C0DDF5A62A303E8000959F90 /* GroupMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DDF5A42A303E8000959F90 /* GroupMemberTableViewCell.xib */; };
 		C0DE6BA02A2F37E30012A7D8 /* AddGroupExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE6B9F2A2F37E30012A7D8 /* AddGroupExpenseViewController.swift */; };
 		C0E856492A3F4144003D51EF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E856482A3F4143003D51EF /* RegisterViewController.swift */; };
+		C0E8564B2A3F50FC003D51EF /* NetBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8564A2A3F50FC003D51EF /* NetBalance.swift */; };
+		C0E8564D2A3F69A5003D51EF /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E8564C2A3F69A5003D51EF /* Payment.swift */; };
 		D5300E6450FC7AD0E5D86A8C /* Pods_SmartMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FE4A9A0F61B080318EFBDE /* Pods_SmartMoney.framework */; };
 		DC471DB679D0E7C962668A22 /* Pods_SmartMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B01FD637A5246FFB6C5B405 /* Pods_SmartMoneyTests.framework */; };
 		F4F26084F527337704169F07 /* Pods_SmartMoney_SmartMoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873008847319056A4F6A2460 /* Pods_SmartMoney_SmartMoneyUITests.framework */; };
@@ -173,6 +175,8 @@
 		C0DDF5A42A303E8000959F90 /* GroupMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupMemberTableViewCell.xib; sourceTree = "<group>"; };
 		C0DE6B9F2A2F37E30012A7D8 /* AddGroupExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupExpenseViewController.swift; sourceTree = "<group>"; };
 		C0E856482A3F4143003D51EF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C0E8564A2A3F50FC003D51EF /* NetBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetBalance.swift; sourceTree = "<group>"; };
+		C0E8564C2A3F69A5003D51EF /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		D240BAB13ADCBEEABBCFCF9A /* Pods-SmartMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney.debug.xcconfig"; path = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -408,6 +412,8 @@
 				C021FCA22A3C925D00091549 /* Expense */,
 				C043C2EA2A17C4FA00A1F14D /* MonthYear.swift */,
 				C021FCCA2A3DED2100091549 /* GroupDebtSimplifier.swift */,
+				C0E8564C2A3F69A5003D51EF /* Payment.swift */,
+				C0E8564A2A3F50FC003D51EF /* NetBalance.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -746,6 +752,7 @@
 				C043C2E32A1738EA00A1F14D /* FriendsViewController.swift in Sources */,
 				C04E27982A3356AE00964161 /* User.swift in Sources */,
 				C00EEE562A2C8E1100EF1A13 /* Group.swift in Sources */,
+				C0E8564D2A3F69A5003D51EF /* Payment.swift in Sources */,
 				C0CD635E2A3721FB0056EFE0 /* BalancesTableTableViewController.swift in Sources */,
 				C021FCA82A3C942300091549 /* ExpenseData.swift in Sources */,
 				C043C2E52A1738F700A1F14D /* ProfileViewController.swift in Sources */,
@@ -770,6 +777,7 @@
 				C021FCB12A3C9B2800091549 /* Split.swift in Sources */,
 				69C8CE092A37420F004A0382 /* CreateNewExpenseViewController.swift in Sources */,
 				C043C2E72A17782000A1F14D /* CreateGroupViewController.swift in Sources */,
+				C0E8564B2A3F50FC003D51EF /* NetBalance.swift in Sources */,
 				C021FCAD2A3C975400091549 /* ExpenseController.swift in Sources */,
 				C0CD63562A3700E40056EFE0 /* PayUpTableViewCell.swift in Sources */,
 				69C8CDFB2A332DDE004A0382 /* TransactionRow.swift in Sources */,
