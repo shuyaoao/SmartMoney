@@ -7,7 +7,15 @@
 
 import Foundation
 
-class User {
+class User: Hashable {
+    
+    //comparing two users
+    static func == (lhs: User, rhs: User) -> Bool {
+        if lhs.id == rhs.id {
+            return true
+        }
+        return false
+    }
     
     var name: String
     var paidBySelected = false
@@ -26,5 +34,10 @@ class User {
     
     func changeName(_ name: String) {
         self.name = name
+    }
+    
+    //ID uniquely identifies a user
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

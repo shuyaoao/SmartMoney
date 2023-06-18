@@ -178,7 +178,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         //saves and updates debts
         let simplifier = GroupDebtSimplifier()
-        simplifier.demo()
+        simplifier.demonstration()
         self.dismiss(animated: true)
     }
     
