@@ -11,6 +11,7 @@ import SwipeCellKit
 class GroupTableViewCell: SwipeTableViewCell {
     
     @IBOutlet var amtLabel: UILabel!
+    @IBOutlet var nameLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

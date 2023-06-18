@@ -17,7 +17,7 @@ struct categoryStackView: View {
             categoryDataCellView(category: first)
             categoryDataCellView(category: second)
             categoryDataCellView(category: third)
-        }
+        }.background(Color.init("Off-white"))
     }
 }
 

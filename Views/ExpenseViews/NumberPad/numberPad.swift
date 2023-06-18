@@ -53,7 +53,7 @@ struct numberPad: View {
                     createDeleteButton()
                 }
             }
-            .padding()
+            .padding().background(Color.init("Off-white"))
         }
     }
     

@@ -14,6 +14,17 @@ struct Transaction: Identifiable {
     let category : Category
     let amount : Double
     let isExpense : Bool // if false, then income
+    
+    init(id: Int, name: String, date: String, category: Category, amount: Double, isExpense: Bool) {
+        self.id = id
+        self.name = name
+        self.date = date
+        self.category = category
+        self.amount = amount
+        self.isExpense = isExpense
+    }
+    
+    
 }
 
 // This transaction class is used to monitor the pending transaction that is about to be added.

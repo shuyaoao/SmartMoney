@@ -15,15 +15,14 @@ struct Category: Identifiable {
     let category: String
     let icon : Image
     var selected = false
-    var selectedColor = Color(.systemTeal)
-    
+    var selectedColor = Color.init("Medium Blue")
     // Default Category
     init(id: Int, category: String, icon: Image) {
         self.id = id
         self.category = category
         self.icon = icon
         self.selected = false
-        self.selectedColor = Color(.systemTeal)
+        self.selectedColor = Color.init("Medium Blue")
     }
     
     // Selected Category Selection

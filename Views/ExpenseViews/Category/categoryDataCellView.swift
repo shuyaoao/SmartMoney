@@ -23,7 +23,7 @@ struct categoryDataCellView: View {
             
         }) {
             ZStack() {
-                RoundedRectangle(cornerRadius: 15)
+                RoundedRectangle(cornerRadius: 10)
                     .fill(category.selectedColor)
                     .frame(width: 150, height: 35)
                 

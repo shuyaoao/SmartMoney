@@ -11,18 +11,18 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupMemberCollectionViewCell" id="gTV-IL-0wX" customClass="GroupMemberCollectionViewCell" customModule="SmartMoney">
-            <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="120" height="35"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="120" height="35"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AuT-au-92W">
-                        <rect key="frame" x="0.0" y="0.0" width="120" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPa-kY-A5J">
-                                <rect key="frame" x="-1" y="3" width="121" height="44"/>
+                                <rect key="frame" x="-1" y="2" width="121" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,7 +32,7 @@
                         <color key="backgroundColor" name="Medium Blue"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="5"/>
+                                <integer key="value" value="4"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
@@ -40,12 +40,12 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="120" height="50"/>
+            <size key="customSize" width="120" height="35"/>
             <connections>
                 <outlet property="nameLabel" destination="EPa-kY-A5J" id="mje-6N-VRC"/>
                 <outlet property="rectangleView" destination="AuT-au-92W" id="8fG-8r-ADx"/>
             </connections>
-            <point key="canvasLocation" x="174" y="23"/>
+            <point key="canvasLocation" x="172.51908396946564" y="17.253521126760564"/>
         </collectionViewCell>
     </objects>
     <resources>

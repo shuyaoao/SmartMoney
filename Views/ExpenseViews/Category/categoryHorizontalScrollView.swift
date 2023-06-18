@@ -21,9 +21,9 @@ struct CategoryHorizontalScrollView: View {
                                               third: CategoryDataSource.listofCategories[index + 2])
                         }
                     }
-                }
+                }.background(Color.init("Off-white"))
             }
-            .frame(height: 150)
+            .frame(height: 150).background(Color.init("Off-white"))
         }
         
     }

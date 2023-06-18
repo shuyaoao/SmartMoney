@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import SwiftUI
 
 class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var amtTextField: UITextField!
     @IBOutlet weak var whoPaidScrollView: UICollectionView!
     @IBOutlet weak var splitByWho: UICollectionView!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var splitHowCV: UICollectionView!
     
     var array = [User("Dylan"), User("Shuyao"), User("Bernice"), User("Ana"), User("Shi Han"), User("Jiang En")]
@@ -20,6 +22,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     var paidBy: User?
     var paidByIndexPath: IndexPath?
     var splitBtw = [User]()
+    var date = DateFormatter().string(from: Date())
     //var amount = 0.0
     var lastIndexPath: IndexPath = [1, 0]
     
@@ -165,6 +168,13 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
         self.dismiss(animated: true)
     }
     
+    @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy"
+        date = dateFormatter.string(from: datePicker.date)
+        print(date)
+    }
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         //saves and updates debts
         let simplifier = GroupDebtSimplifier()
@@ -199,4 +209,9 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
         }
         return true
     }
+    
+    @IBSegueAction func embedCategoryScrollView(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: CategoryHorizontalScrollView(CategoryDataSource : catDataSource))
+    }
+    
 }

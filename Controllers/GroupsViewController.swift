@@ -79,11 +79,11 @@ extension GroupsViewController : SwipeTableViewCellDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
         cell.delegate = self
-        cell.textLabel?.text = groupArray[indexPath.row].groupName
+        cell.nameLabel.text = groupArray[indexPath.row].groupName
         let amt = groupArray[indexPath.row].owedAmount
         if amt < 0 {
             cell.amtLabel.text = String(format: "$%.2f", -amt)
-            cell.amtLabel.textColor = UIColor.green
+            cell.amtLabel.textColor = UIColor.systemGreen
         } else if amt == 0 {
             cell.amtLabel.text = String(format: "$%.2f", amt)
             cell.amtLabel.textColor = UIColor.black
@@ -91,7 +91,7 @@ extension GroupsViewController : SwipeTableViewCellDelegate {
             cell.amtLabel.text = String(format: "$%.2f", amt)
             cell.amtLabel.textColor = UIColor.red
         }
-        cell.accessoryType = .disclosureIndicator
+//        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
