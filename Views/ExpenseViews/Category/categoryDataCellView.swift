@@ -14,7 +14,7 @@ struct categoryDataCellView: View {
         // Category Button Actions
         Button(action: {
             // Reset all other category buttons
-            for index in 0..<catDataSource.listofCategories.count {
+            for index in 0..<catDataSource.listofCategories.count - 1 {
                 catDataSource.listofCategories[index] = catDataSource.listofCategories[index].buttonunSelected()
             }
             

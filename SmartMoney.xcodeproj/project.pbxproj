@@ -72,6 +72,7 @@
 		C0DDF5A52A303E8000959F90 /* GroupMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DDF5A32A303E8000959F90 /* GroupMemberTableViewCell.swift */; };
 		C0DDF5A62A303E8000959F90 /* GroupMemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0DDF5A42A303E8000959F90 /* GroupMemberTableViewCell.xib */; };
 		C0DE6BA02A2F37E30012A7D8 /* AddGroupExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE6B9F2A2F37E30012A7D8 /* AddGroupExpenseViewController.swift */; };
+		C0E856492A3F4144003D51EF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E856482A3F4143003D51EF /* RegisterViewController.swift */; };
 		D5300E6450FC7AD0E5D86A8C /* Pods_SmartMoney.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98FE4A9A0F61B080318EFBDE /* Pods_SmartMoney.framework */; };
 		DC471DB679D0E7C962668A22 /* Pods_SmartMoneyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B01FD637A5246FFB6C5B405 /* Pods_SmartMoneyTests.framework */; };
 		F4F26084F527337704169F07 /* Pods_SmartMoney_SmartMoneyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873008847319056A4F6A2460 /* Pods_SmartMoney_SmartMoneyUITests.framework */; };
@@ -171,6 +172,7 @@
 		C0DDF5A32A303E8000959F90 /* GroupMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberTableViewCell.swift; sourceTree = "<group>"; };
 		C0DDF5A42A303E8000959F90 /* GroupMemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupMemberTableViewCell.xib; sourceTree = "<group>"; };
 		C0DE6B9F2A2F37E30012A7D8 /* AddGroupExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupExpenseViewController.swift; sourceTree = "<group>"; };
+		C0E856482A3F4143003D51EF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		D240BAB13ADCBEEABBCFCF9A /* Pods-SmartMoney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney.debug.xcconfig"; path = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -392,6 +394,7 @@
 				C0CD635D2A3721FB0056EFE0 /* BalancesTableTableViewController.swift */,
 				69C8CE082A37420F004A0382 /* CreateNewExpenseViewController.swift */,
 				C0D6B0BC2A3EF24A0072AE22 /* LoginViewController.swift */,
+				C0E856482A3F4143003D51EF /* RegisterViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -728,6 +731,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0D6B0BD2A3EF24A0072AE22 /* LoginViewController.swift in Sources */,
+				C0E856492A3F4144003D51EF /* RegisterViewController.swift in Sources */,
 				C021FCC82A3CB3B100091549 /* UnequalExpenseSplit.swift in Sources */,
 				69C8CE0D2A398269004A0382 /* CategoryBrain.swift in Sources */,
 				69E7199F2A399E02002EA577 /* categoryStackView.swift in Sources */,

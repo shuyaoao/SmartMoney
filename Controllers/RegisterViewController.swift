@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  SmartMoney
 //
 //  Created by Shuyao Li on 18/6/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +19,7 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func loginButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "goToHomePage", sender: self)
-    }
-    
+
     /*
     // MARK: - Navigation
 
