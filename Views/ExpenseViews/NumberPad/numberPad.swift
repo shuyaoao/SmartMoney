@@ -24,9 +24,9 @@ struct numberPad: View {
                     .padding()
             }
             .background(
-                RoundedRectangle(cornerRadius: 10)
+                Rectangle()
                     .fill(Color(red: 242/255, green: 242/255, blue: 242/255)))
-            .padding(12)
+            
             
             VStack(spacing: 10) {
                 HStack(spacing: 15) {

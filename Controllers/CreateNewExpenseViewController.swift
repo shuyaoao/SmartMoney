@@ -133,7 +133,7 @@ class CreateNewExpenseViewController: UIViewController {
     
     // Alert Warning Popup
     func showAlert() {
-        alertController = UIAlertController(title: "Message", message: "Please check that you have filled in all fields before saving.", preferredStyle: .alert)
+        alertController = UIAlertController(title: "Invalid Inputs", message: "Please check that you have filled in all fields before saving.", preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
             // Handle OK button action (if needed)
