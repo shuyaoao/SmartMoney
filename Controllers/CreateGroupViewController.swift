@@ -15,15 +15,20 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     weak var delegate : CreateGroupViewControllerDelegate?
     @IBOutlet weak var editButton: UIButton!
     var count = 2
+    var members = [Int:User]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //registering the custom table cell
         let nib = UINib(nibName: GroupMemberTableViewCell.id, bundle: nil)
         groupMembersTableView.register(nib, forCellReuseIdentifier: GroupMemberTableViewCell.id)
         groupMembersTableView.dataSource = self
         groupMembersTableView.delegate = self
         groupMembersTableView.reloadData()
         groupNameTextField.delegate = self
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     //if user presses cancel, dismiss this screen and show the GroupsViewController
     
@@ -33,7 +38,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     
     //dismiss this screen and show the GroupsViewController with the new group
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
-        //add in functionality to create a new group and update database
+        //functionality to create a new group and update database
         delegate?.updateData(self)
         self.dismiss(animated: true)
     }
@@ -45,6 +50,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func editButtonPressed(_ sender: Any) {
+        //toggles in and out of editing mode
         if groupMembersTableView.isEditing == false {
             editButton.setTitle("Done", for: .normal)
             groupMembersTableView.setEditing(true, animated: true)
@@ -58,6 +64,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
         if editingStyle == .delete {
             count -= 1
             groupMembersTableView.deleteRows(at: [indexPath], with: .fade)
+            members.removeValue(forKey: indexPath.row)
         }
     }
     
@@ -67,6 +74,8 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = groupMembersTableView.dequeueReusableCell(withIdentifier: "GroupMemberTableViewCell") as! GroupMemberTableViewCell
+        cell.memberNameTextField.delegate = self
+        cell.memberNameTextField.tag = indexPath.row
         return cell
     }
     
@@ -82,11 +91,17 @@ protocol CreateGroupViewControllerDelegate : AnyObject {
 
 extension CreateGroupViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            return true
+        textField.resignFirstResponder()
+        if textField.text != "" {
+            members[textField.tag] = User(textField.text!)
         }
+        return true
+    }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.resignFirstResponder()
+        if textField.text != "" {
+            members[textField.tag] = User(textField.text!)
         }
+    }
 }

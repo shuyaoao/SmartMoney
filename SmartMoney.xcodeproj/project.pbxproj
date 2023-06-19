@@ -58,6 +58,7 @@
 		C04E27952A3344E600964161 /* GroupMemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E27932A3344E600964161 /* GroupMemberCollectionViewCell.swift */; };
 		C04E27962A3344E600964161 /* GroupMemberCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C04E27942A3344E600964161 /* GroupMemberCollectionViewCell.xib */; };
 		C04E27982A3356AE00964161 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04E27972A3356AE00964161 /* User.swift */; };
+		C06953672A4050EE00921FA5 /* TestingGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06953662A4050EE00921FA5 /* TestingGroups.swift */; };
 		C0931A392A33812F001E19B9 /* UnequalGroupExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0931A382A33812F001E19B9 /* UnequalGroupExpensesTableViewController.swift */; };
 		C0931A402A338230001E19B9 /* UnequalExpensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0931A3E2A338230001E19B9 /* UnequalExpensesTableViewCell.swift */; };
 		C0931A412A338230001E19B9 /* UnequalExpensesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0931A3F2A338230001E19B9 /* UnequalExpensesTableViewCell.xib */; };
@@ -160,6 +161,7 @@
 		C04E27932A3344E600964161 /* GroupMemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberCollectionViewCell.swift; sourceTree = "<group>"; };
 		C04E27942A3344E600964161 /* GroupMemberCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupMemberCollectionViewCell.xib; sourceTree = "<group>"; };
 		C04E27972A3356AE00964161 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C06953662A4050EE00921FA5 /* TestingGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingGroups.swift; sourceTree = "<group>"; };
 		C0931A382A33812F001E19B9 /* UnequalGroupExpensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnequalGroupExpensesTableViewController.swift; sourceTree = "<group>"; };
 		C0931A3E2A338230001E19B9 /* UnequalExpensesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnequalExpensesTableViewCell.swift; sourceTree = "<group>"; };
 		C0931A3F2A338230001E19B9 /* UnequalExpensesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnequalExpensesTableViewCell.xib; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				C021FCCA2A3DED2100091549 /* GroupDebtSimplifier.swift */,
 				C0E8564C2A3F69A5003D51EF /* Payment.swift */,
 				C0E8564A2A3F50FC003D51EF /* NetBalance.swift */,
+				C06953662A4050EE00921FA5 /* TestingGroups.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				69C8CDFD2A332EB1004A0382 /* TransactionData.swift in Sources */,
 				C021FCC62A3CB39500091549 /* EqualExpenseSplit.swift in Sources */,
 				C0931A392A33812F001E19B9 /* UnequalGroupExpensesTableViewController.swift in Sources */,
+				C06953672A4050EE00921FA5 /* TestingGroups.swift in Sources */,
 				C04E27952A3344E600964161 /* GroupMemberCollectionViewCell.swift in Sources */,
 				C043C2A32A172C4600A1F14D /* ViewController.swift in Sources */,
 				C0931A402A338230001E19B9 /* UnequalExpensesTableViewCell.swift in Sources */,

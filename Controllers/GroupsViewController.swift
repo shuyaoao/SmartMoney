@@ -10,9 +10,8 @@ import SwipeCellKit
 
 class GroupsViewController: UITableViewController {
     
-    var groupArray = [Group(10.00, "Friends"), Group(20.00, "Family"), Group(-30.50, "Hall Friends"), Group(20.25, "School"), Group(100.20, "Drinking Buddies")]
-    
-    
+    var groupArray: [Group] = [Family(), Friends(), Hexagon()]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.reloadData()
@@ -25,6 +24,7 @@ class GroupsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "goToGroupDetails", sender: self)
+        //go to groupDetailsView when a specific group is selected
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,7 +33,7 @@ class GroupsViewController: UITableViewController {
             let destinationVC = segue.destination as! GroupDetailsViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 //destinationVC.navigationBar.title = groupArray[indexPath.row].groupName
-                destinationVC.groupName = groupArray[indexPath.row].groupName
+                destinationVC.group = groupArray[indexPath.row]
                 destinationVC.amount = groupArray[indexPath.row].owedAmount
             }
         //else if user presses on the plus button, prepare for navigation to CreateGroupViewController
@@ -52,7 +52,11 @@ class GroupsViewController: UITableViewController {
 extension GroupsViewController : CreateGroupViewControllerDelegate {
     func updateData(_ vc: CreateGroupViewController) {
         if let text = vc.groupNameTextField.text {
-            self.groupArray.append(Group(0, text))
+            let newGroup = Group(text)
+            for (_, user) in vc.members {
+                newGroup.addMember(user)
+            }
+            self.groupArray.append(newGroup)
             self.tableView.reloadData()
         //retrieve date from CreateGroupViewController and add the group to existing array, then refresh the tableview
         }
@@ -77,28 +81,30 @@ extension GroupsViewController : SwipeTableViewCellDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //configures the table cell to display group information(name and summarised debt)
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
         cell.delegate = self
         cell.nameLabel.text = groupArray[indexPath.row].groupName
         let amt = groupArray[indexPath.row].owedAmount
         if amt < 0 {
             cell.amtLabel.text = String(format: "$%.2f", -amt)
-            cell.amtLabel.textColor = UIColor.systemGreen
+            cell.amtLabel.textColor = UIColor.red
         } else if amt == 0 {
             cell.amtLabel.text = String(format: "$%.2f", amt)
             cell.amtLabel.textColor = UIColor.black
         } else {
             cell.amtLabel.text = String(format: "$%.2f", amt)
-            cell.amtLabel.textColor = UIColor.red
+            cell.amtLabel.textColor = UIColor(named: "green")
         }
-//        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        //allows for groups to be deleted
         var options = SwipeOptions()
         options.expansionStyle = .destructive
         options.transitionStyle = .border
+        //will add in functionality to delete group from database when this action is trgiggered
         return options
     }
 }

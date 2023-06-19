@@ -14,6 +14,7 @@ class Group {
     var expenseList: [GroupExpense]
     var expenseController: ExpenseController
     let id: String
+    let simplifier = GroupDebtSimplifier()
     
     init(_ groupName: String) {
         self.groupMembers = [User]()
@@ -34,6 +35,16 @@ class Group {
         self.id = UUID().uuidString
     }
     
+    init(_ owedAmount: Double, _ name: String, _ groupMembers: [User]) {
+        //this constructor will be removed after database has been implemented
+        self.groupMembers = groupMembers
+        self.owedAmount = owedAmount
+        self.groupName = name
+        self.expenseList = [GroupExpense]()
+        self.expenseController = ExpenseController()
+        self.id = UUID().uuidString
+    }
+    
     func addMember(_ member: User) {
         self.groupMembers.append(member)
     }
@@ -42,5 +53,9 @@ class Group {
         let expense = expenseController.createExpense(payer, amount, date, splits, description, splitType)
         expenseList.append(expense)
         return expense
+    }
+    
+    func updateTotalBalance() {
+        self.owedAmount = self.simplifier.getBalances(self.expenseList)[myself] ?? 0
     }
 }

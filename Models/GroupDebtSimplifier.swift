@@ -19,7 +19,7 @@ class GroupDebtSimplifier {
         self.balanceController = BalanceController()
     }
     
-    func simplify(_ transactions: [GroupExpense]) -> [Payment] {
+    func getBalances(_ transactions: [GroupExpense]) -> [User: Double] {
         var netBalance = [User: Double]()
         //iterate through the array of transactions
         for expense in transactions {
@@ -38,7 +38,12 @@ class GroupDebtSimplifier {
                 }
             }
         }
+        return netBalance
+    }
+    
+    func simplify(_ transactions: [GroupExpense]) -> [Payment] {
         
+        let netBalance = getBalances(transactions)
         var positives = [NetBalance]()
         var negatives = [NetBalance]()
         

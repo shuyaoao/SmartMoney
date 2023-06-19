@@ -9,35 +9,59 @@ import UIKit
 
 class BalancesTableTableViewController: UITableViewController {
     
-    var array = [User("Dylan"), User("Shuyao"), User("Bernice"), User("Ana"), User("Shi Han"), User("Jiang En")]
-    var number = [1,2,3,4,5,6]//update with the number of debts owed/being owed
+    var group: Group?
+    var membersArray = [User]()
+    var balances = [User: [Payment]]()
+    var finalArray = [[Payment]]()
+    //var number = [1,2,3,4,5,6]//update with the number of debts owed/being owed
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        membersArray = group?.groupMembers ?? [User]()
+        let results = group?.simplifier.simplify(group?.expenseList ?? [GroupExpense]()) ?? [Payment]()
+        for member in membersArray {
+            balances[member] = [Payment]()
+        }
+        for payment in results {
+            balances[payment.payer]?.append(payment)
+        }
+        
+        for (_, payments) in balances {
+            if !payments.isEmpty {
+                finalArray.append(payments)
+            }
+        }
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BalancesCell")
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //update with the number of debts owed/being owed
-        return number[section]
+        return finalArray[section].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "BalancesCell", for: indexPath)
-        cell.textLabel?.text = String(format: "\(array[indexPath.row].name) owes you %.2f", 10.50)
+        let payer = finalArray[indexPath.section][indexPath.row].payer
+        let payee = finalArray[indexPath.section][indexPath.row].payee
+        let amount = finalArray[indexPath.section][indexPath.row].amount
+        cell.textLabel?.text = String(format: "%@ owes %@ $%.2f", payer.name, payee.name, amount)
         cell.backgroundColor = UIColor(named: "Off-White")
         //update with the exact amounts owed individually
         return cell
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return array.count
+        return finalArray.count
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let button = UIButton()
-        button.setTitle(array[section].name, for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        return button
+        let label = UILabel()
+        if !finalArray[section].isEmpty {
+            label.text = finalArray[section][0].payer.name
+            label.font = UIFont(name:"HelveticaNeue-Medium", size: 18.0)
+            label.textAlignment = .center
+        }
+        return label
     }
 }

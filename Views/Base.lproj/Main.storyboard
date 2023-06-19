@@ -507,7 +507,7 @@
             <objects>
                 <viewController id="vqs-bk-2y2" customClass="GroupDetailsViewController" customModule="SmartMoney" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dBy-lH-tR4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yzQ-ON-zyH">
@@ -639,7 +639,21 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNV-78-4xN">
-                                                            <rect key="frame" x="147" y="7" width="206" height="61"/>
+                                                            <rect key="frame" x="211" y="15" width="134" height="26"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BmZ-Dg-RTp">
+                                                            <rect key="frame" x="168" y="34" width="173" height="26"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are not involved" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99U-LE-Ra9">
+                                                            <rect key="frame" x="243" y="13" width="102" height="49"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -658,10 +672,12 @@
                                             <color key="backgroundColor" name="Off-white"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="amountLabel" destination="RNV-78-4xN" id="et1-9Z-Vq5"/>
+                                            <outlet property="amountLabel" destination="BmZ-Dg-RTp" id="AHS-wn-dDo"/>
                                             <outlet property="categoryImage" destination="8Wo-xb-G6T" id="uN7-DX-SkU"/>
                                             <outlet property="dateLabel" destination="vlV-je-JRS" id="cLn-qx-5J8"/>
                                             <outlet property="descriptionLabel" destination="shu-7d-jBq" id="l92-f1-Eva"/>
+                                            <outlet property="involvedLabel" destination="99U-LE-Ra9" id="amH-qA-zwE"/>
+                                            <outlet property="whoOwedLabel" destination="RNV-78-4xN" id="et1-9Z-Vq5"/>
                                             <outlet property="whoPaidLabel" destination="qHp-yo-7Hp" id="nQi-9X-J3i"/>
                                         </connections>
                                     </tableViewCell>
@@ -698,7 +714,7 @@
             <objects>
                 <tableViewController id="WRZ-Tj-666" customClass="BalancesTableTableViewController" customModule="SmartMoney" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="4eJ-1m-RnF">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="Off-white"/>
                         <prototypes>
@@ -1482,7 +1498,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7dR-fb-nfP"/>
+        <segue reference="AuO-6o-Jfd"/>
         <segue reference="MRW-6y-9xw"/>
     </inferredMetricsTieBreakers>
     <resources>
