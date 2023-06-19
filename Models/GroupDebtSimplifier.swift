@@ -101,6 +101,7 @@ class GroupDebtSimplifier {
         var splits4 = [Split]()
         splits4.append(Split(user: userController.getUser("Shuyao")!, amount: 100))
         splits4.append(Split(user: userController.getUser("Dylan")!, amount: 150))
+        splits4.append(Split(user: userController.getUser("Bernice")!, amount: 0))
         group?.createExpense(userController.getUser("Bernice")!, 250, Date(), splits4, "Something else",  SplitType(id: "UnEqually"))
         
         var splits5 = [Split]()
