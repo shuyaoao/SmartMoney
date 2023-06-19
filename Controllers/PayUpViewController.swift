@@ -9,13 +9,14 @@ import UIKit
 
 class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
-    var array = [User("Dylan"), User("Shuyao"), User("Bernice"), User("Ana"), User("Shi Han"), User("Jiang En")]
+    var array = [User]()
     @IBOutlet weak var fromTableView: UITableView!
     @IBOutlet weak var toTableView: UITableView!
     @IBOutlet weak var amountTextField: UITextField!
     var from: User?
     var to: User?
     var payUpAmount: Double?
+    var group: Group?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,9 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        for user in (group?.groupMembers)! {
+            array.append(user)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

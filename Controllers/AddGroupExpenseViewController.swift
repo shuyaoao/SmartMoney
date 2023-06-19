@@ -16,7 +16,8 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var splitHowCV: UICollectionView!
     
-    var array = [User("Dylan"), User("Shuyao"), User("Bernice"), User("Ana"), User("Shi Han"), User("Jiang En")]
+    var group: Group?
+    var array = [User]()
     let splitHow = ["Equally", "Unequally"]
     var splitEqually = true
     var paidBy: User?
@@ -33,6 +34,12 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
         whoPaidScrollView.delegate = self
         splitByWho.dataSource = self
         splitByWho.delegate = self
+        
+        //create a copy of group members array
+        for user in (group?.groupMembers)! {
+            array.append(user)
+        }
+        
         whoPaidScrollView.register(GroupMemberCollectionViewCell.nib(), forCellWithReuseIdentifier: "GroupMemberCollectionViewCell")
         splitByWho.register(GroupMemberCollectionViewCell.nib(), forCellWithReuseIdentifier: "GroupMemberCollectionViewCell")
         splitHowCV.register(GroupMemberCollectionViewCell.nib(), forCellWithReuseIdentifier: "GroupMemberCollectionViewCell")
@@ -96,7 +103,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
             if array[indexPath.row].splitBtwSelected == true {
                 cell.rectangleView.backgroundColor = UIColor(named: "Medium Blue")
                 cell.nameLabel.backgroundColor = UIColor(named: "Medium Blue")
-                array[indexPath.row].splitBtwSelected = false
+                group?.groupMembers[indexPath.row].splitBtwSelected = false
                 splitBtw = splitBtw.filter { user in
                     user.name != array[indexPath.row].name
                 }
@@ -107,7 +114,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                     if !splitBtw.contains(where: { user in
                         user.name == name
                     }) {
-                        array[indexPath.row].splitBtwSelected = true
+                        group?.groupMembers[indexPath.row].splitBtwSelected = true
                         splitBtw.append(array[indexPath.row])
                     }
                 }

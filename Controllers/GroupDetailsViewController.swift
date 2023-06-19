@@ -83,6 +83,12 @@ class GroupDetailsViewController: UIViewController {
         if segue.identifier == "goToBalances" {
             let destinationVC = segue.destination as! BalancesTableTableViewController
             destinationVC.group = group
+        } else if segue.identifier == "addGroupExpense" {
+            let destinationVC = segue.destination as! AddGroupExpenseViewController
+            destinationVC.group = group
+        } else if segue.identifier == "goToPayUp" {
+            let destinationVC = segue.destination as! PayUpViewController
+            destinationVC.group = group
         }
     }
     
