@@ -46,7 +46,9 @@ class GroupExpensesTableViewCell: UITableViewCell {
             if myOwes > 0  {
                 self.involvedLabel.isHidden = true
                 self.whoOwedLabel.text = "You owe:"
+                self.whoOwedLabel.textColor = UIColor.red
                 self.amountLabel.text = String(format: "$%.2f", myOwes)
+                self.amountLabel.textColor = UIColor.red
             } else {
                 self.involvedLabel.isHidden = false
                 self.whoOwedLabel.isHidden = true
@@ -56,6 +58,8 @@ class GroupExpensesTableViewCell: UITableViewCell {
             self.involvedLabel.isHidden = true
             self.whoOwedLabel.text = "You are owed:"
             self.amountLabel.text = String(format: "$%.2f", expense.amount - myOwes)
+            self.whoOwedLabel.textColor = UIColor(named: "green")
+            self.amountLabel.textColor = UIColor(named: "green")
         }
     }
 
