@@ -9,14 +9,15 @@ import UIKit
 
 class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
-    var array = [User]()
+    var array = [SelectedUser]()
     @IBOutlet weak var fromTableView: UITableView!
     @IBOutlet weak var toTableView: UITableView!
     @IBOutlet weak var amountTextField: UITextField!
-    var from: User?
-    var to: User?
+    var from: SelectedUser?
+    var to: SelectedUser?
     var payUpAmount: Double?
     var group: Group?
+    var prevVC: GroupDetailsViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         for user in (group?.groupMembers)! {
-            array.append(user)
+            array.append(SelectedUser(user))
         }
     }
     
@@ -38,6 +39,7 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //populates the table with custom cells displaying names of group members
         let cell = tableView.dequeueReusableCell(withIdentifier: "PayUpCell", for: indexPath) as! PayUpTableViewCell
         if tableView == fromTableView {
             if array[indexPath.row].from {
@@ -61,6 +63,7 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //when a cell is selected, update accordingly
         print(array[indexPath.row].name)
         if tableView == fromTableView {
             if array[indexPath.row].name == to?.name {
@@ -113,8 +116,34 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        //saves the input
-        self.dismiss(animated: true)
+        //saves the input and updates balances, table view and debts
+        if from != nil && to != nil && amountTextField.text != "" {
+            var payer: User?
+            var payee: User?
+            for user in (group?.groupMembers)! {
+                if user.id == from?.id {
+                    payer = user
+                }
+                if user.id == to?.id {
+                    payee = user
+                }
+            }
+            let amount = Double(amountTextField.text!)!
+            group?.createExpense(payer!, amount, Date(), [Split(user: payee!, amount: amount)])
+            let groupDetailsVC = self.prevVC
+            let groupsVC = self.prevVC?.prevVC
+            var index = 0
+            for ind in 0 ..< (groupsVC?.groupArray.count ?? 0) {
+                if (groupsVC?.groupArray[ind].id)! == group!.id {
+                    index = ind
+                }
+            }
+            groupsVC?.groupArray[index] = group!
+            groupsVC?.updateData()
+            groupDetailsVC?.updateData()
+            self.dismiss(animated: true)
+        }
+        
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
@@ -124,14 +153,12 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text != "" {
             payUpAmount = Double(textField.text!)
-            print(payUpAmount!)
         }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             payUpAmount = Double(textField.text!)
-            print(payUpAmount!)
         }
         return true
     }

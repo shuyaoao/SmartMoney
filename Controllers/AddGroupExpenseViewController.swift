@@ -14,18 +14,20 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var whoPaidScrollView: UICollectionView!
     @IBOutlet weak var splitByWho: UICollectionView!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var descriptionLabel: UITextField!
     @IBOutlet weak var splitHowCV: UICollectionView!
     
+    var previousVC: GroupDetailsViewController?
     var group: Group?
-    var array = [User]()
+    var array = [SelectedUser]()
     let splitHow = ["Equally", "Unequally"]
-    var splitEqually = true
-    var paidBy: User?
+    var splitEqually = true //default splitMethod to be set to equal
+    var paidBy: SelectedUser?
     var paidByIndexPath: IndexPath?
-    var splitBtw = [User]()
-    var date = DateFormatter().string(from: Date())
-    //var amount = 0.0
+    var splitBtw = [SelectedUser]()
+    var date = Date()
     var lastIndexPath: IndexPath = [1, 0]
+    var splits = [Split]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
         
         //create a copy of group members array
         for user in (group?.groupMembers)! {
-            array.append(user)
+            array.append(SelectedUser(user))
         }
         
         whoPaidScrollView.register(GroupMemberCollectionViewCell.nib(), forCellWithReuseIdentifier: "GroupMemberCollectionViewCell")
@@ -53,6 +55,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //number of cells based on which collection view
         if collectionView == splitByWho || collectionView == whoPaidScrollView {
             return array.count
         } else {
@@ -103,7 +106,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
             if array[indexPath.row].splitBtwSelected == true {
                 cell.rectangleView.backgroundColor = UIColor(named: "Medium Blue")
                 cell.nameLabel.backgroundColor = UIColor(named: "Medium Blue")
-                group?.groupMembers[indexPath.row].splitBtwSelected = false
+                array[indexPath.row].splitBtwSelected = false
                 splitBtw = splitBtw.filter { user in
                     user.name != array[indexPath.row].name
                 }
@@ -114,7 +117,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                     if !splitBtw.contains(where: { user in
                         user.name == name
                     }) {
-                        group?.groupMembers[indexPath.row].splitBtwSelected = true
+                        array[indexPath.row].splitBtwSelected = true
                         splitBtw.append(array[indexPath.row])
                     }
                 }
@@ -149,7 +152,6 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                             if amtTextField.hasText {
                             performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: collectionView.delegate)
                             }
-                            print("unequally selected")
                         } else {
                             splitEqually = true
                         }
@@ -176,15 +178,52 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     }
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
+        //formats the date selected
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM yyyy"
-        date = dateFormatter.string(from: datePicker.date)
-        print(date)
+        dateFormatter.dateFormat = "dd mmm yyyy"
+        date = datePicker.date
+        let dateString = dateFormatter.string(from: datePicker.date)
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        //saves and updates debts
-        self.dismiss(animated: true)
+        //saves and updates tableview, debts and balances
+        if descriptionLabel.text != "" && amtTextField.text != "" && paidBy != nil && !splitBtw.isEmpty {
+            var splitID: String
+            if splitEqually {
+                splitID = "Equally"
+            } else {
+                splitID = "Unequally"
+            }
+            var payer: User?
+            for user in (group?.groupMembers)! {
+                if user.id == paidBy?.id {
+                    payer = user
+                }
+            }
+            
+            if splitEqually {
+                for selectedUser in splitBtw {
+                    splits.append(Split(user: (group?.groupMembers.first(where: { user in
+                        selectedUser.id == user.id
+                    }))!, amount: Double(self.amtTextField.text!)! / Double(splitBtw.count)))
+                }
+            }
+            
+            group?.createExpense(payer!, Double(self.amtTextField.text!)!, datePicker.date, splits, descriptionLabel.text!, SplitType(id: splitID))
+            let groupDetailsVC = self.previousVC
+            let groupsVC = self.previousVC?.prevVC
+            var index = 0
+            for ind in 0 ..< (groupsVC?.groupArray.count ?? 0) {
+                if (groupsVC?.groupArray[ind].id)! == group!.id {
+                    index = ind
+                }
+            }
+            groupsVC?.groupArray[index] = group!
+            groupsVC?.updateData()
+            groupDetailsVC?.updateData()
+            self.dismiss(animated: true)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -193,6 +232,8 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
             let destinationVC = segue.destination as! UnequalGroupExpensesTableViewController
             destinationVC.array = splitBtw
             destinationVC.amt = Double(amtTextField.text!)
+            destinationVC.group = group
+            destinationVC.prevVC = self
         }
     }
     

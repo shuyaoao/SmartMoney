@@ -61,6 +61,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //allows deletion of a group
         if editingStyle == .delete {
             count -= 1
             groupMembersTableView.deleteRows(at: [indexPath], with: .fade)
@@ -73,6 +74,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //populates tableview with groups
         let cell = groupMembersTableView.dequeueReusableCell(withIdentifier: "GroupMemberTableViewCell") as! GroupMemberTableViewCell
         cell.memberNameTextField.delegate = self
         cell.memberNameTextField.tag = indexPath.row
@@ -91,6 +93,7 @@ protocol CreateGroupViewControllerDelegate : AnyObject {
 
 extension CreateGroupViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //records the group members of a group
         textField.resignFirstResponder()
         if textField.text != "" {
             members[textField.tag] = User(textField.text!)
@@ -99,6 +102,7 @@ extension CreateGroupViewController : UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        //records the group members of a group
         textField.resignFirstResponder()
         if textField.text != "" {
             members[textField.tag] = User(textField.text!)

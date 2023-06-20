@@ -18,10 +18,6 @@ class User: Hashable {
     }
     
     var name: String
-    var paidBySelected = false
-    var splitBtwSelected = false
-    var from = false
-    var to = false
     var userExpenseBalance: UserExpenseBalance
     let id: String
     

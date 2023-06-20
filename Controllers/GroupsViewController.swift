@@ -27,6 +27,13 @@ class GroupsViewController: UITableViewController {
         //go to groupDetailsView when a specific group is selected
     }
     
+    func updateData() {
+        for group in groupArray {
+            group.updateTotalBalance()
+        }
+        self.tableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //if user presses on the group, prepare for navigation to GroupDetailsViewController
         if segue.identifier == "goToGroupDetails" {
@@ -35,6 +42,7 @@ class GroupsViewController: UITableViewController {
                 //destinationVC.navigationBar.title = groupArray[indexPath.row].groupName
                 destinationVC.group = groupArray[indexPath.row]
                 destinationVC.amount = groupArray[indexPath.row].owedAmount
+                destinationVC.prevVC = self
             }
         //else if user presses on the plus button, prepare for navigation to CreateGroupViewController
         } else if segue.identifier == "createGroup" {
@@ -53,6 +61,7 @@ extension GroupsViewController : CreateGroupViewControllerDelegate {
     func updateData(_ vc: CreateGroupViewController) {
         if let text = vc.groupNameTextField.text {
             let newGroup = Group(text)
+            newGroup.addMember(User("Shuyao")) //to replace with logged in user after database has been inplemented
             for (_, user) in vc.members {
                 newGroup.addMember(user)
             }

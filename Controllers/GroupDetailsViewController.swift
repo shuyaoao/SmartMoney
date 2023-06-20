@@ -8,6 +8,7 @@
 import UIKit
 import MonthYearPicker
 import SwiftUI
+import SwipeCellKit
 
 class GroupDetailsViewController: UIViewController {
 
@@ -20,6 +21,7 @@ class GroupDetailsViewController: UIViewController {
     @IBOutlet weak var owedAmountDescriptionLabel: UILabel!
     var group: Group?
     var amount : Double?
+    var prevVC: GroupsViewController?
     
     override func viewDidLoad() {
         //adds a scroll selector to allow users to select a specific month and year to display expenses in that selected timeframe
@@ -27,6 +29,25 @@ class GroupDetailsViewController: UIViewController {
         expensesTableView.delegate = self
         expensesTableView.dataSource = self
         groupNameLabel.text = group?.groupName
+        group?.expenseList = (group?.expenseList.sorted())!
+        dateTextField.delegate = self
+        picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: (view.bounds.height - 216) / 2), size: CGSize(width: view.bounds.width, height: 216)))
+        picker!.minimumDate = Date.distantPast
+        picker!.maximumDate = Calendar.current.date(byAdding: .year, value: 10, to: Date())
+        picker!.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
+        //view.addSubview(picker)
+        dateTextField.inputView = picker!
+        dateTextField.text = formatDate(date: Date())
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        displayBalance()
+    }
+    
+    func displayBalance() {
+        //displays user total balance
+        self.group?.updateTotalBalance()
+        self.amount = group?.owedAmount
         if let safeAmount = amount {
             if safeAmount > 0 {
                 amountLabel.text = String(format: "$%.2f", safeAmount)
@@ -43,29 +64,22 @@ class GroupDetailsViewController: UIViewController {
                 owedAmountDescriptionLabel.text = "You owe in total:"
             }
         }
-        dateTextField.delegate = self
-        picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: (view.bounds.height - 216) / 2), size: CGSize(width: view.bounds.width, height: 216)))
-        picker!.minimumDate = Date.distantPast
-        picker!.maximumDate = Calendar.current.date(byAdding: .year, value: 10, to: Date())
-        picker!.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
-        //view.addSubview(picker)
-        dateTextField.inputView = picker!
-        dateTextField.text = formatDate(date: Date())
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
     }
     
     @IBAction func payUpButtonPressed(_ sender: UIButton) {
+        //navigates to payup page
         performSegue(withIdentifier: "goToPayUp", sender: self)
     }
     
     @objc func dateChanged(_ datePicker: MonthYearPickerView) {
+        //updates the date chosen
         dateTextField.text = formatDate(date: datePicker.date)
+        expensesTableView.reloadData()
         datePicker.resignFirstResponder()
     }
 
     func formatDate(date: Date) -> String {
+        //formats the date
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM yyyy"
         return formatter.string(from: date)
@@ -73,31 +87,39 @@ class GroupDetailsViewController: UIViewController {
     
     @IBAction func addGroupExpenseButtonPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "addGroupExpense", sender: self)
+        //navigates to addgroupexpense page
     }
     
     @IBAction func balancesButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "goToBalances", sender: self)
+        //navigates to balances page
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //prepare for navigation to the various pages by setting their properties based on current view controller
         if segue.identifier == "goToBalances" {
             let destinationVC = segue.destination as! BalancesTableTableViewController
             destinationVC.group = group
         } else if segue.identifier == "addGroupExpense" {
             let destinationVC = segue.destination as! AddGroupExpenseViewController
             destinationVC.group = group
+            destinationVC.previousVC = self
         } else if segue.identifier == "goToPayUp" {
             let destinationVC = segue.destination as! PayUpViewController
             destinationVC.group = group
+            destinationVC.prevVC = self
         }
     }
     
-    @IBSegueAction func expenseScrollView(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: TransactionScrollView(transactionDataModel: transactionDataModel))
+    func updateData() {
+        //reloads the page after a payup/expense has been created
+        self.expensesTableView.reloadData()
+        self.displayBalance()
     }
 }
 
 extension GroupDetailsViewController : UITextFieldDelegate {
+    //protocol methods for textfield delegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
             return true
@@ -110,12 +132,68 @@ extension GroupDetailsViewController : UITextFieldDelegate {
 
 extension GroupDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return group?.expenseList.count ?? 0
+        //number of rows to be displayed in the table view
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM yyyy"
+        let filteredExpensesList = group?.expenseList.filter({ expense in
+            return formatter.string(from: expense.date) == dateTextField.text
+        })
+        return filteredExpensesList?.count ?? 0
+    }
+}
+
+extension GroupDetailsViewController : SwipeTableViewCellDelegate {
+    //this block of code adds a delete function to enable users to delete a group
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+
+        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
+            // handle action by updating model with deletion
+            let cell = tableView.cellForRow(at: indexPath) as! GroupExpensesTableViewCell
+            let id = cell.expense?.id
+            var index: Int?
+            for ind in 0 ..< (self.group?.expenseList.count ?? 0) {
+                if self.group?.expenseList[ind].id == id {
+                    index = ind
+                }
+            }
+            if index != nil {
+                self.group?.expenseList.remove(at: index!)
+                self.displayBalance()
+                var int = 0
+                for ind in 0 ..< (self.prevVC?.groupArray.count ?? 0) {
+                    if (self.prevVC?.groupArray[ind].id)! == self.group!.id {
+                        int = ind
+                    }
+                }
+                self.prevVC?.groupArray[int] = self.group!
+                self.prevVC?.updateData()
+            }
+        }
+        // customize the action appearance
+        deleteAction.image = UIImage(named: "trash.fill")
+
+        return [deleteAction]
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        //allows for groups to be deleted
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //filters the expenses based on date and populates the table view
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupExpensesCell", for: indexPath) as! GroupExpensesTableViewCell
-        cell.configure((group?.expenseList[indexPath.row])!)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM yyyy"
+        let filteredExpensesList = group?.expenseList.filter({ expense in
+            return formatter.string(from: expense.date) == dateTextField.text
+        })
+        cell.configure((filteredExpensesList?[indexPath.row])!)
+        cell.delegate = self
         return cell
     }
 }

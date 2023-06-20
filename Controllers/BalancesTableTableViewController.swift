@@ -56,6 +56,7 @@ class BalancesTableTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        //sets the headers of each section to group members' names
         let label = UILabel()
         if !finalArray[section].isEmpty {
             label.text = finalArray[section][0].payer.name
