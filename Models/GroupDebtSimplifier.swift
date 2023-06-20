@@ -42,34 +42,38 @@ class GroupDebtSimplifier {
     }
     
     func simplify(_ transactions: [GroupExpense]) -> [Payment] {
-        
-        let netBalance = getBalances(transactions)
-        var positives = [NetBalance]()
-        var negatives = [NetBalance]()
-        
-        for (user, credit) in netBalance {
-            if credit > 0 {
-                pushHeap(&positives, credit, user)
-            } else {
-                pushHeap(&negatives, -credit, user)
+        if transactions.isEmpty {
+            return []
+        } else {
+            let netBalance = getBalances(transactions)
+            var positives = [NetBalance]()
+            var negatives = [NetBalance]()
+            
+            for (user, credit) in netBalance {
+                if credit > 0 {
+                    pushHeap(&positives, credit, user)
+                } else {
+                    pushHeap(&negatives, -credit, user)
+                }
             }
+            
+            var result = [Payment]()
+            while positives.count > 0 {
+                var p1 = heapTop(positives)!
+                var p2 = heapTop(negatives)!
+                popHeap(&positives)
+                popHeap(&negatives)
+                let payment = Payment(p2.user, p1.user, min(p1.balance, p2.balance))
+                result.append(payment)
+                if p1.balance > p2.balance {
+                    pushHeap(&positives, p1.balance - p2.balance, p1.user)
+                } else if p1.balance < p2.balance {
+                    pushHeap(&negatives, p2.balance - p1.balance, p2.user)
+                }
+            }
+            return result
         }
         
-        var result = [Payment]()
-        while positives.count > 0 {
-            var p1 = heapTop(positives)!
-            var p2 = heapTop(negatives)!
-            popHeap(&positives)
-            popHeap(&negatives)
-            let payment = Payment(p2.user, p1.user, min(p1.balance, p2.balance))
-            result.append(payment)
-            if p1.balance > p2.balance {
-                pushHeap(&positives, p1.balance - p2.balance, p1.user)
-            } else if p1.balance < p2.balance {
-                pushHeap(&negatives, p2.balance - p1.balance, p2.user)
-            }
-        }
-        return result
     }
     
     func upheapify(_ heap: inout [NetBalance], _ index: Int) {

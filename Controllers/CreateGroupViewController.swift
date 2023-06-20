@@ -21,6 +21,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         //registering the custom table cell
         let nib = UINib(nibName: GroupMemberTableViewCell.id, bundle: nil)
+        groupNameTextField.tag = 0
         groupMembersTableView.register(nib, forCellReuseIdentifier: GroupMemberTableViewCell.id)
         groupMembersTableView.dataSource = self
         groupMembersTableView.delegate = self
@@ -95,7 +96,7 @@ extension CreateGroupViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //records the group members of a group
         textField.resignFirstResponder()
-        if textField.text != "" {
+        if textField.text != "" && textField != groupNameTextField {
             members[textField.tag] = User(textField.text!)
         }
         return true
@@ -104,8 +105,10 @@ extension CreateGroupViewController : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         //records the group members of a group
         textField.resignFirstResponder()
-        if textField.text != "" {
+        if textField.text != "" && textField != groupNameTextField {
             members[textField.tag] = User(textField.text!)
+            print(textField.tag)
+            print(textField.text!)
         }
     }
 }
