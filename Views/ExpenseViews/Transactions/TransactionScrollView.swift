@@ -14,7 +14,7 @@ struct TransactionScrollView: View {
         ScrollView {
             VStack(spacing: 20) {
                 // For each transaction in the transaction data model
-                ForEach(transactionDataModel.transactionDataList) { trans in
+                ForEach(transactionDataModel.transactionDataList.reversed()) { trans in
                     TransactionRow(transaction: trans)
                 }
             }

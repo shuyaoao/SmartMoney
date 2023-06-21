@@ -12,6 +12,12 @@ import Combine
 class TransactionDataModel: ObservableObject {
     var totalExpenses : Double
     var totalIncome : Double
+    
+    // Referencing to dateModel's pickedYear and pickedMonth
+    // for filtering of transaction data
+    var pickedYear = dateModel.pickedYear
+    var pickedMonth = dateModel.pickedMonth
+    
     @Published var transactionDataList: [Transaction] {
         willSet {
             objectWillChange.send()
@@ -24,8 +30,8 @@ class TransactionDataModel: ObservableObject {
         self.totalIncome = 0.00
     }
     
-    func updateTransactionDataList(with newData: [Transaction]) {
-        transactionDataList = newData
+    func updateTransactionDataList(newTransaction : Transaction) {
+        transactionDataList = transactionDataList + [newTransaction]
     }
     
     func updateTotalExpenses() {
@@ -62,3 +68,20 @@ var transactionPreviewDataList = [
 var transactionDataModel = TransactionDataModel(transactionDataList : transactionPreviewDataList)
 
 
+
+
+
+// Extract Year and Month from Date Strings like 03 Jun 2023
+func extractYearAndMonth(from dateString: String) -> (year: Int, month: Int)? {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd MMM yyyy"
+    
+    if let date = dateFormatter.date(from: dateString) {
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        return (year, month)
+    } else {
+        return nil
+    }
+}

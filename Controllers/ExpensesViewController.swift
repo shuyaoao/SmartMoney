@@ -21,9 +21,11 @@ class ExpensesViewController: UIViewController {
         
         totalSpentLabel.text = "$\(transactionDataModel.totalExpenses)"
         totalIncomeLabel.text = "$\(transactionDataModel.totalIncome)"
-        // Automatically set the Date selected to Today's Month and Year
-        yearMonthButton2.setTitle(formatDate(date: Date()), for: .normal)
-        // Initialise confirmation button for datepicker (remained hidden)
+
+        self.yearMonthButton2.setTitle(formatDate(date: Date()), for: .normal)
+        
+        
+        // Initialise of Datepicker (remained hidden)
         confirmButton = initConfirmButton()
         picker = initYearMonthPicker()
     }
@@ -36,14 +38,14 @@ class ExpensesViewController: UIViewController {
         
     }
     
-    
     // Functionality when Date is Changed
     @objc func dateChanged(_ picker: MonthYearPickerView) {
         let calendarDate = formatDate(date: picker.date)
         yearMonthButton2.setTitle("\(calendarDate)", for: .normal)
+        let (pickedYear, pickedMonth) = extractYearAndMonth(from: picker.date)
         
-        // Implement Functionality to Store Year and Month data from date
-        
+        // Update dateModel
+        dateModel.changeYearandMonth(year: pickedYear, month: pickedMonth)
     }
     
     // Date Formatter to Display Month and Year
@@ -57,7 +59,7 @@ class ExpensesViewController: UIViewController {
     func initYearMonthPicker() -> MonthYearPickerView {
         picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 500), size: CGSize(width: view.bounds.width, height: 216)))
         picker!.backgroundColor = .white
-        picker!.minimumDate = Date()
+        picker!.minimumDate = Calendar.current.date(byAdding: .year, value: -10, to: Date())
         picker!.maximumDate = Calendar.current.date(byAdding: .year, value: 10, to: Date())
         picker!.addTarget(self, action: #selector(dateChanged(_:)), for: .valueChanged)
         
@@ -66,7 +68,6 @@ class ExpensesViewController: UIViewController {
         
         // Hide Picker Button
         picker!.isHidden = true
-        
         return picker!
     }
     
@@ -130,4 +131,13 @@ class CustomSegue: UIStoryboardSegue {
         // Perform the segue
         sourceViewController.present(destinationViewController, animated: true, completion: nil)
     }
+}
+
+
+func extractYearAndMonth(from date: Date) -> (year: Int, month: Int) {
+    let calendar = Calendar.current
+    let year = calendar.component(.year, from: date)
+    let month = calendar.component(.month, from: date)
+    
+    return (year, month)
 }
