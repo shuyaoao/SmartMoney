@@ -14,6 +14,7 @@ class DateModel: ObservableObject {
             objectWillChange.send()
         }
     }
+    
     @Published var pickedMonth : Int {
         willSet {
             objectWillChange.send()

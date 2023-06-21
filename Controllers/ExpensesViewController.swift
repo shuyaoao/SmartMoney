@@ -15,10 +15,12 @@ class ExpensesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Updating Transaction DataModel
+        // Updating all of TransactionDataSource components.
         transactionDataModel.updateTotalIncome()
         transactionDataModel.updateTotalExpenses()
+        transactionDataModel.updateFilteredList()
         
+        // Setting Labels
         totalSpentLabel.text = "$\(transactionDataModel.totalExpenses)"
         totalIncomeLabel.text = "$\(transactionDataModel.totalIncome)"
 
@@ -46,6 +48,10 @@ class ExpensesViewController: UIViewController {
         
         // Update dateModel
         dateModel.changeYearandMonth(year: pickedYear, month: pickedMonth)
+        print(dateModel.pickedYear)
+        print(dateModel.pickedMonth)
+        
+        transactionDataModel.updateFilteredList()
     }
     
     // Date Formatter to Display Month and Year
@@ -101,7 +107,7 @@ class ExpensesViewController: UIViewController {
     
     
     @IBSegueAction func TransactionsScrollView(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: TransactionScrollView(transactionDataModel: transactionDataModel))
+        return UIHostingController(coder: coder, rootView: TransactionScrollView(transactionDataModel: transactionDataModel, pickedYear: dateModel.pickedYear, pickedMonth: dateModel.pickedMonth))
     }
     
     // Circular Budget Progress View

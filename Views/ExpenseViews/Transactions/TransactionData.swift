@@ -13,16 +13,15 @@ class TransactionDataModel: ObservableObject {
     var totalExpenses : Double
     var totalIncome : Double
     
-    // Referencing to dateModel's pickedYear and pickedMonth
-    // for filtering of transaction data
-    var pickedYear = dateModel.pickedYear
-    var pickedMonth = dateModel.pickedMonth
     
     @Published var transactionDataList: [Transaction] {
-        willSet {
+        didSet {
+            updateFilteredList()
             objectWillChange.send()
         }
     }
+    
+    @Published var filteredTransactionDataList: [Transaction] = []
     
     init(transactionDataList : [Transaction]) {
         self.transactionDataList = transactionDataList
@@ -54,6 +53,35 @@ class TransactionDataModel: ObservableObject {
             (partialresult, element) in
             return partialresult + element
         })
+    }
+    
+    // Call this function to update Filtered Transaction List
+    // This will refer to the main dateModel's picked Year and Month
+    // and filter accordingly
+    func updateFilteredList() {
+        filteredTransactionDataList = filterTransactionsByYearAndMonth(year: dateModel.pickedYear, month: dateModel.pickedMonth)
+    }
+    
+    // Function to filter transactions by year and month
+    func filterTransactionsByYearAndMonth(year: Int, month: Int) -> [Transaction] {
+        let calendar = Calendar.current
+        
+        let filteredTransactions = self.transactionDataList.filter { transaction in
+            // Convert the date string to a Date object
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            if let transactionDate = dateFormatter.date(from: transaction.date) {
+                // Get the year and month components of the transaction date
+                let components = calendar.dateComponents([.year, .month], from: transactionDate)
+                
+                // Compare the year and month components with the provided values
+                return components.year == year && components.month == month
+            }
+            
+            return false
+        }
+        
+        return filteredTransactions
     }
 }
 
