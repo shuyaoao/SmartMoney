@@ -10,6 +10,8 @@ import SwiftUI
 import Combine
 
 class TransactionDataModel: ObservableObject {
+    var totalExpenses : Double
+    var totalIncome : Double
     @Published var transactionDataList: [Transaction] {
         willSet {
             objectWillChange.send()
@@ -18,10 +20,34 @@ class TransactionDataModel: ObservableObject {
     
     init(transactionDataList : [Transaction]) {
         self.transactionDataList = transactionDataList
+        self.totalExpenses = 0.00
+        self.totalIncome = 0.00
     }
     
     func updateTransactionDataList(with newData: [Transaction]) {
         transactionDataList = newData
+    }
+    
+    func updateTotalExpenses() {
+        let expenseList = transactionDataList.filter {
+            $0.isExpense == true}
+            .map {$0.amount}
+        
+        totalExpenses = expenseList.reduce(0.0, {
+            (partialresult, element) in
+            return partialresult + element
+        })
+    }
+    
+    func updateTotalIncome() {
+        let incomeList = transactionDataList.filter {
+            $0.isExpense == false}
+            .map {$0.amount}
+        
+        totalIncome = incomeList.reduce(0.0, {
+            (partialresult, element) in
+            return partialresult + element
+        })
     }
 }
 

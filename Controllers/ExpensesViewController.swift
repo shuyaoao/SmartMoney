@@ -3,16 +3,24 @@ import SwiftUI
 import MonthYearPicker
 
 class ExpensesViewController: UIViewController {
-    
     // PickerView
     var picker : MonthYearPickerView?
     
     // Buttons
     @IBOutlet var confirmButton: UIButton!
     @IBOutlet weak var yearMonthButton2: UIButton!
-
+    @IBOutlet weak var totalSpentLabel: UILabel!
+    @IBOutlet weak var totalIncomeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Updating Transaction DataModel
+        transactionDataModel.updateTotalIncome()
+        transactionDataModel.updateTotalExpenses()
+        
+        totalSpentLabel.text = "$\(transactionDataModel.totalExpenses)"
+        totalIncomeLabel.text = "$\(transactionDataModel.totalIncome)"
         // Automatically set the Date selected to Today's Month and Year
         yearMonthButton2.setTitle(formatDate(date: Date()), for: .normal)
         // Initialise confirmation button for datepicker (remained hidden)
@@ -100,5 +108,26 @@ class ExpensesViewController: UIViewController {
         return UIHostingController(coder: coder, rootView: CircularProgressView(progress: 0.7).frame(width: 45, height: 45))
     }
     
+    func refresh() {
+        // Perform the refresh logic here...
+        totalSpentLabel.text = "$\(transactionDataModel.totalExpenses)"
+        totalIncomeLabel.text = "$\(transactionDataModel.totalIncome)"
+    }
 }
 
+
+class CustomSegue: UIStoryboardSegue {
+    override func perform() {
+        // Get the source and destination view controllers
+        guard let sourceViewController = source as? ExpensesViewController,
+              let destinationViewController = destination as? CreateNewExpenseViewController else {
+            return
+        }
+        
+        // Set the reference to the main view controller in the destination view controller
+        destinationViewController.mainViewController = sourceViewController
+        
+        // Perform the segue
+        sourceViewController.present(destinationViewController, animated: true, completion: nil)
+    }
+}

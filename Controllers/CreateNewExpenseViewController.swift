@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 
 class CreateNewExpenseViewController: UIViewController {
+    weak var mainViewController: ExpensesViewController?
     static private var enteredNumber: String = ""
     
     // Transaction
@@ -90,6 +91,9 @@ class CreateNewExpenseViewController: UIViewController {
             numPad.reset()
             
             // Close popup
+            transactionDataModel.updateTotalIncome()
+            transactionDataModel.updateTotalExpenses()
+            mainViewController?.refresh()
             dismiss(animated: true)
             
         } else {

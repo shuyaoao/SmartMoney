@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ilf-aM-yGN">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -480,7 +480,7 @@
                                             <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <segue destination="6VB-hS-rOD" kind="popoverPresentation" popoverAnchorView="lJu-v3-v6Y" id="kCA-DG-VRs">
+                                            <segue destination="6VB-hS-rOD" kind="popoverPresentation" customClass="CustomSegue" customModule="SmartMoney" customModuleProvider="target" popoverAnchorView="lJu-v3-v6Y" id="kCA-DG-VRs">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -495,6 +495,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Expenses" image="dollarsign.circle.fill" catalog="system" id="rSd-MN-iZc"/>
                     <connections>
+                        <outlet property="totalIncomeLabel" destination="95O-sW-fCa" id="s7n-Xm-djz"/>
+                        <outlet property="totalSpentLabel" destination="r65-up-iql" id="MIn-6C-Wri"/>
                         <outlet property="yearMonthButton2" destination="I5g-g6-2TR" id="fUy-8B-z3H"/>
                     </connections>
                 </viewController>
