@@ -10,13 +10,19 @@ import UIKit
 import SwiftUI
 
 // MARK: Default Category Struct
-struct Category: Identifiable {
+class Category: Identifiable, ObservableObject {
     let id: Int
     let category: String
     let icon : Image
-    var selected = false
-    var selectedColor = Color.init("Medium Blue")
+    @Published var selected = false
+    @Published var selectedColor = Color.init("Medium Blue") {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+    
     let imageName: String
+    
     // Default Category
     init(id: Int, category: String, icon: Image, imageName: String) {
         self.id = id
@@ -48,11 +54,18 @@ struct Category: Identifiable {
 }
 
 // MARK: Class to Handle A Vertical Stack of Categories (3 in one Stack)
-struct CategoryStack: Identifiable {
+class CategoryStack: Identifiable, ObservableObject {
     let id : Int
-    var first : Category
-    var second: Category
-    var third : Category
+    @Published var first : Category
+    @Published var second: Category
+    @Published var third : Category
+    
+    init(id: Int, first: Category, second: Category, third: Category) {
+        self.id = id
+        self.first = first
+        self.second = second
+        self.third = third
+    }
 }
 
 // MARK: Main Category Data Model

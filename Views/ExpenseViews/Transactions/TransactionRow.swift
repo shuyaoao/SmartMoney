@@ -51,13 +51,13 @@ struct TransactionRow: View {
                 Text(String(format: "+$%.2f", transaction.amount))
                     .foregroundColor(.green)
             }
-            
+
         }
         .padding([.all], 14)
         .background(
             RoundedRectangle(cornerRadius: 15)
                 .fill(
-                    Color(red: 172/255, green: 210/255, blue: 243/255)))
+                    Color(red: 175/255, green: 211/255, blue: 226/255)))
     }
 }
 

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct categoryDataCellView: View {
-    @State var category : Category
+    @ObservedObject var category : Category
     
     var body: some View {
         // Category Button Actions
