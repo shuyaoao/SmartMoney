@@ -13,7 +13,6 @@ class BalancesTableTableViewController: UITableViewController {
     var membersArray = [User]()
     var balances = [User: [Payment]]()
     var finalArray = [[Payment]]()
-    //var number = [1,2,3,4,5,6]//update with the number of debts owed/being owed
     
     override func viewDidLoad() {
         super.viewDidLoad()

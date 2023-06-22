@@ -63,6 +63,8 @@
 		C0931A392A33812F001E19B9 /* UnequalGroupExpensesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0931A382A33812F001E19B9 /* UnequalGroupExpensesTableViewController.swift */; };
 		C0931A402A338230001E19B9 /* UnequalExpensesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0931A3E2A338230001E19B9 /* UnequalExpensesTableViewCell.swift */; };
 		C0931A412A338230001E19B9 /* UnequalExpensesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0931A3F2A338230001E19B9 /* UnequalExpensesTableViewCell.xib */; };
+		C097C9DD2A440211009D3D55 /* GroupExpenseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C097C9DC2A440211009D3D55 /* GroupExpenseDetailsViewController.swift */; };
+		C097C9DF2A4408FB009D3D55 /* ExpenseDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C097C9DE2A4408FB009D3D55 /* ExpenseDetailsTableViewCell.swift */; };
 		C0CD63562A3700E40056EFE0 /* PayUpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD63542A3700E40056EFE0 /* PayUpTableViewCell.swift */; };
 		C0CD635A2A3701F70056EFE0 /* PayUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD63592A3701F70056EFE0 /* PayUpViewController.swift */; };
 		C0CD635E2A3721FB0056EFE0 /* BalancesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CD635D2A3721FB0056EFE0 /* BalancesTableTableViewController.swift */; };
@@ -167,6 +169,8 @@
 		C0931A382A33812F001E19B9 /* UnequalGroupExpensesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnequalGroupExpensesTableViewController.swift; sourceTree = "<group>"; };
 		C0931A3E2A338230001E19B9 /* UnequalExpensesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnequalExpensesTableViewCell.swift; sourceTree = "<group>"; };
 		C0931A3F2A338230001E19B9 /* UnequalExpensesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UnequalExpensesTableViewCell.xib; sourceTree = "<group>"; };
+		C097C9DC2A440211009D3D55 /* GroupExpenseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupExpenseDetailsViewController.swift; sourceTree = "<group>"; };
+		C097C9DE2A4408FB009D3D55 /* ExpenseDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		C0CD63542A3700E40056EFE0 /* PayUpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayUpTableViewCell.swift; sourceTree = "<group>"; };
 		C0CD63592A3701F70056EFE0 /* PayUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayUpViewController.swift; sourceTree = "<group>"; };
 		C0CD635D2A3721FB0056EFE0 /* BalancesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalancesTableTableViewController.swift; sourceTree = "<group>"; };
@@ -401,6 +405,7 @@
 				C0931A382A33812F001E19B9 /* UnequalGroupExpensesTableViewController.swift */,
 				C0CD63592A3701F70056EFE0 /* PayUpViewController.swift */,
 				C0CD635D2A3721FB0056EFE0 /* BalancesTableTableViewController.swift */,
+				C097C9DC2A440211009D3D55 /* GroupExpenseDetailsViewController.swift */,
 				69C8CE082A37420F004A0382 /* CreateNewExpenseViewController.swift */,
 				C0D6B0BC2A3EF24A0072AE22 /* LoginViewController.swift */,
 				C0E856482A3F4143003D51EF /* RegisterViewController.swift */,
@@ -437,6 +442,7 @@
 				C0931A3A2A3381E0001E19B9 /* GroupMemberCollectionViewCell */,
 				C0CD63582A3700EE0056EFE0 /* PayUpTableViewCell */,
 				C0D6B0BA2A3EEA4C0072AE22 /* GroupExpensesTableViewCell.swift */,
+				C097C9DE2A4408FB009D3D55 /* ExpenseDetailsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -778,6 +784,7 @@
 				C043C2E12A1738E100A1F14D /* GroupsViewController.swift in Sources */,
 				C043C29F2A172C4600A1F14D /* AppDelegate.swift in Sources */,
 				C06953692A40973E00921FA5 /* SelectedUser.swift in Sources */,
+				C097C9DD2A440211009D3D55 /* GroupExpenseDetailsViewController.swift in Sources */,
 				C021FCB92A3CA1A900091549 /* UserController.swift in Sources */,
 				69C8CDFF2A3332AC004A0382 /* TransactionScrollView.swift in Sources */,
 				C043C2EB2A17C4FA00A1F14D /* MonthYear.swift in Sources */,
@@ -790,6 +797,7 @@
 				C0CD63562A3700E40056EFE0 /* PayUpTableViewCell.swift in Sources */,
 				69C8CDFB2A332DDE004A0382 /* TransactionRow.swift in Sources */,
 				C0D6B0BB2A3EEA4C0072AE22 /* GroupExpensesTableViewCell.swift in Sources */,
+				C097C9DF2A4408FB009D3D55 /* ExpenseDetailsTableViewCell.swift in Sources */,
 				C0CD635A2A3701F70056EFE0 /* PayUpViewController.swift in Sources */,
 				C021FCBD2A3CA79D00091549 /* Balance.swift in Sources */,
 				C021FCAF2A3C999500091549 /* EqualExpense.swift in Sources */,

@@ -22,6 +22,7 @@ class GroupDetailsViewController: UIViewController {
     var group: Group?
     var amount : Double?
     var prevVC: GroupsViewController?
+    var selectedExpense: GroupExpense?
     
     override func viewDidLoad() {
         //adds a scroll selector to allow users to select a specific month and year to display expenses in that selected timeframe
@@ -107,6 +108,10 @@ class GroupDetailsViewController: UIViewController {
         } else if segue.identifier == "goToPayUp" {
             let destinationVC = segue.destination as! PayUpViewController
             destinationVC.group = group
+            destinationVC.prevVC = self
+        } else if segue.identifier == "goToExpenseDetails" && selectedExpense != nil {
+            let destinationVC = segue.destination as! GroupExpenseDetailsViewController
+            destinationVC.expense = selectedExpense!
             destinationVC.prevVC = self
         }
     }
@@ -195,5 +200,13 @@ extension GroupDetailsViewController : SwipeTableViewCellDelegate {
         cell.configure((filteredExpensesList?[indexPath.row])!)
         cell.delegate = self
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! GroupExpensesTableViewCell
+        selectedExpense = cell.expense
+        if selectedExpense != nil {
+            performSegue(withIdentifier: "goToExpenseDetails", sender: self)
+        }
     }
 }
