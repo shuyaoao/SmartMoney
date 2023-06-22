@@ -57,8 +57,7 @@ struct TransactionRow: View {
         .background(
             RoundedRectangle(cornerRadius: 15)
                 .fill(
-                    Color(red: 172/255, green: 210/255, blue: 243/255))
-            )
+                    Color(red: 172/255, green: 210/255, blue: 243/255)))
     }
 }
 
