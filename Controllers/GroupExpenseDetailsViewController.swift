@@ -19,7 +19,7 @@ class GroupExpenseDetailsViewController: UIViewController, UITableViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        categoryImage.image = UIImage(systemName: "fork.knife.circle.fill")
+        categoryImage.image = UIImage(systemName: (expense?.category.imageName)!)!
         //to update when category selector is fixed
         descriptionLabel.text = expense?.description
         descriptionLabel.textColor = UIColor(named: "Dark Blue")

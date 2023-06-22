@@ -16,6 +16,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var editButton: UIButton!
     var count = 2
     var members = [Int:User]()
+    var alertController: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,44 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     //dismiss this screen and show the GroupsViewController with the new group
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         //functionality to create a new group and update database
-        delegate?.updateData(self)
-        self.dismiss(animated: true)
+        if groupNameTextField.text == "" || members.count <= 0 {
+            showAlert()
+        } else {
+            delegate?.updateData(self)
+            self.dismiss(animated: true)
+        }
+    }
+    
+    //show alerts
+    func showAlert() {
+        if groupNameTextField.text == "" {
+            alertController = UIAlertController(title: "You have not entered a group name!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            // Present the alert controller
+            present(alertController!, animated: true, completion: nil)
+        } else if members.isEmpty {
+            alertController = UIAlertController(title: "You must enter at least one group member!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            // Present the alert controller
+            present(alertController!, animated: true, completion: nil)
+        }
+    }
+    
+    func dismissAlert() {
+        alertController?.dismiss(animated: true, completion: nil)
+        alertController = nil
     }
     
     @IBAction func addButtonPressed(_ sender: UIButton) {

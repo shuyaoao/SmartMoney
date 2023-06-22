@@ -61,7 +61,7 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
         for (_, amt) in amounts {
             count += amt
         }
-        if count != amt! {
+        if Double(round((count - amt!) * 100) / 100.0) > 0 {
             showAlert()
         } else {
             for (selectedUser, amount) in splitsDict {
@@ -78,7 +78,6 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         //shows user how much is remaining of the total debt
-        print("did end editing")
         var remainingAmt = amt!
         var safeAmt: Double
         if textField.text == nil {
@@ -87,12 +86,11 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
             safeAmt = Double(textField.text!) ?? 0
         }
         amounts[textField.tag] = safeAmt
-        print(amounts[textField.tag])
         var count = 0.0
         for (_, amt) in amounts {
             count += amt
         }
-        if count > amt! {
+        if Double(round((count - amt!) * 100) / 100.0) > 0 {
             showAlert()
         } else {
             if safeAmt >= 0 {
@@ -100,7 +98,11 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
                 for (_, amt) in amounts {
                     remainingAmt -= amt
                 }
-                remainingAmtLabel.text = String(format: "$%.2f remaining of $%.2f", remainingAmt, amt!)
+                if remainingAmt <= 0 {
+                    remainingAmtLabel.text = String(format: "$0.00 remaining of $%.2f", amt!)
+                } else {
+                    remainingAmtLabel.text = String(format: "$%.2f remaining of $%.2f", remainingAmt, amt!)
+                }
             }
         }
     }

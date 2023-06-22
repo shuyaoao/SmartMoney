@@ -58,7 +58,7 @@ class GroupDebtSimplifier {
             }
             
             var result = [Payment]()
-            while positives.count > 0 {
+            while positives.count > 0 && negatives.count > 0 {
                 var p1 = heapTop(positives)!
                 var p2 = heapTop(negatives)!
                 popHeap(&positives)

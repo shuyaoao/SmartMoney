@@ -83,20 +83,20 @@ var catDataSource = CategoryDataModel(listofCategories: [foodCategory, transport
 
 
 // MARK: Categories
-var foodCategory = Category(id: 0, category: "Food", icon: Image("food"), imageName: "food")
-var transportCategory = Category(id: 1, category: "Transport", icon: Image("transport"), imageName: "transport")
-var groceriesCategory = Category(id: 2, category: "Groceries", icon: Image("groceries"), imageName: "groceries")
-var entertainmentCategory = Category(id: 3, category: "Entertainment", icon: Image("entertainment"), imageName: "entertainment")
-var utilitiesCategory = Category(id: 4, category: "Utilities", icon: Image("utilities"), imageName: "utilities")
+var foodCategory = Category(id: 0, category: "Food", icon: Image("food"), imageName: "takeoutbag.and.cup.and.straw.fill")
+var transportCategory = Category(id: 1, category: "Transport", icon: Image("transport"), imageName: "train.side.rear.car")
+var groceriesCategory = Category(id: 2, category: "Groceries", icon: Image("groceries"), imageName: "bag.circle")
+var entertainmentCategory = Category(id: 3, category: "Entertainment", icon: Image("entertainment"), imageName: "popcorn.circle")
+var utilitiesCategory = Category(id: 4, category: "Utilities", icon: Image("utilities"), imageName: "house.circle")
 var clothingCategory = Category(id: 5, category: "Clothing", icon: Image("tshirt.fill"), imageName: "tshirt.fill")
-var healthCategory = Category(id: 6, category: "Health", icon: Image("health"), imageName: "health")
-var workCategory = Category(id: 7, category: "Work", icon: Image("work"), imageName: "work")
-var taxCategory = Category(id: 8, category: "Tax", icon: Image("tax"), imageName: "tax")
-var insuranceCategory = Category(id: 9, category: "Insurance", icon: Image("insurance"), imageName: "insurance")
-var educationCategory = Category(id: 10, category: "Education", icon: Image("education"), imageName: "education")
+var healthCategory = Category(id: 6, category: "Health", icon: Image("health"), imageName: "heart.circle")
+var workCategory = Category(id: 7, category: "Work", icon: Image("work"), imageName: "dollarsign.circle.fill")
+var taxCategory = Category(id: 8, category: "Tax", icon: Image("tax"), imageName: "dollarsign.square.fill")
+var insuranceCategory = Category(id: 9, category: "Insurance", icon: Image("insurance"), imageName: "cloud.rain.fill")
+var educationCategory = Category(id: 10, category: "Education", icon: Image("education"), imageName: "book.circle")
 
 // Filler Category
-var othersCategory = Category(id: 11, category: "Others", icon: Image("questionmark"), imageName: "questionmark")
+var othersCategory = Category(id: 11, category: "Others", icon: Image("questionmark"), imageName: "questionmark.folder")
 
 
 

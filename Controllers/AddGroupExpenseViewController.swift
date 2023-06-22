@@ -201,9 +201,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
         }
         
         //shows alert pop up when necessary
-        showAlert()
-        
-        if descriptionLabel.text != "" && amtTextField.text != "" && paidBy != nil && !splitBtw.isEmpty && category != nil {
+        if descriptionLabel.text != "" && Double(amtTextField.text!) != nil && Double(amtTextField.text!)! > 0 && paidBy != nil && !splitBtw.isEmpty && category != nil {
             var splitID: String
             if splitEqually {
                 splitID = "Equally"
@@ -237,9 +235,11 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
             groupsVC?.groupArray[index] = group!
             groupsVC?.updateData()
             groupDetailsVC?.updateData()
+            catDataSource.listofCategories[index] = catDataSource.listofCategories[index].buttonunSelected()
             self.dismiss(animated: true)
+        } else {
+            showAlert()
         }
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -250,11 +250,16 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
             destinationVC.amt = Double(amtTextField.text!)
             destinationVC.group = group
             destinationVC.prevVC = self
+        } else {
+            showAlert()
         }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         //triggeres segue when textField has stopped editing
+        if Double(amtTextField.text!) == nil || Double(amtTextField.text!)! <= 0 {
+            showAlert("textField")
+        }
         if !splitEqually && textField.text != "" && !splitBtw.isEmpty {
             self.resignFirstResponder()
             performSegue(withIdentifier: "goToUnequalGroupExpensesPage", sender: self)
@@ -320,9 +325,84 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
             
             alertController?.addAction(okAction)
             present(alertController!, animated: true, completion: nil)
+        } else if Double(amtTextField.text!) == nil {
+            alertController = UIAlertController(title: "You have keyed in an invalid amount!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            present(alertController!, animated: true, completion: nil)
+        } else if Double(amtTextField.text!)! <= 0 {
+            alertController = UIAlertController(title: "You have keyed in an invalid amount!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            present(alertController!, animated: true, completion: nil)
         }
     }
     
+    func showAlert(_ alertName: String) {
+        if alertName == "description" {
+            alertController = UIAlertController(title: "You have not entered a description!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            // Present the alert controller
+            present(alertController!, animated: true, completion: nil)
+        } else if alertName == "Category" {
+            alertController = UIAlertController(title: "You have not chosen a category!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            // Present the alert controller
+            present(alertController!, animated: true, completion: nil)
+        } else if alertName == "payer" {
+            alertController = UIAlertController(title: "You have not chosen a payer!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            present(alertController!, animated: true, completion: nil)
+        } else if alertName == "payee" {
+            alertController = UIAlertController(title: "You have not chosen who to split between!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            present(alertController!, animated: true, completion: nil)
+        } else if alertName == "textField" {
+            alertController = UIAlertController(title: "You have keyed in an invalid amount!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            present(alertController!, animated: true, completion: nil)
+        }
+    }
     func dismissAlert() {
         alertController?.dismiss(animated: true, completion: nil)
         alertController = nil
