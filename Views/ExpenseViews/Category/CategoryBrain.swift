@@ -66,7 +66,7 @@ class CategoryDataModel : ObservableObject {
 
 
 // MARK: Category Data Source
-var catDataSource = CategoryDataModel(listofCategories: [foodCategory, transportCategory, groceriesCategory, entertainmentCategory, utilitiesCategory, clothingCategory, healthCategory, workCategory, taxCategory, insuranceCategory, educationCategory])
+var catDataSource = CategoryDataModel(listofCategories: [foodCategory, transportCategory, groceriesCategory, entertainmentCategory, utilitiesCategory, clothingCategory, healthCategory, workCategory, taxCategory, insuranceCategory, educationCategory, othersCategory])
 
 
 // MARK: Categories
@@ -83,7 +83,7 @@ var insuranceCategory = Category(id: 9, category: "Insurance", icon: Image("insu
 var educationCategory = Category(id: 10, category: "Education", icon: Image("education"), imageName: "education")
 
 // Filler Category
-var unfilledCategory = Category(id: 11, category: "", icon: Image("questionmark"), imageName: "questionmark")
+var othersCategory = Category(id: 11, category: "Others", icon: Image("questionmark"), imageName: "questionmark")
 
 
 

@@ -89,35 +89,35 @@ class Hexagon : Group {
         splits3.append(Split(user: self.simplifier.userController.getUser("Shuyao")!, amount: 200))
         splits3.append(Split(user: self.simplifier.userController.getUser("Dylan")!, amount: 200))
         splits3.append(Split(user: self.simplifier.userController.getUser("Bernice")!, amount: 200))
-        self.createExpense(self.simplifier.userController.getUser("Dylan")!, 600, Date(), splits3, "Something",  SplitType(id: "Equally"), unfilledCategory)
+        self.createExpense(self.simplifier.userController.getUser("Dylan")!, 600, Date(), splits3, "Something",  SplitType(id: "Equally"), othersCategory)
         
         var splits4 = [Split]()
         splits4.append(Split(user: self.simplifier.userController.getUser("Shuyao")!, amount: 100))
         splits4.append(Split(user: self.simplifier.userController.getUser("Dylan")!, amount: 150))
         splits4.append(Split(user: self.simplifier.userController.getUser("Bernice")!, amount: 0))
-        self.createExpense(self.simplifier.userController.getUser("Bernice")!, 250, Date(), splits4, "Something else",  SplitType(id: "UnEqually"), unfilledCategory)
+        self.createExpense(self.simplifier.userController.getUser("Bernice")!, 250, Date(), splits4, "Something else",  SplitType(id: "UnEqually"), othersCategory)
         
         var splits5 = [Split]()
         splits5.append(Split(user: self.simplifier.userController.getUser("Shuyao")!, amount: 45))
         splits5.append(Split(user: self.simplifier.userController.getUser("Dylan")!, amount: 35))
         splits5.append(Split(user: self.simplifier.userController.getUser("Bernice")!, amount: 30))
-        self.createExpense(self.simplifier.userController.getUser("Bernice")!, 110, Date(), splits5, "Something else 2",  SplitType(id: "UnEqually"), unfilledCategory)
+        self.createExpense(self.simplifier.userController.getUser("Bernice")!, 110, Date(), splits5, "Something else 2",  SplitType(id: "UnEqually"), othersCategory)
         
         var splits6 = [Split]()
         splits6.append(Split(user: self.simplifier.userController.getUser("Shuyao")!, amount: 3.55))
         splits6.append(Split(user: self.simplifier.userController.getUser("Dylan")!, amount: 2.63))
         splits6.append(Split(user: self.simplifier.userController.getUser("Bernice")!, amount: 4.71))
-        self.createExpense(self.simplifier.userController.getUser("Dylan")!, 10.89, Date(), splits6, "Something else 3",  SplitType(id: "UnEqually"), unfilledCategory)
+        self.createExpense(self.simplifier.userController.getUser("Dylan")!, 10.89, Date(), splits6, "Something else 3",  SplitType(id: "UnEqually"), othersCategory)
         
         var splits7 = [Split]()
         splits7.append(Split(user: self.simplifier.userController.getUser("Dylan")!, amount: 270))
         splits7.append(Split(user: self.simplifier.userController.getUser("Bernice")!, amount: 270))
-        self.createExpense(self.simplifier.userController.getUser("Dylan")!, 540, Date(), splits7, "Something else 4",  SplitType(id: "Equally"), unfilledCategory)
+        self.createExpense(self.simplifier.userController.getUser("Dylan")!, 540, Date(), splits7, "Something else 4",  SplitType(id: "Equally"), othersCategory)
         
         var splits8 = [Split]()
         splits8.append(Split(user: self.simplifier.userController.getUser("Ana")!, amount: 500))
         splits8.append(Split(user: self.simplifier.userController.getUser("Bernice")!, amount: 200))
-        self.createExpense(self.simplifier.userController.getUser("Bernice")!, 700, Date(), splits8, "Something else 5",  SplitType(id: "Unequally"), unfilledCategory)
+        self.createExpense(self.simplifier.userController.getUser("Bernice")!, 700, Date(), splits8, "Something else 5",  SplitType(id: "Unequally"), othersCategory)
         
         self.updateTotalBalance()
     }
