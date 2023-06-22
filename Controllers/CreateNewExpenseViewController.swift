@@ -9,6 +9,7 @@ import UIKit
 import SwiftUI
 
 class CreateNewExpenseViewController: UIViewController {
+    weak var mainViewController: ExpensesViewController?
     static private var enteredNumber: String = ""
     
     // Transaction
@@ -79,17 +80,19 @@ class CreateNewExpenseViewController: UIViewController {
            let amount = newTransaction.amount,
            let isExpense = newTransaction.isExpense {
             
-            let currentTransactionList = transactionDataModel.transactionDataList
             let unwrappedNewTransaction = Transaction(id: id, name: name, date: date, category: category, amount: amount, isExpense: isExpense)
             
             // Add new transaction to the DataSource
-            transactionDataModel.updateTransactionDataList(with: currentTransactionList + [unwrappedNewTransaction])
+            transactionDataModel.updateTransactionDataList(newTransaction: unwrappedNewTransaction)
             print(transactionDataModel.transactionDataList)
             // Resetting of Model Variables
             newTransaction = selectedTransaction()
             numPad.reset()
             
             // Close popup
+            transactionDataModel.updateTotalIncome()
+            transactionDataModel.updateTotalExpenses()
+            mainViewController?.refresh()
             dismiss(animated: true)
             
         } else {

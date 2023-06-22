@@ -10,18 +10,91 @@ import SwiftUI
 import Combine
 
 class TransactionDataModel: ObservableObject {
+    @Published var totalExpenses : Double
+    @Published var totalIncome : Double
+    
     @Published var transactionDataList: [Transaction] {
-        willSet {
+        didSet {
+            updateFilteredList()
             objectWillChange.send()
         }
     }
     
+    @Published var filteredTransactionDataList: [Transaction] = []
+    
     init(transactionDataList : [Transaction]) {
         self.transactionDataList = transactionDataList
+        self.totalExpenses = 0.00
+        self.totalIncome = 0.00
     }
     
-    func updateTransactionDataList(with newData: [Transaction]) {
-        transactionDataList = newData
+    func updateTransactionDataList(newTransaction : Transaction) {
+        transactionDataList = transactionDataList + [newTransaction]
+    }
+    
+    func updateTotalExpenses() {
+        let expenseList = filteredTransactionDataList.filter {
+            $0.isExpense == true}
+            .map {$0.amount}
+        
+        totalExpenses = expenseList.reduce(0.0, {
+            (partialresult, element) in
+            return partialresult + element
+        })
+    }
+    
+    func updateTotalIncome() {
+        let incomeList = filteredTransactionDataList.filter {
+            $0.isExpense == false}
+            .map {$0.amount}
+        
+        totalIncome = incomeList.reduce(0.0, {
+            (partialresult, element) in
+            return partialresult + element
+        })
+    }
+    
+    // Call this function to update Filtered Transaction List
+    // This will refer to the main dateModel's picked Year and Month
+    // and filter accordingly
+    func updateFilteredList() {
+        filteredTransactionDataList = filterTransactionsByYearAndMonth(year: dateModel.pickedYear, month: dateModel.pickedMonth)
+    }
+    
+    // Function to filter transactions by year and month
+    func filterTransactionsByYearAndMonth(year: Int, month: Int) -> [Transaction] {
+        let calendar = Calendar.current
+        
+        let filteredTransactions = self.transactionDataList.filter { transaction in
+            // Convert the date string to a Date object
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            if let transactionDate = dateFormatter.date(from: transaction.date) {
+                // Get the year and month components of the transaction date
+                let components = calendar.dateComponents([.year, .month], from: transactionDate)
+                
+                // Compare the year and month components with the provided values
+                return components.year == year && components.month == month
+            }
+            
+            return false
+        }
+        
+        // Sort from more recent to latest (Descending Order)
+        let sortedTransactions = filteredTransactions.sorted { transaction1, transaction2 in
+            // Sort transactions by date in ascending order
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            
+            if let date1 = dateFormatter.date(from: transaction1.date),
+               let date2 = dateFormatter.date(from: transaction2.date) {
+                return date1 > date2
+            }
+            
+            return false
+        }
+            
+        return sortedTransactions
     }
 }
 
@@ -34,5 +107,9 @@ var transactionPreviewDataList = [
 
 // MARK: The main DataModel used for holding transactions
 var transactionDataModel = TransactionDataModel(transactionDataList : transactionPreviewDataList)
+
+
+
+
 
 

@@ -43,13 +43,21 @@ struct TransactionRow: View {
             Spacer()
             
             // MARK: Transaction Amount
-            Text(String(format: "$%.2f", transaction.amount))
+            if transaction.isExpense == true {
+                Text(String(format: "-$%.2f", transaction.amount))
+                    .foregroundColor(.red)
+            // If Income
+            } else {
+                Text(String(format: "+$%.2f", transaction.amount))
+                    .foregroundColor(.green)
+            }
+            
         }
         .padding([.all], 14)
         .background(
             RoundedRectangle(cornerRadius: 15)
                 .fill(
-                    Color(red: 162/255, green: 210/255, blue: 223/255))
+                    Color(red: 172/255, green: 210/255, blue: 243/255))
             )
     }
 }
