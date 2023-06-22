@@ -23,8 +23,6 @@ struct Transaction: Identifiable {
         self.amount = amount
         self.isExpense = isExpense
     }
-    
-    
 }
 
 // This transaction class is used to monitor the pending transaction that is about to be added.

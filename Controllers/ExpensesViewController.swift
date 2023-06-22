@@ -5,17 +5,21 @@ import MonthYearPicker
 class ExpensesViewController: UIViewController {
     // PickerView
     var picker : MonthYearPickerView?
+    var numberTextField = UITextField()
     
     // Buttons
     @IBOutlet var confirmButton: UIButton!
     @IBOutlet weak var yearMonthButton2: UIButton!
     @IBOutlet weak var totalSpentLabel: UILabel!
     @IBOutlet weak var totalIncomeLabel: UILabel!
-    
     @IBOutlet weak var balanceLabel: UILabel!
+    
+    var alertController: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker = initYearMonthPicker()
+        initNumberTextField()
         
         // Updating all of TransactionDataSource components.
         transactionDataModel.updateFilteredList()
@@ -33,10 +37,9 @@ class ExpensesViewController: UIViewController {
 
         self.yearMonthButton2.setTitle(formatDate(date: Date()), for: .normal)
         
-        
         // Initialise of Datepicker (remained hidden)
         confirmButton = initConfirmButton()
-        picker = initYearMonthPicker()
+        
     }
     
     // When YearMonth Button is pressed
@@ -59,6 +62,7 @@ class ExpensesViewController: UIViewController {
         transactionDataModel.updateFilteredList()
         transactionDataModel.updateTotalIncome()
         transactionDataModel.updateTotalExpenses()
+        
         refresh()
 
     }
@@ -73,6 +77,7 @@ class ExpensesViewController: UIViewController {
     // Initialising YearMonthPicker View
     func initYearMonthPicker() -> MonthYearPickerView {
         picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 500), size: CGSize(width: view.bounds.width, height: 216)))
+        
         picker!.backgroundColor = .white
         picker!.minimumDate = Calendar.current.date(byAdding: .year, value: -10, to: Date())
         picker!.maximumDate = Calendar.current.date(byAdding: .year, value: 10, to: Date())
@@ -121,17 +126,83 @@ class ExpensesViewController: UIViewController {
     
     // Circular Budget Progress View
     @IBSegueAction func embedBudgetProgressBarView(_ coder: NSCoder) -> UIViewController? {
-        return UIHostingController(coder: coder, rootView: CircularProgressView(progress: 0.7).frame(width: 45, height: 45))
+        
+        let searchedBudget = budgetModel.searchBudget(year: dateModel.pickedYear, month: dateModel.pickedMonth)
+        let budgetProgress = Double(transactionDataModel.totalExpenses) / Double(searchedBudget.budgetAmount)
+        return UIHostingController(coder: coder, rootView: CircularProgressView(progress: budgetProgress).frame(width: 45, height: 45))
     }
     
     func refresh() {
-        // Perform the refresh logic here...
+        // Refresh totalExpenses and totalIncome
         totalSpentLabel.text = "$\(transactionDataModel.totalExpenses)"
         totalIncomeLabel.text = "$\(transactionDataModel.totalIncome)"
-
+        
+        // Refresh Balance
         let (color, balanceString) = getBalance()
         balanceLabel.text = balanceString
         balanceLabel.textColor = color
+        
+        // Refresh budget
+        initNumberTextField()
+    }
+    
+    // Initialising the BudgetCustomizable Text Field (Found below Budget Button)
+    func initNumberTextField() {
+        // Extract Year and Month from Picker
+        let (pickedYear, pickedMonth) = extractYearAndMonth(from: picker!.date)
+        
+        // Set up Number Text Field
+        numberTextField.frame = CGRect(x: 187, y: 204, width: 100, height: 35)
+        numberTextField.borderStyle = .roundedRect
+        numberTextField.textAlignment = .center
+        numberTextField.placeholder = "Enter number"
+        numberTextField.keyboardType = .numberPad
+        numberTextField.addTarget(self, action: #selector(numberDidChange(_:)), for: .editingChanged)
+        
+        // Obtain Budget Numbers from budgetModel
+        let searchedBudget = budgetModel.searchBudget(year: pickedYear, month: pickedMonth)
+        
+        // Set a default value
+        numberTextField.text = String(searchedBudget.budgetAmount)
+        
+        
+        view.addSubview(numberTextField)
+    }
+    
+    // Tracks the Budget Text Field when it is editted by the user
+    @objc func numberDidChange(_ textField: UITextField) {
+        let (pickedYear, pickedMonth) = extractYearAndMonth(from: picker!.date)
+        // Handle number value changes
+        if let text = textField.text, let number = Int(text) {
+            // modify budget
+            let newBudget = Budget(budgetAmount: number, year: pickedYear, month: pickedMonth)
+            budgetModel.addBudget(budget: newBudget)
+            budgetModel.editBudget(budget: newBudget)
+            
+        } else {
+            showAlert()
+        }
+        
+    }
+    
+    // Budget Numbers Only Alert Warning Popup
+    func showAlert() {
+        alertController = UIAlertController(title: "Invalid Inputs", message: "Please check that you have filled in a Number", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            // Handle OK button action (if needed)
+            self?.dismissAlert()
+        }
+        
+        alertController?.addAction(okAction)
+        
+        // Present the alert controller
+        present(alertController!, animated: true, completion: nil)
+    }
+
+    func dismissAlert() {
+        alertController?.dismiss(animated: true, completion: nil)
+        alertController = nil
     }
 }
 
@@ -176,3 +247,8 @@ func getBalance() -> (UIColor, String) {
     balance = abs(balance)
     return (color, "$\(balance)")
 }
+
+
+
+
+

@@ -10,7 +10,7 @@ import UIKit
 
 struct CircularProgressView: View {
     // 1
-    let progress: Double
+    @State var progress: Double
     
     var body: some View {
         ZStack {

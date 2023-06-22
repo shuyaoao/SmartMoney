@@ -98,7 +98,6 @@ class TransactionDataModel: ObservableObject {
     }
 }
 
-
 var transactionPreviewDataList = [
     Transaction(id: 0, name: "Apple", date: "01 Jun 2023", category: utilitiesCategory, amount: 30.00, isExpense: true),
     Transaction(id: 1, name: "Banana", date: "02 Jun 2023", category: groceriesCategory, amount: 15.00, isExpense: true),
