@@ -61,7 +61,7 @@ class GroupExpense: Comparable {
         self.splitType = SplitType(id: "Equally")
         self.id = UUID().uuidString
         self.type = "Payup"
-        self.category = unfilledCategory
+        self.category = othersCategory
     }
     
     func validate() -> Bool {

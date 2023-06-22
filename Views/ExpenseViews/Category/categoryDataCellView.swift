@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct categoryDataCellView: View {
-    @State var category : Category
+    @ObservedObject var category : Category
     
     var body: some View {
         // Category Button Actions
         Button(action: {
             // Reset all other category buttons
-            for index in 0..<catDataSource.listofCategories.count - 1 {
+            for index in 0..<catDataSource.listofCategories.count {
                 catDataSource.listofCategories[index] = catDataSource.listofCategories[index].buttonunSelected()
             }
             

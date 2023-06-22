@@ -57,7 +57,7 @@ class Group {
     }
     
     func createExpense(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split]) -> GroupExpense {
-        let expense = expenseController.createExpense(payer, amount, date, splits, "Payup", SplitType(id: "Equally"), unfilledCategory)
+        let expense = expenseController.createExpense(payer, amount, date, splits, "Payup", SplitType(id: "Equally"), othersCategory)
         expenseList.append(expense)
         expenseList.sort { expense1, expense2 in
             expense1.date > expense2.date
