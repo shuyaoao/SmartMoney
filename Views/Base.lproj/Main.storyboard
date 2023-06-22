@@ -504,7 +504,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Budget" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFU-4O-83W">
-                                        <rect key="frame" x="205" y="185" width="45" height="16"/>
+                                        <rect key="frame" x="187" y="185" width="45" height="16"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                         <color key="textColor" systemColor="systemGrayColor"/>
@@ -571,21 +571,19 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Edit"/>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tZQ-MO-emk">
-                                        <rect key="frame" x="205" y="208" width="117" height="22"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" name="Medium Blue"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkT-H2-T2T">
-                                        <rect key="frame" x="36" y="208" width="61" height="21"/>
+                                        <rect key="frame" x="36" y="209" width="61" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tVK-7V-zVa">
+                                        <rect key="frame" x="187" y="204" width="80" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="QJV-vy-MvM"/>
                                 <color key="backgroundColor" name="Off-white"/>
@@ -597,7 +595,6 @@
                     <tabBarItem key="tabBarItem" title="Expenses" image="dollarsign.circle.fill" catalog="system" id="rSd-MN-iZc"/>
                     <connections>
                         <outlet property="balanceLabel" destination="IkT-H2-T2T" id="LWr-ji-4zc"/>
-                        <outlet property="monthlySpendingLimitLeftLabel" destination="tZQ-MO-emk" id="SFM-f1-GbS"/>
                         <outlet property="totalIncomeLabel" destination="95O-sW-fCa" id="s7n-Xm-djz"/>
                         <outlet property="totalSpentLabel" destination="r65-up-iql" id="MIn-6C-Wri"/>
                         <outlet property="yearMonthButton2" destination="I5g-g6-2TR" id="fUy-8B-z3H"/>

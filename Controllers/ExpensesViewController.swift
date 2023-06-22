@@ -11,7 +11,6 @@ class ExpensesViewController: UIViewController {
     @IBOutlet weak var yearMonthButton2: UIButton!
     @IBOutlet weak var totalSpentLabel: UILabel!
     @IBOutlet weak var totalIncomeLabel: UILabel!
-    @IBOutlet weak var monthlySpendingLimitLeftLabel: UILabel!
     
     @IBOutlet weak var balanceLabel: UILabel!
     
@@ -31,7 +30,6 @@ class ExpensesViewController: UIViewController {
         balanceLabel.text = balanceString
         balanceLabel.textColor = color
         
-        monthlySpendingLimitLeftLabel.text = "$\(transactionDataModel.totalExpenses)"
 
         self.yearMonthButton2.setTitle(formatDate(date: Date()), for: .normal)
         
@@ -61,6 +59,7 @@ class ExpensesViewController: UIViewController {
         transactionDataModel.updateFilteredList()
         transactionDataModel.updateTotalIncome()
         transactionDataModel.updateTotalExpenses()
+        refresh()
 
     }
     
@@ -129,7 +128,7 @@ class ExpensesViewController: UIViewController {
         // Perform the refresh logic here...
         totalSpentLabel.text = "$\(transactionDataModel.totalExpenses)"
         totalIncomeLabel.text = "$\(transactionDataModel.totalIncome)"
-        monthlySpendingLimitLeftLabel.text = "$\(transactionDataModel.totalExpenses)"
+
         let (color, balanceString) = getBalance()
         balanceLabel.text = balanceString
         balanceLabel.textColor = color
