@@ -61,7 +61,7 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
         for (_, amt) in amounts {
             count += amt
         }
-        if count > amt! {
+        if count != amt! {
             showAlert()
         } else {
             for (selectedUser, amount) in splitsDict {
@@ -78,6 +78,7 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         //shows user how much is remaining of the total debt
+        print("did end editing")
         var remainingAmt = amt!
         var safeAmt: Double
         if textField.text == nil {
@@ -86,6 +87,7 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
             safeAmt = Double(textField.text!) ?? 0
         }
         amounts[textField.tag] = safeAmt
+        print(amounts[textField.tag])
         var count = 0.0
         for (_, amt) in amounts {
             count += amt
@@ -93,7 +95,7 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
         if count > amt! {
             showAlert()
         } else {
-            if safeAmt > 0 {
+            if safeAmt >= 0 {
                 splitsDict[array[textField.tag]] = safeAmt
                 for (_, amt) in amounts {
                     remainingAmt -= amt

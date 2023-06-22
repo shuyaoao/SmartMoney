@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ilf-aM-yGN">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -49,7 +49,6 @@
                         <segue destination="7jc-gJ-B60" kind="relationship" relationship="viewControllers" id="onl-1N-r7Y"/>
                         <segue destination="YGi-iN-9xP" kind="relationship" relationship="viewControllers" id="SjL-M0-ffd"/>
                         <segue destination="60D-hT-1Zo" kind="relationship" relationship="viewControllers" id="JYa-Be-WWG"/>
-                        <segue destination="HAq-vq-ZaY" kind="relationship" relationship="viewControllers" id="4xk-wo-hWL"/>
                         <segue destination="16C-w7-DxO" kind="relationship" relationship="viewControllers" id="ifS-zS-Zp0"/>
                     </connections>
                 </tabBarController>
@@ -1480,22 +1479,6 @@
             </objects>
             <point key="canvasLocation" x="2836" y="2603"/>
         </scene>
-        <!--Friends-->
-        <scene sceneID="x31-aT-L7g">
-            <objects>
-                <viewController id="HAq-vq-ZaY" customClass="FriendsViewController" customModule="SmartMoney" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CJa-a4-kbB">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Q1Z-af-b2t"/>
-                        <color key="backgroundColor" name="Off-white"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Friends" image="heart.fill" catalog="system" id="Orc-hl-UWl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZfQ-nC-JwS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2077" y="1106"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="i56-vo-vZ6">
             <objects>
@@ -1616,7 +1599,6 @@
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="greenIncomeIcon" width="479" height="520"/>
-        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="icon" width="1024" height="1024"/>
         <image name="lightBlueAppIcon" width="1024" height="1024"/>
