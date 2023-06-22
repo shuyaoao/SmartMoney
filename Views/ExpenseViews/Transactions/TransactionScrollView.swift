@@ -14,7 +14,7 @@ struct TransactionScrollView: View {
     
     var body: some View {
         ScrollView {
-            VStack(spacing: 20) {
+            VStack(spacing: 10) {
                 // For each transaction in the transaction data model
                 // Filter the transaction data according to the Picked Date in the Interface
                 ForEach(transactionDataModel.filteredTransactionDataList) { trans in

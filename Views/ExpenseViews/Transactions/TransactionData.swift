@@ -10,9 +10,8 @@ import SwiftUI
 import Combine
 
 class TransactionDataModel: ObservableObject {
-    var totalExpenses : Double
-    var totalIncome : Double
-    
+    @Published var totalExpenses : Double
+    @Published var totalIncome : Double
     
     @Published var transactionDataList: [Transaction] {
         didSet {
@@ -34,7 +33,7 @@ class TransactionDataModel: ObservableObject {
     }
     
     func updateTotalExpenses() {
-        let expenseList = transactionDataList.filter {
+        let expenseList = filteredTransactionDataList.filter {
             $0.isExpense == true}
             .map {$0.amount}
         
@@ -45,7 +44,7 @@ class TransactionDataModel: ObservableObject {
     }
     
     func updateTotalIncome() {
-        let incomeList = transactionDataList.filter {
+        let incomeList = filteredTransactionDataList.filter {
             $0.isExpense == false}
             .map {$0.amount}
         

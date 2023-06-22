@@ -11,18 +11,27 @@ class ExpensesViewController: UIViewController {
     @IBOutlet weak var yearMonthButton2: UIButton!
     @IBOutlet weak var totalSpentLabel: UILabel!
     @IBOutlet weak var totalIncomeLabel: UILabel!
+    @IBOutlet weak var monthlySpendingLimitLeftLabel: UILabel!
+    
+    @IBOutlet weak var balanceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Updating all of TransactionDataSource components.
+        transactionDataModel.updateFilteredList()
         transactionDataModel.updateTotalIncome()
         transactionDataModel.updateTotalExpenses()
-        transactionDataModel.updateFilteredList()
         
         // Setting Labels
         totalSpentLabel.text = "$\(transactionDataModel.totalExpenses)"
         totalIncomeLabel.text = "$\(transactionDataModel.totalIncome)"
+        
+        let (color, balanceString) = getBalance()
+        balanceLabel.text = balanceString
+        balanceLabel.textColor = color
+        
+        monthlySpendingLimitLeftLabel.text = "$\(transactionDataModel.totalExpenses)"
 
         self.yearMonthButton2.setTitle(formatDate(date: Date()), for: .normal)
         
@@ -48,10 +57,11 @@ class ExpensesViewController: UIViewController {
         
         // Update dateModel
         dateModel.changeYearandMonth(year: pickedYear, month: pickedMonth)
-        print(dateModel.pickedYear)
-        print(dateModel.pickedMonth)
         
         transactionDataModel.updateFilteredList()
+        transactionDataModel.updateTotalIncome()
+        transactionDataModel.updateTotalExpenses()
+
     }
     
     // Date Formatter to Display Month and Year
@@ -119,6 +129,10 @@ class ExpensesViewController: UIViewController {
         // Perform the refresh logic here...
         totalSpentLabel.text = "$\(transactionDataModel.totalExpenses)"
         totalIncomeLabel.text = "$\(transactionDataModel.totalIncome)"
+        monthlySpendingLimitLeftLabel.text = "$\(transactionDataModel.totalExpenses)"
+        let (color, balanceString) = getBalance()
+        balanceLabel.text = balanceString
+        balanceLabel.textColor = color
     }
 }
 
@@ -146,4 +160,20 @@ func extractYearAndMonth(from date: Date) -> (year: Int, month: Int) {
     let month = calendar.component(.month, from: date)
     
     return (year, month)
+}
+
+
+
+func getBalance() -> (UIColor, String) {
+    var balance = Int(transactionDataModel.totalIncome - transactionDataModel.totalExpenses)
+    let color : UIColor
+    
+    if balance >= 0 {
+        color = UIColor(.black)
+    } else {
+        color = UIColor(.red)
+    }
+    
+    balance = abs(balance)
+    return (color, "$\(balance)")
 }
