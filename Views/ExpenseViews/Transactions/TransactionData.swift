@@ -81,7 +81,21 @@ class TransactionDataModel: ObservableObject {
             return false
         }
         
-        return filteredTransactions
+        // Sort from more recent to latest (Descending Order)
+        let sortedTransactions = filteredTransactions.sorted { transaction1, transaction2 in
+            // Sort transactions by date in ascending order
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd MMM yyyy"
+            
+            if let date1 = dateFormatter.date(from: transaction1.date),
+               let date2 = dateFormatter.date(from: transaction2.date) {
+                return date1 > date2
+            }
+            
+            return false
+        }
+            
+        return sortedTransactions
     }
 }
 
@@ -99,17 +113,4 @@ var transactionDataModel = TransactionDataModel(transactionDataList : transactio
 
 
 
-// Extract Year and Month from Date Strings like 03 Jun 2023
-func extractYearAndMonth(from dateString: String) -> (year: Int, month: Int)? {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd MMM yyyy"
-    
-    if let date = dateFormatter.date(from: dateString) {
-        let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        return (year, month)
-    } else {
-        return nil
-    }
-}
+
