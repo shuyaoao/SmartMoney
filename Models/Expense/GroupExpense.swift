@@ -27,7 +27,19 @@ class GroupExpense: Comparable {
     let isInvolved = false
     let owedAmount = 0
     var type = "Expense"
+    let category: Category
     
+    
+    init(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split], _ description: String, _ splitType: SplitType, _ category: Category) {
+        self.payer = payer
+        self.amount = amount
+        self.date = date
+        self.splits.append(contentsOf: splits)
+        self.description = description
+        self.splitType = splitType
+        self.id = UUID().uuidString
+        self.category = category
+    }
     
     init(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split], _ description: String, _ splitType: SplitType) {
         self.payer = payer
@@ -37,6 +49,7 @@ class GroupExpense: Comparable {
         self.description = description
         self.splitType = splitType
         self.id = UUID().uuidString
+        self.category = foodCategory
     }
     
     init(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split]) {
@@ -48,6 +61,7 @@ class GroupExpense: Comparable {
         self.splitType = SplitType(id: "Equally")
         self.id = UUID().uuidString
         self.type = "Payup"
+        self.category = unfilledCategory
     }
     
     func validate() -> Bool {

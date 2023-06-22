@@ -15,17 +15,17 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
     var amt : Double?
     var exactAmounts : [String: Double] = [:]
     var count = 0.0
-    var remainingAmt : Double?
     var prevVC: AddGroupExpenseViewController?
     var group: Group?
     var splitsDict = [SelectedUser: Double]()
     var splits = [Split]()
+    var amounts = [Int: Double]()
+    var alertController: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        remainingAmt = amt
         remainingAmtLabel.text = String(format: "$%.2f remaining of $%.2f", amt!, amt!)
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
@@ -43,6 +43,7 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
         cell.amountTextField.tag = indexPath.row
         cell.configure(array[indexPath.row].name)
         cell.amountTextField.delegate = self
+        cell.amountTextField.tag = indexPath.row
         
         return cell
     }
@@ -56,8 +57,12 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         //saves the exact amounts of the debts
-        if count != amt! {
-            print("amount doesnt tally!")
+        var count = 0.0
+        for (_, amt) in amounts {
+            count += amt
+        }
+        if count > amt! {
+            showAlert()
         } else {
             for (selectedUser, amount) in splitsDict {
                 for user in (group?.groupMembers)! {
@@ -66,23 +71,55 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
                     }
                 }
             }
+            prevVC?.splits = splits
+            self.dismiss(animated: true)
         }
-        prevVC?.splits = splits
-        self.dismiss(animated: true)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         //shows user how much is remaining of the total debt
-        if let safeAmt = Double(textField.text!) {
-            if count + safeAmt > amt! {
-                print("amount doesnt tally!")
-            } else {
-                count += safeAmt
-                remainingAmt! -= safeAmt
-                remainingAmtLabel.text = String(format: "$%.2f remaining of $%.2f", remainingAmt!, amt!)
-                
-            }
-            splitsDict[array[textField.tag]] = safeAmt
+        var remainingAmt = amt!
+        var safeAmt: Double
+        if textField.text == nil {
+            safeAmt = 0
+        } else {
+            safeAmt = Double(textField.text!) ?? 0
         }
+        amounts[textField.tag] = safeAmt
+        var count = 0.0
+        for (_, amt) in amounts {
+            count += amt
+        }
+        if count > amt! {
+            showAlert()
+        } else {
+            if safeAmt > 0 {
+                splitsDict[array[textField.tag]] = safeAmt
+                for (_, amt) in amounts {
+                    remainingAmt -= amt
+                }
+                remainingAmtLabel.text = String(format: "$%.2f remaining of $%.2f", remainingAmt, amt!)
+            }
+        }
+    }
+    
+    //alert when amount does not tally
+    func showAlert() {
+        alertController = UIAlertController(title: "Amount doesn't tally!", message: "Please check your inputs", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            // Handle OK button action (if needed)
+            self?.dismissAlert()
+        }
+        
+        alertController?.addAction(okAction)
+        
+        // Present the alert controller
+        present(alertController!, animated: true, completion: nil)
+    }
+    
+    func dismissAlert() {
+        alertController?.dismiss(animated: true, completion: nil)
+        alertController = nil
     }
 }

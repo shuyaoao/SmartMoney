@@ -14,12 +14,12 @@ struct ExpenseController {
         self.balanceController = BalanceController()
     }
     
-    func createExpense(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split], _ description: String, _ splitType: SplitType) -> GroupExpense {
+    func createExpense(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split], _ description: String, _ splitType: SplitType, _ category: Category) -> GroupExpense {
        
         var expenseSplit = SplitFactory.getSplitObject(splitType)
         expenseSplit.validateSplitRequest(splits, amount)
         
-        let expense = GroupExpense(payer, amount, date, splits, description, splitType)
+        let expense = GroupExpense(payer, amount, date, splits, description, splitType, category)
         balanceController.updateExpenses(payer, splits, amount)
         
         return expense

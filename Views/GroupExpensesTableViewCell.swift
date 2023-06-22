@@ -53,7 +53,7 @@ class GroupExpensesTableViewCell: SwipeTableViewCell {
             let formatter = DateFormatter()
             formatter.dateFormat = "dd MMM yyyy"
             self.dateLabel.text = formatter.string(from: expense.date)
-            //self.categoryImage.image = UIImage(named: "fork.knife.circle.fill")
+            self.categoryImage.image = UIImage(named: expense.category.imageName)
             self.descriptionLabel.text = expense.description
             self.whoPaidLabel.text = String(format: "%@ paid $%.2f", expense.payer.name, expense.amount)
             let myOwes = expense.splits.first(where: { split in

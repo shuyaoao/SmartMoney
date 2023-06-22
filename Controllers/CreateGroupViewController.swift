@@ -107,8 +107,6 @@ extension CreateGroupViewController : UITextFieldDelegate {
         textField.resignFirstResponder()
         if textField.text != "" && textField != groupNameTextField {
             members[textField.tag] = User(textField.text!)
-            print(textField.tag)
-            print(textField.text!)
         }
     }
 }

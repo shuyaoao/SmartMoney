@@ -49,15 +49,15 @@ class Group {
         self.groupMembers.append(member)
     }
     
-    func createExpense(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split], _ description: String, _ splitType: SplitType) -> GroupExpense {
-        let expense = expenseController.createExpense(payer, amount, date, splits, description, splitType)
+    func createExpense(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split], _ description: String, _ splitType: SplitType, _ category: Category) -> GroupExpense {
+        let expense = expenseController.createExpense(payer, amount, date, splits, description, splitType, category)
         expenseList.append(expense)
         expenseList.sort()
         return expense
     }
     
     func createExpense(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split]) -> GroupExpense {
-        let expense = expenseController.createExpense(payer, amount, date, splits, "Payup", SplitType(id: "Equally"))
+        let expense = expenseController.createExpense(payer, amount, date, splits, "Payup", SplitType(id: "Equally"), unfilledCategory)
         expenseList.append(expense)
         expenseList.sort { expense1, expense2 in
             expense1.date > expense2.date

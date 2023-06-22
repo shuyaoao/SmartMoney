@@ -17,6 +17,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     @IBOutlet weak var descriptionLabel: UITextField!
     @IBOutlet weak var splitHowCV: UICollectionView!
     
+    var category: Category?
     var previousVC: GroupDetailsViewController?
     var group: Group?
     var array = [SelectedUser]()
@@ -28,6 +29,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     var date = Date()
     var lastIndexPath: IndexPath = [1, 0]
     var splits = [Split]()
+    var alertController: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -187,7 +189,21 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         //saves and updates tableview, debts and balances
-        if descriptionLabel.text != "" && amtTextField.text != "" && paidBy != nil && !splitBtw.isEmpty {
+        
+        //updates the selected category
+        for index in 0..<catDataSource.listofCategories.count {
+            if catDataSource.listofCategories[index].selected == true {
+                category = catDataSource.listofCategories[index]
+            }
+            
+            // Reset all Category Buttons
+            catDataSource.listofCategories[index] = catDataSource.listofCategories[index].buttonunSelected()
+        }
+        
+        //shows alert pop up when necessary
+        showAlert()
+        
+        if descriptionLabel.text != "" && amtTextField.text != "" && paidBy != nil && !splitBtw.isEmpty && category != nil {
             var splitID: String
             if splitEqually {
                 splitID = "Equally"
@@ -209,7 +225,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                 }
             }
             
-            group?.createExpense(payer!, Double(self.amtTextField.text!)!, datePicker.date, splits, descriptionLabel.text!, SplitType(id: splitID))
+            group?.createExpense(payer!, Double(self.amtTextField.text!)!, datePicker.date, splits, descriptionLabel.text!, SplitType(id: splitID), category!)
             let groupDetailsVC = self.previousVC
             let groupsVC = self.previousVC?.prevVC
             var index = 0
@@ -258,6 +274,58 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     
     @IBSegueAction func embedCategoryScrollView(_ coder: NSCoder) -> UIViewController? {
         return UIHostingController(coder: coder, rootView: CategoryHorizontalScrollView(CategoryDataSource : catDataSource))
+    }
+    
+    //show alerts if any field is empty
+    func showAlert() {
+        if descriptionLabel.text == "" {
+            alertController = UIAlertController(title: "You have not entered a description!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            // Present the alert controller
+            present(alertController!, animated: true, completion: nil)
+        } else if category == nil {
+            alertController = UIAlertController(title: "You have not chosen a category!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            // Present the alert controller
+            present(alertController!, animated: true, completion: nil)
+        } else if paidBy == nil {
+            alertController = UIAlertController(title: "You have not chosen a payer!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            present(alertController!, animated: true, completion: nil)
+        } else if splitBtw.isEmpty {
+            alertController = UIAlertController(title: "You have not chosen who to split between!", message: "Please check your inputs", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+                // Handle OK button action (if needed)
+                self?.dismissAlert()
+            }
+            
+            alertController?.addAction(okAction)
+            present(alertController!, animated: true, completion: nil)
+        }
+    }
+    
+    func dismissAlert() {
+        alertController?.dismiss(animated: true, completion: nil)
+        alertController = nil
     }
     
 }
