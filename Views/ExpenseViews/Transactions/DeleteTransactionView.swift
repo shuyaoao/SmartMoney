@@ -29,7 +29,7 @@ struct DeleteTransactionView: View {
                                 ZStack {
                                     Circle()
                                         .foregroundColor(.teal)
-                                        .frame(width: 20, height: 20)
+                                        .frame(width: 24, height: 24)
                                     transaction.category.icon
                                 }
                                 

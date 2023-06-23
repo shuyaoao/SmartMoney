@@ -72,7 +72,7 @@ class ExpensesViewController: UIViewController {
     
     // Initialising YearMonthPicker View
     func initYearMonthPicker() -> MonthYearPickerView {
-        picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 500), size: CGSize(width: view.bounds.width, height: 216)))
+        picker = MonthYearPickerView(frame: CGRect(origin: CGPoint(x: 0, y: 550), size: CGSize(width: view.bounds.width, height: 216)))
         
         picker!.backgroundColor = .white
         picker!.minimumDate = Calendar.current.date(byAdding: .year, value: -10, to: Date())
@@ -100,7 +100,7 @@ class ExpensesViewController: UIViewController {
         confirmButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         
         // Set the frame for the button
-        confirmButton.frame = CGRect(x: 155, y: 470, width: 100, height: 40)
+        confirmButton.frame = CGRect(x: 155, y: 505, width: 100, height: 40)
         
         view.addSubview(confirmButton)
         confirmButton.isHidden = true
