@@ -72,3 +72,22 @@ let presetBudget = Budget(budgetAmount: 200, year: thisYear
                           , month: thisMonth)
 
 var budgetModel = BudgetModel(budgetDataList: [presetBudget])
+
+
+// MARK: Used for Budget Progress Bar Calculation
+class BudgetProgress : ObservableObject {
+    @Published var progress : Double
+    
+    init() {
+        let searchedBudget = budgetModel.searchBudget(year: dateModel.pickedYear, month: dateModel.pickedMonth)
+        self.progress = Double(transactionDataModel.totalExpenses) / Double(searchedBudget.budgetAmount)
+    }
+    
+    func budgetProgressRefresh() {
+        let searchedBudget = budgetModel.searchBudget(year: dateModel.pickedYear, month: dateModel.pickedMonth)
+        self.progress = Double(transactionDataModel.totalExpenses) / Double(searchedBudget.budgetAmount)
+    }
+}
+
+var budgetProgressModel = BudgetProgress()
+

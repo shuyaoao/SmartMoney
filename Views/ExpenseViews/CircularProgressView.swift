@@ -10,7 +10,7 @@ import UIKit
 
 struct CircularProgressView: View {
     // 1
-    @State var progress: Double
+    @ObservedObject var budgetProgress: BudgetProgress
     
     var body: some View {
         ZStack {
@@ -21,7 +21,7 @@ struct CircularProgressView: View {
                 )
             Circle()
                 // 2
-                .trim(from: 0, to: progress)
+                .trim(from: 0, to: budgetProgress.progress)
                 .stroke(
                     Color.pink,
                     style: StrokeStyle(
@@ -30,8 +30,9 @@ struct CircularProgressView: View {
                     )
                 )
                 .rotationEffect(.degrees(-90))
-                .animation(.easeOut, value: progress)
-            Text(String(format: "%.0f%%", progress * 100))
+                .animation(.easeOut, value: budgetProgress.progress)
+            
+            Text(String(format: "%.0f%%", budgetProgress.progress * 100))
                 .font(Font.system(size: 12))
             
         }
@@ -41,7 +42,7 @@ struct CircularProgressView: View {
 
 struct CircularProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        CircularProgressView(progress: 0.7)
+        CircularProgressView(budgetProgress: budgetProgressModel)
             .frame(width: 50, height: 50)
     }
 }

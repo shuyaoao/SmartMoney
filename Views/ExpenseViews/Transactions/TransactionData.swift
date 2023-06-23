@@ -10,8 +10,16 @@ import SwiftUI
 import Combine
 
 class TransactionDataModel: ObservableObject {
-    @Published var totalExpenses : Double
-    @Published var totalIncome : Double
+    @Published var totalExpenses : Double {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+    @Published var totalIncome : Double {
+        didSet {
+            objectWillChange.send()
+        }
+    }
     
     @Published var transactionDataList: [Transaction] {
         didSet {
