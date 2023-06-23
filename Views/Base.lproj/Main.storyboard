@@ -448,14 +448,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zdp-K7-ja4">
-                                <rect key="frame" x="16" y="100" width="361" height="666"/>
+                                <rect key="frame" x="0.0" y="85" width="393" height="763"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="8IE-CD-mYa" kind="embed" destinationCreationSelector="embedDeleteTransactionList:sender:segueIdentifier:" id="a1H-UA-Hzo"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7s-1Q-djK">
-                                <rect key="frame" x="-22" y="38" width="111" height="61"/>
+                                <rect key="frame" x="294" y="38" width="111" height="61"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemTealColor"/>
                                 <state key="normal" title="Button"/>

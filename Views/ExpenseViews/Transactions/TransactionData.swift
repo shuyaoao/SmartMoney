@@ -36,10 +36,24 @@ class TransactionDataModel: ObservableObject {
         self.totalIncome = 0.00
     }
     
+    // Delete Transactions according to its unique id
+    func removeTransaction(id : Int) {
+        self.transactionDataList.removeAll { $0.id == id }
+    }
+    
+    // Reset Index of all Transactions in transaction datalist
+    func resetTransactionIndexes() {
+        for (index, _) in transactionDataList.enumerated() {
+            transactionDataList[index].id = index
+        }
+    }
+    
+    // Append new Transaction to existing transaction data list
     func updateTransactionDataList(newTransaction : Transaction) {
         transactionDataList = transactionDataList + [newTransaction]
     }
     
+    // Reduce function to cumulate totalExpenses
     func updateTotalExpenses() {
         let expenseList = filteredTransactionDataList.filter {
             $0.isExpense == true}
@@ -51,6 +65,7 @@ class TransactionDataModel: ObservableObject {
         })
     }
     
+    // Reduce function to cumulate totalIncome
     func updateTotalIncome() {
         let incomeList = filteredTransactionDataList.filter {
             $0.isExpense == false}

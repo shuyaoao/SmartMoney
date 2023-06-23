@@ -26,7 +26,13 @@ struct DeleteTransactionView: View {
                             
                             HStack(spacing: 8) {
                                 // Adding Category Icon
-                                transaction.category.icon
+                                ZStack {
+                                    Circle()
+                                        .foregroundColor(.teal)
+                                        .frame(width: 20, height: 20)
+                                    transaction.category.icon
+                                }
+                                
                                 
                                 // Category Text
                                 Text(transaction.category.category)
@@ -56,17 +62,34 @@ struct DeleteTransactionView: View {
                         }
 
                     }
-                    .padding([.all], 14)
+                    .padding([.all], 5)
                 }
                 .onDelete(perform: delete)
             }
+            .background(Color(red: 242/255, green: 242/255, blue: 242/255))
             .navigationTitle("Transactions")
         }
     }
     
     func delete(at offsets: IndexSet) {
-        transactiondatamodel.filteredTransactionDataList.remove(atOffsets: offsets)
+        // Construct an array of the Index
+        let indexesToRemove = Array(offsets)
+        
+        // Retrieve the id of the Transaction that is to be removed
+        let idsToRemove = indexesToRemove.map { transactiondatamodel.filteredTransactionDataList[$0].id
+        }
+        
+        // Remove the id from the TransactionDataModel
+        for id in idsToRemove {
+            transactiondatamodel.removeTransaction(id: id)
+        }
+        
+        // Reset the id of all transactions (for future update/delete)
+        transactiondatamodel.resetTransactionIndexes()
+        
+       
     }
+    
     
 }
 

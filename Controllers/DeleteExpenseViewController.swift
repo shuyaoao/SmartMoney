@@ -12,21 +12,15 @@ class DeleteExpenseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
+        let scale = CGFloat(242/255)
+        let color = UIColor(red: scale, green: scale, blue: scale, alpha: CGFloat(1))
     }
-    
-    
-    
     
     @IBAction func backButton(_ sender: UIButton) {
         dismiss(animated: true)
     }
     
-    
     @IBSegueAction func embedDeleteTransactionList(_ coder: NSCoder, sender: Any?, segueIdentifier: String?) -> UIViewController? {
         return UIHostingController(coder: coder, rootView: DeleteTransactionView(transactiondatamodel: transactionDataModel))
     }
-    
 }

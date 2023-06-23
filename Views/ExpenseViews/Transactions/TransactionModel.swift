@@ -8,12 +8,12 @@
 import Foundation
 
 struct Transaction: Identifiable {
-    let id: Int
-    let name: String
-    let date : String
-    let category : Category
-    let amount : Double
-    let isExpense : Bool // if false, then income
+    var id: Int
+    var name: String
+    var date : String
+    var category : Category
+    var amount : Double
+    var isExpense : Bool // if false, then income
     
     init(id: Int, name: String, date: String, category: Category, amount: Double, isExpense: Bool) {
         self.id = id
