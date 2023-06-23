@@ -51,6 +51,11 @@ class CreateNewExpenseViewController: UIViewController {
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
         // Resets new Transaction and close popup
         newTransaction = selectedTransaction()
+        for index in 0..<catDataSource.listofCategories.count {
+            // Reset all Category Buttons
+            catDataSource.listofCategories[index] = catDataSource.listofCategories[index].buttonunSelected()
+        }
+        
         dismiss(animated: true)
         
     }
@@ -109,8 +114,7 @@ class CreateNewExpenseViewController: UIViewController {
     @IBAction func transactionNameChanged(_ sender: UITextField) {
         newTransaction.name = transactionNameTextField.text
     }
-
-    //newTransaction.isExpense = true
+    
     // Income and Expense Buttons
     @IBAction func expenseButtonClicked(_ sender: UIButton) {
         newTransaction.isExpense = true
@@ -153,11 +157,7 @@ class CreateNewExpenseViewController: UIViewController {
         alertController?.dismiss(animated: true, completion: nil)
         alertController = nil
     }
-    
-    
-    
 }
-
 
 func convertToDouble(_ string: String) -> Double? {
     let numberFormatter = NumberFormatter()

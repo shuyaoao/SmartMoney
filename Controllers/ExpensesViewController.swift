@@ -182,7 +182,6 @@ class ExpensesViewController: UIViewController {
         } else {
             showAlert()
         }
-        
     }
     
     // Budget Numbers Only Alert Warning Popup
