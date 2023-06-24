@@ -24,8 +24,8 @@ class SelectedUser : Hashable {
     let name: String
     var paidBySelected = false
     var splitBtwSelected = false
-    var from = false
-    var to = false
+    var isFrom = false
+    var isTo = false
     
     init(_ user: User) {
         self.id = user.id

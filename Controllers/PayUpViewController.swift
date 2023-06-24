@@ -42,7 +42,7 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //populates the table with custom cells displaying names of group members
         let cell = tableView.dequeueReusableCell(withIdentifier: "PayUpCell", for: indexPath) as! PayUpTableViewCell
         if tableView == fromTableView {
-            if array[indexPath.row].from {
+            if array[indexPath.row].isFrom {
                 cell.rectangleView.backgroundColor = UIColor(named: "Dark Blue")
                 cell.nameLabel.backgroundColor = UIColor(named: "Dark Blue")
             } else {
@@ -50,7 +50,7 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 cell.nameLabel.backgroundColor = UIColor(named: "Medium Blue")
             }
         } else {
-            if array[indexPath.row].to {
+            if array[indexPath.row].isTo {
                 cell.rectangleView.backgroundColor = UIColor(named: "Dark Blue")
                 cell.nameLabel.backgroundColor = UIColor(named: "Dark Blue")
             } else {
@@ -70,7 +70,7 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 print("from and to cannot be the same person!")
             }
             else if from == nil {
-                array[indexPath.row].from = true
+                array[indexPath.row].isFrom = true
                 from = array[indexPath.row]
             } else {
                 var index: Int?
@@ -80,9 +80,9 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }
                 }
                 if let safeIndex = index {
-                    array[safeIndex].from = false
+                    array[safeIndex].isFrom = false
                 }
-                array[indexPath.row].from = true
+                array[indexPath.row].isFrom = true
                 from = array[indexPath.row]
             }
         } else {
@@ -90,7 +90,7 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 print("from and to cannot be the same person!")
             }
                 else if to == nil {
-                    array[indexPath.row].to = true
+                    array[indexPath.row].isTo = true
                     to = array[indexPath.row]
                 }
             else {
@@ -101,9 +101,9 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         }
                     }
                     if let safeIndex = index {
-                        array[safeIndex].to = false
+                        array[safeIndex].isTo = false
                     }
-                    array[indexPath.row].to = true
+                    array[indexPath.row].isTo = true
                     to = array[indexPath.row]
                 }
             }
