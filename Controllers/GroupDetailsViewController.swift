@@ -48,7 +48,7 @@ class GroupDetailsViewController: UIViewController {
     func displayBalance() {
         //displays user total balance
         self.group?.updateTotalBalance()
-        self.amount = group?.owedAmount
+        self.amount = self.group?.owedAmount
         if let safeAmount = amount {
             if safeAmount > 0 {
                 amountLabel.text = String(format: "$%.2f", safeAmount)

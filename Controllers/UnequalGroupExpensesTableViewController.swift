@@ -61,13 +61,13 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
         for (_, amt) in amounts {
             count += amt
         }
-        if Double(round((count - amt!) * 100) / 100.0) > 0 {
+        if Double(round((count - amt!) * 100) / 100.0) != 0 {
             showAlert()
         } else {
             for (selectedUser, amount) in splitsDict {
                 for user in (group?.groupMembers)! {
                     if user.id == selectedUser.id {
-                        splits.append(Split(user: user, amount: amount))
+                        splits.append(Split(user: (group?.simplifier.userController.getUser(user.name))!, amount: amount))
                     }
                 }
             }

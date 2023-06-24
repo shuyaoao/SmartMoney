@@ -217,13 +217,12 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
             
             if splitEqually {
                 for selectedUser in splitBtw {
-                    splits.append(Split(user: (group?.groupMembers.first(where: { user in
-                        selectedUser.id == user.id
-                    }))!, amount: Double(self.amtTextField.text!)! / Double(splitBtw.count)))
+                    splits.append(Split(user: (group?.simplifier.userController.getUser(selectedUser.name))!, amount: Double(self.amtTextField.text!)! / Double(splitBtw.count)))
                 }
             }
             
             group?.createExpense(payer!, Double(self.amtTextField.text!)!, datePicker.date, splits, descriptionLabel.text!, SplitType(id: splitID), category!)
+            group?.updateTotalBalance()
             let groupDetailsVC = self.previousVC
             let groupsVC = self.previousVC?.prevVC
             var index = 0

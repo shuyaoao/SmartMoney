@@ -14,7 +14,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var groupNameTextField: UITextField!
     weak var delegate : CreateGroupViewControllerDelegate?
     @IBOutlet weak var editButton: UIButton!
-    var count = 2
+    var count = 1
     var members = [Int:User]()
     var alertController: UIAlertController?
     
@@ -93,7 +93,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
             editButton.setTitle("Done", for: .normal)
             groupMembersTableView.setEditing(true, animated: true)
         } else {
-            editButton.setTitle("Edit", for: .normal)
+            editButton.setTitle("Delete", for: .normal)
             groupMembersTableView.setEditing(false, animated: true)
         }
     }
