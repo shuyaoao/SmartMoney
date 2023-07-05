@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6913848C2A5503DE00454D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6913848B2A5503DE00454D7D /* GoogleService-Info.plist */; };
 		691384982A55060400454D7D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 691384972A55060400454D7D /* FirebaseAnalytics */; };
 		6913849A2A55060400454D7D /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 691384992A55060400454D7D /* FirebaseAnalyticsSwift */; };
 		6913849C2A55060400454D7D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6913849B2A55060400454D7D /* FirebaseAuth */; };
 		6913849E2A55060400454D7D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6913849D2A55060400454D7D /* FirebaseDatabase */; };
 		691384A02A55060400454D7D /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6913849F2A55060400454D7D /* FirebaseDatabaseSwift */; };
+		691384A52A5543F400454D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 691384A42A5543F400454D7D /* GoogleService-Info.plist */; };
 		694952832A32D642004F989B /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694952822A32D642004F989B /* CircularProgressView.swift */; };
 		69C8CDF62A332C74004A0382 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDF52A332C74004A0382 /* TransactionModel.swift */; };
 		69C8CDFB2A332DDE004A0382 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */; };
@@ -114,7 +114,7 @@
 		3B01FD637A5246FFB6C5B405 /* Pods_SmartMoneyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartMoneyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F36524AFDD4C1673FC448FA /* Pods-SmartMoney-SmartMoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney-SmartMoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4A1D276909B1BDF6EAB9EF75 /* Pods-SmartMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney.release.xcconfig"; path = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.release.xcconfig"; sourceTree = "<group>"; };
-		6913848B2A5503DE00454D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		691384A42A5543F400454D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		694952822A32D642004F989B /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		69C8CDF52A332C74004A0382 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
@@ -393,8 +393,8 @@
 		C043C29D2A172C4600A1F14D /* SmartMoney */ = {
 			isa = PBXGroup;
 			children = (
-				6913848B2A5503DE00454D7D /* GoogleService-Info.plist */,
 				C043C29E2A172C4600A1F14D /* AppDelegate.swift */,
+				691384A42A5543F400454D7D /* GoogleService-Info.plist */,
 				C043C2A02A172C4600A1F14D /* SceneDelegate.swift */,
 				C043C2AA2A172C4600A1F14D /* Assets.xcassets */,
 				C043C2AF2A172C4600A1F14D /* Info.plist */,
@@ -651,7 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C043C2D92A17348A00A1F14D /* Launch Screen.storyboard in Resources */,
-				6913848C2A5503DE00454D7D /* GoogleService-Info.plist in Resources */,
+				691384A52A5543F400454D7D /* GoogleService-Info.plist in Resources */,
 				C0DDF5A62A303E8000959F90 /* GroupMemberTableViewCell.xib in Resources */,
 				C04E27962A3344E600964161 /* GroupMemberCollectionViewCell.xib in Resources */,
 				C043C2AB2A172C4600A1F14D /* Assets.xcassets in Resources */,

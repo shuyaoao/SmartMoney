@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>334096476767-1dk4e2ig3alrkn74ncs49j06f13utq24.apps.googleusercontent.com</string>
+	<string>311287408399-rrtse4jjb1ur84pbqen6agg4hle78428.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.334096476767-1dk4e2ig3alrkn74ncs49j06f13utq24</string>
+	<string>com.googleusercontent.apps.311287408399-rrtse4jjb1ur84pbqen6agg4hle78428</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDSDiINVUaMDHkWsEdny7BAk6_XEiD-zqM</string>
+	<string>AIzaSyCJ7tLG9414Hnltd_AgETQYSL9oya_ao5w</string>
 	<key>GCM_SENDER_ID</key>
-	<string>334096476767</string>
+	<string>311287408399</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>petrichoro7.SmartMoney</string>
 	<key>PROJECT_ID</key>
-	<string>smart-money-1f512</string>
+	<string>smartmoney-orbital</string>
 	<key>STORAGE_BUCKET</key>
-	<string>smart-money-1f512.appspot.com</string>
+	<string>smartmoney-orbital.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:334096476767:ios:f93c489d233c0aa95e49ea</string>
+	<string>1:311287408399:ios:75ac78a1a48411ec7e807a</string>
+	<key>DATABASE_URL</key>
+	<string>https://smartmoney-orbital-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
 </plist>
