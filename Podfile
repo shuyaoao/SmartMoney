@@ -9,7 +9,6 @@ target 'SmartMoney' do
 	pod 'SwipeCellKit', :git => 'https://github.com/SwipeCellKit/SwipeCellKit.git', :branch => 'develop'
 	#pod 'RoundedUI'
 	#pod 'IQKeyboardManagerSwift'
-	
 
   target 'SmartMoneyTests' do
     inherit! :search_paths

@@ -6,9 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
+    var alertMessage = ""
+    var alertController: UIAlertController?
 
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var passwordText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,17 +26,35 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: Any) {
-        performSegue(withIdentifier: "goToHomePage", sender: self)
+        Auth.auth().signIn(withEmail: emailText.text ?? "Random", password: passwordText.text ?? "Random") { result, error in
+            if error != nil {
+                self.alertMessage = error!.localizedDescription
+                self.showAlert()
+            } else {
+                self.performSegue(withIdentifier: "goToHomePage", sender: self)
+            }
+        }
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // Alert Warning Popup
+    func showAlert() {
+        self.alertController = UIAlertController(title: "Error", message: alertMessage, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            // Handle OK button action (if needed)
+            self?.dismissAlert()
+        }
+        
+        self.alertController?.addAction(okAction)
+        
+        // Present the alert controller
+        present(alertController!, animated: true, completion: nil)
     }
-    */
+    
+    func dismissAlert() {
+        alertController?.dismiss(animated: true, completion: nil)
+        alertController = nil
+    }
 
 }

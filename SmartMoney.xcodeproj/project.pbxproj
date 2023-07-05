@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6913848C2A5503DE00454D7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6913848B2A5503DE00454D7D /* GoogleService-Info.plist */; };
+		691384982A55060400454D7D /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 691384972A55060400454D7D /* FirebaseAnalytics */; };
+		6913849A2A55060400454D7D /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 691384992A55060400454D7D /* FirebaseAnalyticsSwift */; };
+		6913849C2A55060400454D7D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6913849B2A55060400454D7D /* FirebaseAuth */; };
+		6913849E2A55060400454D7D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 6913849D2A55060400454D7D /* FirebaseDatabase */; };
+		691384A02A55060400454D7D /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6913849F2A55060400454D7D /* FirebaseDatabaseSwift */; };
 		694952832A32D642004F989B /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694952822A32D642004F989B /* CircularProgressView.swift */; };
 		69C8CDF62A332C74004A0382 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDF52A332C74004A0382 /* TransactionModel.swift */; };
 		69C8CDFB2A332DDE004A0382 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */; };
@@ -108,6 +114,7 @@
 		3B01FD637A5246FFB6C5B405 /* Pods_SmartMoneyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmartMoneyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F36524AFDD4C1673FC448FA /* Pods-SmartMoney-SmartMoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney-SmartMoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4A1D276909B1BDF6EAB9EF75 /* Pods-SmartMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney.release.xcconfig"; path = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.release.xcconfig"; sourceTree = "<group>"; };
+		6913848B2A5503DE00454D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		694952822A32D642004F989B /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		69C8CDF52A332C74004A0382 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
@@ -199,8 +206,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				691384A02A55060400454D7D /* FirebaseDatabaseSwift in Frameworks */,
+				6913849E2A55060400454D7D /* FirebaseDatabase in Frameworks */,
+				6913849A2A55060400454D7D /* FirebaseAnalyticsSwift in Frameworks */,
+				6913849C2A55060400454D7D /* FirebaseAuth in Frameworks */,
 				C043C2F42A17C85700A1F14D /* MonthYearPicker in Frameworks */,
 				D5300E6450FC7AD0E5D86A8C /* Pods_SmartMoney.framework in Frameworks */,
+				691384982A55060400454D7D /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +393,7 @@
 		C043C29D2A172C4600A1F14D /* SmartMoney */ = {
 			isa = PBXGroup;
 			children = (
+				6913848B2A5503DE00454D7D /* GoogleService-Info.plist */,
 				C043C29E2A172C4600A1F14D /* AppDelegate.swift */,
 				C043C2A02A172C4600A1F14D /* SceneDelegate.swift */,
 				C043C2AA2A172C4600A1F14D /* Assets.xcassets */,
@@ -536,6 +549,11 @@
 			name = SmartMoney;
 			packageProductDependencies = (
 				C043C2F32A17C85700A1F14D /* MonthYearPicker */,
+				691384972A55060400454D7D /* FirebaseAnalytics */,
+				691384992A55060400454D7D /* FirebaseAnalyticsSwift */,
+				6913849B2A55060400454D7D /* FirebaseAuth */,
+				6913849D2A55060400454D7D /* FirebaseDatabase */,
+				6913849F2A55060400454D7D /* FirebaseDatabaseSwift */,
 			);
 			productName = SmartMoney;
 			productReference = C043C29B2A172C4600A1F14D /* SmartMoney.app */;
@@ -614,6 +632,7 @@
 			mainGroup = C043C2922A172C4600A1F14D;
 			packageReferences = (
 				C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */,
+				691384962A55060400454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = C043C29C2A172C4600A1F14D /* Products */;
 			projectDirPath = "";
@@ -632,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C043C2D92A17348A00A1F14D /* Launch Screen.storyboard in Resources */,
+				6913848C2A5503DE00454D7D /* GoogleService-Info.plist in Resources */,
 				C0DDF5A62A303E8000959F90 /* GroupMemberTableViewCell.xib in Resources */,
 				C04E27962A3344E600964161 /* GroupMemberCollectionViewCell.xib in Resources */,
 				C043C2AB2A172C4600A1F14D /* Assets.xcassets in Resources */,
@@ -1180,6 +1200,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		691384962A55060400454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexanderedge/MonthYearPicker.git";
@@ -1191,6 +1219,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		691384972A55060400454D7D /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 691384962A55060400454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		691384992A55060400454D7D /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 691384962A55060400454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		6913849B2A55060400454D7D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 691384962A55060400454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6913849D2A55060400454D7D /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 691384962A55060400454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		6913849F2A55060400454D7D /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 691384962A55060400454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
 		C043C2F32A17C85700A1F14D /* MonthYearPicker */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */;
