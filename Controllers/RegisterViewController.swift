@@ -7,12 +7,14 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class RegisterViewController: UIViewController {
     var alertMessage = ""
     var alertController: UIAlertController?
     
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var profileNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
@@ -40,12 +42,37 @@ class RegisterViewController: UIViewController {
         if passwordTextField.text! != confirmPasswordTextField.text! {
             alertMessage = "Please check that both your passwords match."
             showAlert()
+            
         } else {
             Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { result, error in
+                // Authentication Failed
                 if error != nil {
                     self.alertMessage = error!.localizedDescription
                     self.showAlert()
+                    
+                // Authentication Successful
                 } else {
+                    guard let user = result?.user else { return }
+                        
+                    // MARK: Update user name for the user
+                    let changeRequest = user.createProfileChangeRequest()
+                    changeRequest.displayName = self.profileNameTextField.text // Set the user's name
+                    changeRequest.commitChanges { error in
+                        if let error = error {
+                            // Handle profile update error
+                            print("Profile update error: \(error.localizedDescription)")
+                        } else {
+                            // Name successfully added to the user's profile
+                            print("Name added to user profile: \(user.displayName ?? "")")
+                        }
+                    }
+                    
+                    // MARK: Initialise data upon registration
+                    let databaseRef = Database.database().reference()
+                    let usersRef = databaseRef.child("users")
+                    // Access user content
+                    usersRef.setValue(user.uid)
+                    
                     self.dismiss(animated: true)
                 }
             }

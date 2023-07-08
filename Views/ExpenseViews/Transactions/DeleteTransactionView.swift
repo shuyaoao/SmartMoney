@@ -86,8 +86,6 @@ struct DeleteTransactionView: View {
         
         // Reset the id of all transactions (for future update/delete)
         transactiondatamodel.resetTransactionIndexes()
-        
-       
     }
     
     

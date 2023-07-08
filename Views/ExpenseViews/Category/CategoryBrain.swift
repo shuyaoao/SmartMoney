@@ -83,6 +83,22 @@ var catDataSource = CategoryDataModel(listofCategories: [foodCategory, transport
 
 
 // MARK: Categories
+
+var categoryDict = [
+    "Food" : foodCategory,
+    "Transport" : transportCategory,
+    "Groceries" : groceriesCategory,
+    "Entertainment" : entertainmentCategory,
+    "Utilities" : utilitiesCategory,
+    "Clothing" : clothingCategory,
+    "Health" : healthCategory,
+    "Work" : workCategory,
+    "Tax" : taxCategory,
+    "Insurance" : insuranceCategory,
+    "Education" : educationCategory,
+    "Others" : othersCategory
+]
+
 var foodCategory = Category(id: 0, category: "Food", icon: Image("food"), imageName: "takeoutbag.and.cup.and.straw.fill")
 var transportCategory = Category(id: 1, category: "Transport", icon: Image("transport"), imageName: "train.side.rear.car")
 var groceriesCategory = Category(id: 2, category: "Groceries", icon: Image("groceries"), imageName: "bag.circle")
@@ -97,6 +113,7 @@ var educationCategory = Category(id: 10, category: "Education", icon: Image("edu
 
 // Filler Category
 var othersCategory = Category(id: 11, category: "Others", icon: Image("questionmark"), imageName: "questionmark.folder")
+
 
 
 

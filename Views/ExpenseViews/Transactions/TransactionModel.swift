@@ -23,6 +23,18 @@ struct Transaction: Identifiable {
         self.amount = amount
         self.isExpense = isExpense
     }
+    
+    func toDictionary() -> [String: Any] {
+        var dictionary: [String: Any] = [:]
+        // dictionary["id"] = id excluded
+        dictionary["name"] = name
+        dictionary["date"] = date
+        dictionary["category"] = category.category
+        dictionary["amount"] = amount
+        dictionary["isExpense"] = isExpense
+        
+        return dictionary
+    }
 }
 
 // This transaction class is used to monitor the pending transaction that is about to be added.

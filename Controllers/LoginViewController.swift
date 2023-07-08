@@ -34,7 +34,6 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "goToHomePage", sender: self)
             }
         }
-        
     }
     
     // Alert Warning Popup

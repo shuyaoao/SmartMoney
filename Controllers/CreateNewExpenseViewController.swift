@@ -75,7 +75,7 @@ class CreateNewExpenseViewController: UIViewController {
         newTransaction.amount = convertToDouble(numPad.numPadNumber)
         
         // new Unique id of Transaction
-        let id = transactionDataModel.transactionDataList.count
+        let id = transactionDataModel.transactionDataList.count 
         
         // Checks if any of the datafields are empty
         // if Empty: Show a Warning Message

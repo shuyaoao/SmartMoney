@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 import Combine
+import FirebaseDatabase
+import FirebaseAuth
 
 class TransactionDataModel: ObservableObject {
     @Published var totalExpenses : Double {
@@ -38,19 +40,82 @@ class TransactionDataModel: ObservableObject {
     
     // Delete Transactions according to its unique id
     func removeTransaction(id : Int) {
+        // Remove for UI purposes
         self.transactionDataList.removeAll { $0.id == id }
-    }
-    
-    // Reset Index of all Transactions in transaction datalist
-    func resetTransactionIndexes() {
-        for (index, _) in transactionDataList.enumerated() {
-            transactionDataList[index].id = index
+        
+        // Remove from database
+        let user = Auth.auth().currentUser
+        let databaseRef = Database.database().reference().child("users")
+        let userRef = databaseRef.child(user!.uid)
+        let transactionsRef = userRef.child("transactions")
+        
+        transactionsRef.child(String(id)).removeValue { error, _ in
+            if let error = error {
+                print("Error removing value: \(error.localizedDescription)")
+            } else {
+                print("Value removed successfully.")
+            }
         }
+        // reset id into incrementing order
+        
+        print("Before")
+        print(transactionDataList)
+        resetTransactionIndexes()
+        print("After")
+        print(transactionDataList)
     }
     
     // Append new Transaction to existing transaction data list
     func updateTransactionDataList(newTransaction : Transaction) {
+        // Add internally
         transactionDataList = transactionDataList + [newTransaction]
+        
+        // Add to database
+        let user = Auth.auth().currentUser
+        let databaseRef = Database.database().reference().child("users")
+        let userRef = databaseRef.child(user!.uid)
+        let transactionsRef = userRef.child("transactions")
+        
+        // Add new transaction with id = length of datalist
+        transactionsRef.child(String(newTransaction.id)).setValue(newTransaction.toDictionary())
+        print("Added Transactions to Database")
+    }
+    
+    // Reset Index of all Transactions in transaction datalist
+    func resetTransactionIndexes() {
+        // Reset internally
+        for (index, _) in transactionDataList.enumerated() {
+            transactionDataList[index].id = index
+        }
+        
+        
+        // Reset index in database
+        let user = Auth.auth().currentUser
+        let databaseRef = Database.database().reference().child("users")
+        let userRef = databaseRef.child(user!.uid)
+        let transactionsRef = userRef.child("transactions")
+        
+        transactionsRef.observeSingleEvent(of: .value) { snapshot in
+            guard snapshot.exists(), let originalData = snapshot.value as? [String: Any] else {
+                return
+            }
+            
+            var newData: [String: Any] = [:]
+            
+            for (index, trans) in self.transactionDataList.enumerated() {
+                newData[String(index)] = trans.toDictionary()
+            }
+            print(newData)
+            
+            // Set the new data structure with reset keys
+            transactionsRef.setValue(newData) { error, _ in
+                if let error = error {
+                    print("Error resetting keys: \(error.localizedDescription)")
+                } else {
+                    print("Keys reset successfully.")
+                }
+            }
+        }
     }
     
     // Reduce function to cumulate totalExpenses
@@ -121,17 +186,9 @@ class TransactionDataModel: ObservableObject {
     }
 }
 
-var transactionPreviewDataList = [
-    Transaction(id: 0, name: "Apple", date: "01 Jun 2023", category: utilitiesCategory, amount: 30.00, isExpense: true),
-    Transaction(id: 1, name: "Banana", date: "02 Jun 2023", category: groceriesCategory, amount: 15.00, isExpense: true),
-    Transaction(id: 2, name: "Orange", date: "03 Jun 2023", category: groceriesCategory, amount: 10.00, isExpense: true)
-]
+// MARK: Pull Data from Database
+
+var transactionPreviewDataList = [Transaction(id: 0, name: "Sample", date: "01 July 1990", category: utilitiesCategory, amount: 10.00, isExpense: true)]
 
 // MARK: The main DataModel used for holding transactions
 var transactionDataModel = TransactionDataModel(transactionDataList : transactionPreviewDataList)
-
-
-
-
-
-

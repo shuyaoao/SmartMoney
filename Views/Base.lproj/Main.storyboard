@@ -161,25 +161,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="r1R-IU-yFu">
-                                <rect key="frame" x="31" y="358" width="330" height="36"/>
+                                <rect key="frame" x="31" y="413" width="330" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Off-white"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-enter password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Uef-vF-Kxy">
-                                <rect key="frame" x="31" y="416" width="330" height="36"/>
+                                <rect key="frame" x="31" y="471" width="330" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Off-white"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lightBlueAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FqS-zg-jov">
-                                <rect key="frame" x="-42" y="85" width="475" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHB-kb-7Lp">
-                                <rect key="frame" x="124" y="468" width="144" height="48"/>
+                                <rect key="frame" x="123" y="515" width="144" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Light Blue"/>
                                 <color key="tintColor" name="Light Blue"/>
@@ -193,6 +189,17 @@
                                     <action selector="registerButtonPressed:" destination="KGm-lN-Fi4" eventType="touchUpInside" id="b5U-DZ-Jfd"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lightBlueAppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FqS-zg-jov">
+                                <rect key="frame" x="-42" y="85" width="475" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Profile Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fdI-1F-jb9">
+                                <rect key="frame" x="30" y="355" width="330" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Off-white"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lp2-WH-md0"/>
                         <color key="backgroundColor" name="Light Blue"/>
@@ -201,6 +208,7 @@
                         <outlet property="confirmPasswordTextField" destination="Uef-vF-Kxy" id="8Ih-g5-fLv"/>
                         <outlet property="emailTextField" destination="1o0-xC-fZd" id="s51-4o-3Md"/>
                         <outlet property="passwordTextField" destination="r1R-IU-yFu" id="tCR-mi-bKg"/>
+                        <outlet property="profileNameTextField" destination="fdI-1F-jb9" id="eG3-2h-R0b"/>
                         <outlet property="registerButton" destination="IHB-kb-7Lp" id="USy-bD-47g"/>
                     </connections>
                 </viewController>
