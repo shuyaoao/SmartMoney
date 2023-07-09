@@ -38,6 +38,11 @@ class CreateNewExpenseViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMM yyyy"
         newTransaction.date = dateFormatter.string(from: datePicker.date)
+        
+        //dismiss keyboard when tapped elsewhere
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {

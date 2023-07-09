@@ -7,10 +7,11 @@
 
 import UIKit
 import SwipeCellKit
+import Combine
+import Firebase
+import FirebaseAuth
 
 class GroupsViewController: UITableViewController {
-    
-    var groupArray: [Group] = [Family(), Friends(), Hexagon()]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class GroupsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return groupArray.count
+        return groupsDataModel.count
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -28,10 +29,23 @@ class GroupsViewController: UITableViewController {
     }
     
     func updateData() {
-        for group in groupArray {
+        for group in groupsDataModel {
             group.updateTotalBalance()
         }
         self.tableView.reloadData()
+        print(groupsDataModel)
+        print("dataReloaded")
+    }
+    
+    func addNewGroupToDatabase(_ group : Group) {
+        let user = Auth.auth().currentUser
+        let databaseRef = Database.database().reference().child("users")
+        let userRef = databaseRef.child(user!.uid)
+        let groupsRef = userRef.child("groups")
+        
+        // Add new group with id
+        groupsRef.child(group.id).setValue(group.toDictionary())
+        print("Added Group to Database")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -40,8 +54,8 @@ class GroupsViewController: UITableViewController {
             let destinationVC = segue.destination as! GroupDetailsViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 //destinationVC.navigationBar.title = groupArray[indexPath.row].groupName
-                destinationVC.group = groupArray[indexPath.row]
-                destinationVC.amount = groupArray[indexPath.row].owedAmount
+                destinationVC.group = groupsDataModel[indexPath.row]
+                destinationVC.amount = groupsDataModel[indexPath.row].owedAmount
                 destinationVC.prevVC = self
             }
         //else if user presses on the plus button, prepare for navigation to CreateGroupViewController
@@ -61,14 +75,16 @@ extension GroupsViewController : CreateGroupViewControllerDelegate {
     func updateData(_ vc: CreateGroupViewController) {
         if let text = vc.groupNameTextField.text {
             let newGroup = Group(text)
-            newGroup.addMember(myself)//to replace with logged in user after database has been inplemented
+            newGroup.addMember(myself)//to replace with logged in user after database has been implemented
             newGroup.simplifier.userController.addUser(myself)
             for (_, user) in vc.members {
                 newGroup.addMember(user)
                 newGroup.simplifier.userController.addUser(user)
             }
-            self.groupArray.append(newGroup)
+            groupsDataModel.append(newGroup)
+            addNewGroupToDatabase(newGroup)
             self.tableView.reloadData()
+            print("new group added")
         //retrieve date from CreateGroupViewController and add the group to existing array, then refresh the tableview
         }
         
@@ -82,7 +98,9 @@ extension GroupsViewController : SwipeTableViewCellDelegate {
 
         let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
             // handle action by updating model with deletion
-            self.groupArray.remove(at: indexPath.row)
+            let groupID = groupsDataModel[indexPath.row].id
+            groupsDataModel.remove(at: indexPath.row)
+            self.removeGroupFromDatabase(groupID)
         }
 
         // customize the action appearance
@@ -91,12 +109,28 @@ extension GroupsViewController : SwipeTableViewCellDelegate {
         return [deleteAction]
     }
     
+    func removeGroupFromDatabase(_ id: String) {
+        // Remove group from database
+        let user = Auth.auth().currentUser
+        let databaseRef = Database.database().reference().child("users")
+        let userRef = databaseRef.child(user!.uid)
+        let groupsRef = userRef.child("groups")
+        
+        groupsRef.child(id).removeValue { error, _ in
+            if let error = error {
+                print("Error removing value: \(error.localizedDescription)")
+            } else {
+                print("Value removed successfully.")
+            }
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //configures the table cell to display group information(name and summarised debt)
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
         cell.delegate = self
-        cell.nameLabel.text = groupArray[indexPath.row].groupName
-        let amt = groupArray[indexPath.row].owedAmount
+        cell.nameLabel.text = groupsDataModel[indexPath.row].groupName
+        let amt = groupsDataModel[indexPath.row].owedAmount
         if amt < 0 {
             cell.amtLabel.text = String(format: "$%.2f", -amt)
             cell.amtLabel.textColor = UIColor.red

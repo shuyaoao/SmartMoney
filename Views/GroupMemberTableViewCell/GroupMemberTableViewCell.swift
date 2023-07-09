@@ -11,11 +11,7 @@ import SwipeCellKit
 class GroupMemberTableViewCell: UITableViewCell {
     
     static var id = "GroupMemberTableViewCell"
-    //@IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var memberNameTextField: UITextField!
-    var time = Date()
-    
-    //var delete = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,4 +24,21 @@ class GroupMemberTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+class TextFieldManager : Comparable {
+    
+    let time: Date
+    
+    init(time: Date) {
+        self.time = time
+    }
+    
+    static func < (lhs: TextFieldManager, rhs: TextFieldManager) -> Bool {
+        return lhs.time < rhs.time
+    }
+    
+    static func == (lhs: TextFieldManager, rhs: TextFieldManager) -> Bool {
+        return true
+    }
 }

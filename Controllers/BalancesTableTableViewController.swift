@@ -22,7 +22,9 @@ class BalancesTableTableViewController: UITableViewController {
             balances[member] = [Payment]()
         }
         for payment in results {
-            balances[payment.payer]?.append(payment)
+            if payment.payer.name != payment.payee.name {
+                balances[payment.payer]?.append(payment)
+            }
         }
         
         for (_, payments) in balances {

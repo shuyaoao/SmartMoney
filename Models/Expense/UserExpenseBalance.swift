@@ -8,7 +8,7 @@
 import Foundation
 
 class UserExpenseBalance {
-    var UserVsBalance: Dictionary<String, Balance>
+    var UserVsBalance: Dictionary<User, Balance>
     var totalYourExpense: Double
     var totalPayment: Double
     var totalYouOwe: Double
@@ -16,7 +16,7 @@ class UserExpenseBalance {
     var credit: Double
     
     init() {
-        self.UserVsBalance = Dictionary<String, Balance>()
+        self.UserVsBalance = Dictionary<User, Balance>()
         self.totalYourExpense = 0.0
         self.totalPayment = 0.0
         self.totalYouOwe = 0.0

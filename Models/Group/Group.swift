@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Group {
+class Group: Comparable {
     var groupMembers : [User]
     var owedAmount : Double
     var groupName : String
@@ -15,6 +15,15 @@ class Group {
     var expenseController: ExpenseController
     let id: String
     let simplifier = GroupDebtSimplifier()
+    var dateCreated: Date
+    
+    static func < (lhs: Group, rhs: Group) -> Bool {
+        return lhs.dateCreated <= rhs.dateCreated
+    }
+    
+    static func == (lhs: Group, rhs: Group) -> Bool {
+        return lhs.id == rhs.id
+    }
     
     init(_ groupName: String) {
         self.groupMembers = [User]()
@@ -23,26 +32,40 @@ class Group {
         self.expenseList = [GroupExpense]()
         self.expenseController = ExpenseController()
         self.id = UUID().uuidString
+        self.dateCreated = Date()
     }
     
-    init(_ owedAmount: Double, _ name: String) {
-        //this constructor will be removed after database has been implemented
-        self.groupMembers = [User]()
-        self.owedAmount = owedAmount
-        self.groupName = name
-        self.expenseList = [GroupExpense]()
-        self.expenseController = ExpenseController()
-        self.id = UUID().uuidString
-    }
+//    init(_ owedAmount: Double, _ name: String) {
+//        //this constructor will be removed after database has been implemented
+//        self.groupMembers = [User]()
+//        self.owedAmount = owedAmount
+//        self.groupName = name
+//        self.expenseList = [GroupExpense]()
+//        self.expenseController = ExpenseController()
+//        self.id = UUID().uuidString
+//    }
+//
+//    init(_ owedAmount: Double, _ name: String, _ groupMembers: [User]) {
+//        //this constructor will be removed after database has been implemented
+//        self.groupMembers = groupMembers
+//        self.owedAmount = owedAmount
+//        self.groupName = name
+//        self.expenseList = [GroupExpense]()
+//        self.expenseController = ExpenseController()
+//        self.id = UUID().uuidString
+//    }
     
-    init(_ owedAmount: Double, _ name: String, _ groupMembers: [User]) {
-        //this constructor will be removed after database has been implemented
+    init(_ owedAmount: Double, _ name: String, _ groupMembers: [User], _ expenseList: [GroupExpense], _ id: String, _ dateCreated: Date) {
         self.groupMembers = groupMembers
         self.owedAmount = owedAmount
         self.groupName = name
-        self.expenseList = [GroupExpense]()
+        self.expenseList = expenseList
         self.expenseController = ExpenseController()
-        self.id = UUID().uuidString
+        self.id = id
+        for user in self.groupMembers {
+            self.simplifier.userController.addUser(user)
+        }
+        self.dateCreated = dateCreated
     }
     
     func addMember(_ member: User) {
@@ -67,5 +90,26 @@ class Group {
     
     func updateTotalBalance() {
         self.owedAmount = self.simplifier.getBalances(self.expenseList)[myself] ?? 0
+    }
+    
+    func toDictionary() -> [String: Any] {
+        var dictionary: [String: Any] = [:]
+        dictionary["id"] = id
+        dictionary["groupName"] = groupName
+        dictionary["owedAmount"] = owedAmount
+        var membersDict: [String: Any] = [:]
+        for member in groupMembers {
+            membersDict[member.id] = member.name
+        }
+        dictionary["groupMembers"] = membersDict
+        var expenseDict: [String: Any] = [:]
+        for expense in expenseList {
+            expenseDict[expense.id] = expense.toDictionary()
+        }
+        dictionary["expenseList"] = expenseDict
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YY, MMM d, HH:mm:ss"
+        dictionary["dateCreated"] = dateFormatter.string(from: dateCreated)
+        return dictionary
     }
 }

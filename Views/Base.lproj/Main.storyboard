@@ -671,7 +671,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yzQ-ON-zyH">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yzQ-ON-zyH">
                                 <rect key="frame" x="16" y="162" width="91" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Light Blue"/>
@@ -1570,7 +1570,7 @@
                                 <color key="backgroundColor" name="Off-white"/>
                                 <color key="tintColor" name="Light Blue"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" image="gear" catalog="system" title="Update Profile" imagePadding="1" titleAlignment="leading">
+                                <buttonConfiguration key="configuration" style="filled" title="Update Name" titleAlignment="leading">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" name="Light Blue"/>
@@ -1582,13 +1582,28 @@
                                 <color key="backgroundColor" name="Off-white"/>
                                 <color key="tintColor" name="Light Blue"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Profile Picture" titleAlignment="leading">
+                                <buttonConfiguration key="configuration" style="filled" title="Update Photo" titleAlignment="leading">
                                     <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                     <color key="baseBackgroundColor" name="Light Blue"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="importPicture:" destination="16C-w7-DxO" eventType="touchUpInside" id="zEs-Pq-nPj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOI-TD-hlj">
+                                <rect key="frame" x="137" y="722" width="119" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Off-white"/>
+                                <color key="tintColor" name="Light Blue"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Logout" titleAlignment="leading">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                    <color key="baseForegroundColor" name="Off-white"/>
+                                    <color key="baseBackgroundColor" red="0.60785645249999998" green="0.10839181389999999" blue="0.12366236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="16C-w7-DxO" eventType="touchUpInside" id="4aJ-AO-2jo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1599,11 +1614,12 @@
                     <connections>
                         <outlet property="nameLabel" destination="RFZ-AV-RXU" id="ibp-YQ-JrL"/>
                         <outlet property="profilePicture" destination="eAf-bY-jmW" id="xEa-BT-Ued"/>
+                        <segue destination="Ilf-aM-yGN" kind="presentation" identifier="logout" modalPresentationStyle="fullScreen" id="G2L-O9-ur4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVk-Yv-yMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3114" y="1106"/>
+            <point key="canvasLocation" x="3113.740458015267" y="1104.9295774647887"/>
         </scene>
         <!--Groups-->
         <scene sceneID="K4N-Yc-aJS">
@@ -1678,7 +1694,6 @@
         <image name="expenseIcon" width="512" height="512"/>
         <image name="food" width="24.5" height="22.5"/>
         <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="gear" catalog="system" width="128" height="122"/>
         <image name="greenIncomeIcon" width="479" height="520"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="icon" width="1024" height="1024"/>

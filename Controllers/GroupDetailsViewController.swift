@@ -9,6 +9,9 @@ import UIKit
 import MonthYearPicker
 import SwiftUI
 import SwipeCellKit
+import Combine
+import Firebase
+import FirebaseAuth
 
 class GroupDetailsViewController: UIViewController {
 
@@ -166,19 +169,39 @@ extension GroupDetailsViewController : SwipeTableViewCellDelegate {
                 self.group?.expenseList.remove(at: index!)
                 self.displayBalance()
                 var int = 0
-                for ind in 0 ..< (self.prevVC?.groupArray.count ?? 0) {
-                    if (self.prevVC?.groupArray[ind].id)! == self.group!.id {
+                for ind in 0 ..< (groupsDataModel.count ?? 0) {
+                    if groupsDataModel[ind].id == self.group!.id {
                         int = ind
                     }
                 }
-                self.prevVC?.groupArray[int] = self.group!
+                groupsDataModel[int] = self.group!
+                self.removeExpenseFromDatabase(id!)
                 self.prevVC?.updateData()
+                print(groupsDataModel)
             }
         }
         // customize the action appearance
         deleteAction.image = UIImage(named: "trash.fill")
 
         return [deleteAction]
+    }
+    
+    func removeExpenseFromDatabase(_ id: String) {
+        // Remove from database
+        let user = Auth.auth().currentUser
+        let databaseRef = Database.database().reference().child("users")
+        let userRef = databaseRef.child(user!.uid)
+        let groupsRef = userRef.child("groups")
+        let group = groupsRef.child(group!.id)
+        let expenseList = group.child("expenseList")
+        
+        expenseList.child(id).removeValue { error, _ in
+            if let error = error {
+                print("Error removing value: \(error.localizedDescription)")
+            } else {
+                print("Value removed successfully.")
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, editActionsOptionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
@@ -198,6 +221,11 @@ extension GroupDetailsViewController : SwipeTableViewCellDelegate {
             return formatter.string(from: expense.date) == dateTextField.text
         })
         cell.configure((filteredExpensesList?[indexPath.row])!)
+        if (filteredExpensesList?[indexPath.row])?.type == "Payup" {
+            cell.isUserInteractionEnabled = false
+        } else {
+            cell.isUserInteractionEnabled = true
+        }
         cell.delegate = self
         return cell
     }
@@ -206,7 +234,9 @@ extension GroupDetailsViewController : SwipeTableViewCellDelegate {
         let cell = tableView.cellForRow(at: indexPath) as! GroupExpensesTableViewCell
         selectedExpense = cell.expense
         if selectedExpense != nil {
-            performSegue(withIdentifier: "goToExpenseDetails", sender: self)
+            if selectedExpense?.type != "Payup"{
+                performSegue(withIdentifier: "goToExpenseDetails", sender: self)
+            }
         }
     }
 }

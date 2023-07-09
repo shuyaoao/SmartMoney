@@ -14,7 +14,7 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var groupNameTextField: UITextField!
     weak var delegate : CreateGroupViewControllerDelegate?
     @IBOutlet weak var editButton: UIButton!
-    var count = 1
+    var textFieldArray = [TextFieldManager(time: Date())]
     var members = [Int:User]()
     var alertController: UIAlertController?
     
@@ -83,7 +83,13 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
         //some function to add another textfield to add more group members
-        count += 1
+        textFieldArray.append(TextFieldManager(time: Date()))
+        textFieldArray.sort()
+//        for array in textFieldArray {
+//            let dateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "YY, MMM d, HH:mm:ss"
+//            print(dateFormatter.string(from: array.time))
+//        }
         groupMembersTableView.reloadData()
     }
     
@@ -101,14 +107,15 @@ class CreateGroupViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         //allows deletion of a group
         if editingStyle == .delete {
-            count -= 1
+            textFieldArray.remove(at: indexPath.row)
+            textFieldArray.sort()
             groupMembersTableView.deleteRows(at: [indexPath], with: .fade)
             members.removeValue(forKey: indexPath.row)
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return count
+        return textFieldArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

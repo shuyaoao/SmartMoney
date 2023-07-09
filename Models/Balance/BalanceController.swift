@@ -24,11 +24,11 @@ class BalanceController {
                 payerUserExpense.totalYouGetBack += amountOwed
                 
                 var userOweBalance: Balance
-                if payerUserExpense.UserVsBalance[userOwe.name] != nil {
-                    userOweBalance = payerUserExpense.UserVsBalance[userOwe.name]!
+                if payerUserExpense.UserVsBalance[userOwe] != nil {
+                    userOweBalance = payerUserExpense.UserVsBalance[userOwe]!
                 } else {
                     userOweBalance = Balance()
-                    payerUserExpense.UserVsBalance[userOwe.name] = userOweBalance
+                    payerUserExpense.UserVsBalance[userOwe] = userOweBalance
                 }
                 userOweBalance.amountGetBack += amountOwed
                 
@@ -38,29 +38,29 @@ class BalanceController {
                 payerUserExpense.updateCredit()
                 
                 var userPaidBalance: Balance
-                if userOweExpense.UserVsBalance[payer.name] != nil {
-                    userPaidBalance = userOweExpense.UserVsBalance[payer.name]!
+                if userOweExpense.UserVsBalance[payer] != nil {
+                    userPaidBalance = userOweExpense.UserVsBalance[payer]!
                 } else {
                     userPaidBalance = Balance()
-                    userOweExpense.UserVsBalance[payer.name] = userPaidBalance
+                    userOweExpense.UserVsBalance[payer] = userPaidBalance
                 }
                 userPaidBalance.amountOwe += amountOwed
             }
         }
     }
     
-    func showBalanceSheetOfUser(_ user: User) {
-        print("---------------------------------------")
-        print("Balance sheet of user : " + user.name)
-        let userExpenseBalanceSheet =  user.userExpenseBalance
-        print("TotalYourExpense: " + String(format: "%.2f", userExpenseBalanceSheet.totalYourExpense))
-        print("TotalGetBack: " + String(format: "%.2f", userExpenseBalanceSheet.totalYouGetBack))
-        print("TotalYourOwe: " + String(format: "%.2f", userExpenseBalanceSheet.totalYouOwe))
-        print("TotalPaymentMade: " + String(format: "%.2f", userExpenseBalanceSheet.totalPayment))
-        print("TotalCredit: " + String(format: "%.2f", userExpenseBalanceSheet.credit))
-        for (name, balance) in userExpenseBalanceSheet.UserVsBalance {
-            print(String(format: "Name: %@, YouGetBack: %.2f, YouOwe: %.2f", name, balance.amountGetBack, balance.amountOwe))
-        }
-        print("---------------------------------------");
-    }
+//    func showBalanceSheetOfUser(_ user: User) {
+//        print("---------------------------------------")
+//        print("Balance sheet of user : " + user.name)
+//        let userExpenseBalanceSheet =  user.userExpenseBalance
+//        print("TotalYourExpense: " + String(format: "%.2f", userExpenseBalanceSheet.totalYourExpense))
+//        print("TotalGetBack: " + String(format: "%.2f", userExpenseBalanceSheet.totalYouGetBack))
+//        print("TotalYourOwe: " + String(format: "%.2f", userExpenseBalanceSheet.totalYouOwe))
+//        print("TotalPaymentMade: " + String(format: "%.2f", userExpenseBalanceSheet.totalPayment))
+//        print("TotalCredit: " + String(format: "%.2f", userExpenseBalanceSheet.credit))
+//        for (name, balance) in userExpenseBalanceSheet.UserVsBalance {
+//            print(String(format: "Name: %@, YouGetBack: %.2f, YouOwe: %.2f", name, balance.amountGetBack, balance.amountOwe))
+//        }
+//        print("---------------------------------------");
+//    }
 }

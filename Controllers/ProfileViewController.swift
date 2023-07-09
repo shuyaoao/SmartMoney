@@ -7,6 +7,10 @@
 
 import UIKit
 import SwiftUI
+import Firebase
+import FirebaseAuth
+import Combine
+//import FirebaseStorage
 
 class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
@@ -26,6 +30,10 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func logoutButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "logout", sender: self)
+    }
+    
     @IBAction func importPicture(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -43,6 +51,26 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+    
+//    func uploadPhotoToDatabase() {
+//        //turn photo into data
+//        guard profilePicture.image != nil else {
+//            return
+//        }
+//        let imageData = profilePicture.image?.jpegData(compressionQuality: 0.8)
+//
+//        guard imageData != nil else {
+//            return
+//        }
+//        //create storage reference
+//        let user = Auth.auth().currentUser
+//        let databaseRef = Storage.storage().reference().child("users")
+//        let userRef = databaseRef.child(user!.uid)
+//        let profilePictureRef = userRef.child("profilePicture")
+//
+//        // put image data into database
+//        let uploadTask = profilePictureRef.put
+//    }
     
     /*
     // MARK: - Navigation

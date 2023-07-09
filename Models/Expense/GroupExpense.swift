@@ -41,6 +41,17 @@ class GroupExpense: Comparable {
         self.category = category
     }
     
+    init(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split], _ description: String, _ splitType: SplitType, _ category: Category, _ id: String) {
+        self.payer = payer
+        self.amount = amount
+        self.date = date
+        self.splits.append(contentsOf: splits)
+        self.description = description
+        self.splitType = splitType
+        self.id = id
+        self.category = category
+    }
+    
     init(_ payer: User, _ amount: Double, _ date: Date, _ splits: [Split], _ description: String, _ splitType: SplitType) {
         self.payer = payer
         self.amount = amount
@@ -66,6 +77,26 @@ class GroupExpense: Comparable {
     
     func validate() -> Bool {
         return true
+    }
+    
+    func toDictionary() -> [String: Any] {
+        var dictionary: [String: Any] = [:]
+
+        dictionary["description"] = description
+        dictionary["payer"] = payer.toDictionary()
+        dictionary["category"] = category.category
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YY, MMM d, HH:mm:ss"
+        dictionary["date"] = dateFormatter.string(from: date)
+        dictionary["splitType"] = splitType.id
+        dictionary["type"] = type
+        dictionary["amount"] = amount
+        var subDict: [String: Any] = [:]
+        for split in splits {
+            subDict[split.user.id] = split.amount
+        }
+        dictionary["splits"] = subDict
+        return dictionary
     }
     
 }

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Combine
+import Firebase
+import FirebaseAuth
 
 class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
@@ -129,21 +132,34 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 }
             }
             let amount = Double(amountTextField.text!)!
-            group?.createExpense(payer!, amount, Date(), [Split(user: payee!, amount: amount)])
+            let payup = group?.createExpense(payer!, amount, Date(), [Split(user: payee!, amount: amount)])
             let groupDetailsVC = self.prevVC
             let groupsVC = self.prevVC?.prevVC
             var index = 0
-            for ind in 0 ..< (groupsVC?.groupArray.count ?? 0) {
-                if (groupsVC?.groupArray[ind].id)! == group!.id {
+            for ind in 0 ..< (groupsDataModel.count ?? 0) {
+                if (groupsDataModel[ind].id) == group!.id {
                     index = ind
                 }
             }
-            groupsVC?.groupArray[index] = group!
+            groupsDataModel[index] = group!
             groupsVC?.updateData()
             groupDetailsVC?.updateData()
+            addNewPayupToDatabase(payup!)
             self.dismiss(animated: true)
         }
+    }
+    
+    func addNewPayupToDatabase(_ expense : GroupExpense) {
+        let user = Auth.auth().currentUser
+        let databaseRef = Database.database().reference().child("users")
+        let userRef = databaseRef.child(user!.uid)
+        let groupsRef = userRef.child("groups")
+        let group = groupsRef.child(group!.id)
+        let expenseListRef = group.child("expenseList")
         
+        // Add new expense with id
+        expenseListRef.child(expense.id).setValue(expense.toDictionary())
+        print("Added Pay Up to Database")
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {

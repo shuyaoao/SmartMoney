@@ -7,6 +7,9 @@
 
 import UIKit
 import SwiftUI
+import Combine
+import FirebaseDatabase
+import FirebaseAuth
 
 class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
@@ -110,7 +113,7 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                 cell.nameLabel.backgroundColor = UIColor(named: "Medium Blue")
                 array[indexPath.row].splitBtwSelected = false
                 splitBtw = splitBtw.filter { user in
-                    user.name != array[indexPath.row].name
+                    user.id != array[indexPath.row].id
                 }
             } else {
                 cell.rectangleView.backgroundColor = UIColor(named: "Dark Blue")
@@ -126,11 +129,11 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
             }
             splitHowCV.reloadData()
         } else {
-            if collectionView == whoPaidScrollView && array[indexPath.row].name != paidBy?.name {
+            if collectionView == whoPaidScrollView && array[indexPath.row].id != paidBy?.id {
                 array[indexPath.row].paidBySelected = true
                 var index: Int?
                 for (ind, user) in array.enumerated() {
-                    if user.name == paidBy?.name {
+                    if user.id == paidBy?.id {
                         index = ind
                     }
                 }
@@ -221,24 +224,39 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
                 }
             }
             
-            group?.createExpense(payer!, Double(self.amtTextField.text!)!, datePicker.date, splits, descriptionLabel.text!, SplitType(id: splitID), category!)
+            let expense = group?.createExpense(payer!, Double(self.amtTextField.text!)!, datePicker.date, splits, descriptionLabel.text!, SplitType(id: splitID), category!)
             group?.updateTotalBalance()
             let groupDetailsVC = self.previousVC
             let groupsVC = self.previousVC?.prevVC
             var index = 0
-            for ind in 0 ..< (groupsVC?.groupArray.count ?? 0) {
-                if (groupsVC?.groupArray[ind].id)! == group!.id {
+            for ind in 0 ..< (groupsDataModel.count ?? 0) {
+                if (groupsDataModel[ind].id) == group!.id {
                     index = ind
                 }
             }
-            groupsVC?.groupArray[index] = group!
+            groupsDataModel[index] = group!
+            groupDetailsVC?.group = group!
             groupsVC?.updateData()
             groupDetailsVC?.updateData()
             catDataSource.listofCategories[index] = catDataSource.listofCategories[index].buttonunSelected()
+            addNewExpenseToDatabase(expense!)
             self.dismiss(animated: true)
         } else {
             showAlert()
         }
+    }
+    
+    func addNewExpenseToDatabase(_ expense : GroupExpense) {
+        let user = Auth.auth().currentUser
+        let databaseRef = Database.database().reference().child("users")
+        let userRef = databaseRef.child(user!.uid)
+        let groupsRef = userRef.child("groups")
+        let group = groupsRef.child(group!.id)
+        let expenseListRef = group.child("expenseList")
+        
+        // Add new expense with id
+        expenseListRef.child(expense.id).setValue(expense.toDictionary())
+        print("Added Expense to Database")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -48,7 +48,7 @@ class GroupExpensesTableViewCell: SwipeTableViewCell {
             self.amountLabel.isHidden = false
             self.whoPaidLabel.isHidden = false
             self.whoOwedLabel.text = String(format: "$%.2f", expense.splits.first(where: { split in
-                split.user.name == "Shuyao"
+                split.user.id == myself.id
             })?.amount ?? 0)
             let formatter = DateFormatter()
             formatter.dateFormat = "dd MMM yyyy"
@@ -56,9 +56,9 @@ class GroupExpensesTableViewCell: SwipeTableViewCell {
             self.descriptionLabel.text = expense.description
             self.whoPaidLabel.text = String(format: "%@ paid $%.2f", expense.payer.name, expense.amount)
             let myOwes = expense.splits.first(where: { split in
-                split.user.name == "Shuyao"
+                split.user.id == myself.id
             })?.amount ?? 0
-            if expense.payer.name != "Shuyao" && myOwes >= 0 {
+            if expense.payer.name != myself.name && myOwes >= 0 {
                 if myOwes > 0  {
                     self.involvedLabel.isHidden = true
                     self.whoOwedLabel.isHidden = false
