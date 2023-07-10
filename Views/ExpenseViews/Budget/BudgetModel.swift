@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import FirebaseAuth
+import FirebaseDatabase
 
 class BudgetModel : ObservableObject {
     @Published var budgetDataList: [Budget]
@@ -18,7 +20,19 @@ class BudgetModel : ObservableObject {
         // if budget is already in the list, do nothing
         if self.isInBudgetList(year: budget.year, month: budget.month) == false {
             self.budgetDataList = self.budgetDataList + [budget]
+            
+            // Update to database
+            let uid = (Auth.auth().currentUser?.uid)!
+            let databaseRef = Database.database().reference().child("users")
+            let userRef = databaseRef.child(uid)
+            
+            // Navigate to budget branch
+            let budgetRef = userRef.child("budget")
+            
+            let key = String(budget.year) + "-" + String(budget.month)
+            budgetRef.child(key).setValue(budget.toDictionary())
         }
+        
     }
     
     func editBudget(budget : Budget) {
@@ -29,6 +43,18 @@ class BudgetModel : ObservableObject {
                 break
             }
         }
+        
+        // Update to database
+        let uid = (Auth.auth().currentUser?.uid)!
+        let databaseRef = Database.database().reference().child("users")
+        let userRef = databaseRef.child(uid)
+        
+        // Navigate to budget branch
+        let budgetRef = userRef.child("budget")
+        
+        let key = String(budget.year) + "-" + String(budget.month)
+        budgetRef.child(key).setValue(budget.toDictionary())
+        
     }
     
     func searchBudget(year : Int, month : Int) -> Budget {
@@ -39,7 +65,7 @@ class BudgetModel : ObservableObject {
             }
         }
         // If budget not found, return a new budget
-        let newBudget = Budget(budgetAmount: 0, year: year, month: month)
+        let newBudget = Budget(budgetAmount: 200, year: year, month: month)
         // add new budget to the list and return it
         addBudget(budget: newBudget)
         return newBudget
@@ -66,12 +92,21 @@ class Budget {
         self.year = year
         self.month = month
     }
+    
+    func toDictionary() -> [String: Any] {
+        var dictionary: [String: Any] = [:]
+        // dictionary["id"] = id excluded
+        dictionary["budgetAmount"] = budgetAmount
+        dictionary["year"] = year
+        dictionary["month"] = month
+        return dictionary
+    }
 }
 
-let presetBudget = Budget(budgetAmount: 200, year: thisYear
-                          , month: thisMonth)
 
-var budgetModel = BudgetModel(budgetDataList: [presetBudget])
+var presetBudget = [Budget(budgetAmount: 200, year: 1990, month: 2)]
+
+var budgetModel = BudgetModel(budgetDataList: presetBudget)
 
 
 // MARK: Used for Budget Progress Bar Calculation
@@ -85,7 +120,12 @@ class BudgetProgress : ObservableObject {
     
     func budgetProgressRefresh() {
         let searchedBudget = budgetModel.searchBudget(year: dateModel.pickedYear, month: dateModel.pickedMonth)
-        self.progress = Double(transactionDataModel.totalExpenses) / Double(searchedBudget.budgetAmount)
+        var newProgress = Double(transactionDataModel.totalExpenses) / Double(searchedBudget.budgetAmount)
+        print(newProgress)
+        if newProgress >= 1.0 {
+            newProgress = 1.0
+        }
+        self.progress = newProgress
     }
 }
 

@@ -60,6 +60,8 @@ class ExpensesViewController: UIViewController {
         // Update dateModel
         dateModel.changeYearandMonth(year: pickedYear, month: pickedMonth)
         
+        // Refresh budget
+        budgetProgressModel.budgetProgressRefresh()
         refresh()
     }
     
@@ -173,10 +175,12 @@ class ExpensesViewController: UIViewController {
         let (pickedYear, pickedMonth) = extractYearAndMonth(from: picker!.date)
         // Handle number value changes
         if let text = textField.text, let number = Int(text) {
+            
             // Modify budget with new amount
             let newBudget = Budget(budgetAmount: number, year: pickedYear, month: pickedMonth)
             budgetModel.addBudget(budget: newBudget)
             budgetModel.editBudget(budget: newBudget)
+            
             // Refresh the BudgetProgress for UI Update
             budgetProgressModel.budgetProgressRefresh()
         } else {
