@@ -20,7 +20,15 @@ class HomePageViewController: UIViewController {
         print("Loading transactions")
         loadTransactions()
         print("Transactions successfully loaded")
+        
+        print("Loading Groups")
         loadGroups()
+        print("Groups successfully loaded")
+        
+        print("Loading Budget Data")
+        loadBudgets()
+        print("Budgets successfully loaded")
+
     }
 }
 /*
