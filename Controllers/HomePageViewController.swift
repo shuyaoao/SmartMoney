@@ -44,7 +44,7 @@ func loadTransactions() {
     
     if let user = user {
         let uid = user.uid
-        
+
         // MARK: Navigate to User Branch
         let databaseRef = Database.database().reference().child("users")
         let userRef = databaseRef.child(uid)
@@ -56,6 +56,7 @@ func loadTransactions() {
         transactionsRef.observe(.value, with: { snapshot in
             // Check if snapshot exist
             if snapshot.exists() {
+                print("SNAPSHOT EXISTS")
                 // for transaction id in the database
                 for child in snapshot.children {
                     if let userSnapshot = child as? DataSnapshot,
@@ -85,6 +86,49 @@ func loadTransactions() {
                 let newTransactionRef = transactionsRef.child("1")
                 newTransactionRef.setValue(defaultTransaction.toDictionary())
                 loadTransactions() // Load transactions again
+            }
+        })
+    }
+}
+
+func loadBudgets() {
+    let user = Auth.auth().currentUser
+    
+    if let user = user {
+        let uid = user.uid
+        
+        // MARK: Navigate to User Branch
+        let databaseRef = Database.database().reference().child("users")
+        let userRef = databaseRef.child(uid)
+        
+        // Navigate to budget branch
+        let budgetRef = userRef.child("budget")
+        
+        budgetRef.observe(.value, with: { snapshot in
+            // Check if snapshot exist
+            if snapshot.exists() {
+                print("SNAPSHOT EXISTS")
+                for child in snapshot.children {
+                    if let userSnapshot = child as? DataSnapshot,
+                       // Get the value of the snapshot
+                       let budgetData = userSnapshot.value as? [String: Any] {
+                        
+                        // Access budget details (values)
+                        let amount = budgetData["budgetAmount"] as? Int
+                        let year = budgetData["year"] as? Int
+                        let month = budgetData["month"] as? Int
+                        
+                        // Process budget data as needed
+                        let budget : Budget = Budget(budgetAmount: amount!, year: year!, month: month!)
+                        
+                        presetBudget.append(budget)
+                    }
+                }
+                    
+            } else {
+                let defaultBudget = Budget(budgetAmount: 200, year: 1990, month: 1)
+                let defaultBudgetRef = budgetRef.child("1990-1") // designated key format
+                defaultBudgetRef.setValue(defaultBudget.toDictionary())
             }
         })
     }
