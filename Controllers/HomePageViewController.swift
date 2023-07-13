@@ -84,16 +84,12 @@ func loadTransactions() {
                         
                         // Process user data as needed
                         let trans : Transaction = Transaction(id: id!, name: name!, date: date!, category: category!, amount: amount!, isExpense: isExpense!)
+                        if date != "01 July 1990" {
+                            transactionPreviewDataList.append(trans)
+                        }
                         
-                        transactionPreviewDataList.append(trans)
                     }
                 }
-                // If empty: instatiate a default transaction
-            } else {
-                let defaultTransaction = Transaction(id: 1, name: "Sample", date: "01 July 1990", category: utilitiesCategory, amount: 10.00, isExpense: true)
-                let newTransactionRef = transactionsRef.child("1")
-                newTransactionRef.setValue(defaultTransaction.toDictionary())
-                loadTransactions() // Load transactions again
             }
         })
     }

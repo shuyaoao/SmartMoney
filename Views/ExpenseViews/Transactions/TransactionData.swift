@@ -83,39 +83,20 @@ class TransactionDataModel: ObservableObject {
     
     // Reset Index of all Transactions in transaction datalist
     func resetTransactionIndexes() {
-        // Reset internally
-        for (index, _) in transactionDataList.enumerated() {
-            transactionDataList[index].id = index
-        }
-        
-        
         // Reset index in database
         let user = Auth.auth().currentUser
         let databaseRef = Database.database().reference().child("users")
         let userRef = databaseRef.child(user!.uid)
         let transactionsRef = userRef.child("transactions")
         
-        transactionsRef.observeSingleEvent(of: .value) { snapshot in
-            guard snapshot.exists(), let originalData = snapshot.value as? [String: Any] else {
-                return
+        for (index, _) in transactionDataList.enumerated() {
+            if index == transactionDataList.count - 1 {
+                transactionsRef.child(String(index + 1)).removeValue()
             }
-            
-            var newData: [String: Any] = [:]
-            
-            for (index, trans) in self.transactionDataList.enumerated() {
-                newData[String(index)] = trans.toDictionary()
-            }
-            print(newData)
-            
-            // Set the new data structure with reset keys
-            transactionsRef.setValue(newData) { error, _ in
-                if let error = error {
-                    print("Error resetting keys: \(error.localizedDescription)")
-                } else {
-                    print("Keys reset successfully.")
-                }
-            }
+            transactionDataList[index].id = index
+            transactionsRef.child(String(index)).setValue(transactionDataList[index].toDictionary())
         }
+        
     }
     
     // Reduce function to cumulate totalExpenses

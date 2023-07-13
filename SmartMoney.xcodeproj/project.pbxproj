@@ -12,6 +12,7 @@
 		691384AA2A5C4FBA00454D7D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 691384A92A5C4FBA00454D7D /* FirebaseDatabase */; };
 		691384AC2A5C4FBA00454D7D /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 691384AB2A5C4FBA00454D7D /* FirebaseDatabaseSwift */; };
 		691384AE2A5C4FBA00454D7D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 691384AD2A5C4FBA00454D7D /* FirebaseStorage */; };
+		691384C02A5FD75D00454D7D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 691384BF2A5FD75D00454D7D /* SwiftUICharts */; };
 		694952832A32D642004F989B /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694952822A32D642004F989B /* CircularProgressView.swift */; };
 		69C8CDF62A332C74004A0382 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDF52A332C74004A0382 /* TransactionModel.swift */; };
 		69C8CDFB2A332DDE004A0382 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */; };
@@ -206,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				691384AC2A5C4FBA00454D7D /* FirebaseDatabaseSwift in Frameworks */,
+				691384C02A5FD75D00454D7D /* SwiftUICharts in Frameworks */,
 				C043C2F42A17C85700A1F14D /* MonthYearPicker in Frameworks */,
 				691384A82A5C4FBA00454D7D /* FirebaseAuth in Frameworks */,
 				691384AA2A5C4FBA00454D7D /* FirebaseDatabase in Frameworks */,
@@ -551,6 +553,7 @@
 				691384A92A5C4FBA00454D7D /* FirebaseDatabase */,
 				691384AB2A5C4FBA00454D7D /* FirebaseDatabaseSwift */,
 				691384AD2A5C4FBA00454D7D /* FirebaseStorage */,
+				691384BF2A5FD75D00454D7D /* SwiftUICharts */,
 			);
 			productName = SmartMoney;
 			productReference = C043C29B2A172C4600A1F14D /* SmartMoney.app */;
@@ -630,6 +633,7 @@
 			packageReferences = (
 				C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */,
 				691384A62A5C4FBA00454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				691384BE2A5FD75D00454D7D /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = C043C29C2A172C4600A1F14D /* Products */;
 			projectDirPath = "";
@@ -1205,6 +1209,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		691384BE2A5FD75D00454D7D /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/app4g/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexanderedge/MonthYearPicker.git";
@@ -1235,6 +1247,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 691384A62A5C4FBA00454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		691384BF2A5FD75D00454D7D /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 691384BE2A5FD75D00454D7D /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 		C043C2F32A17C85700A1F14D /* MonthYearPicker */ = {
 			isa = XCSwiftPackageProductDependency;
