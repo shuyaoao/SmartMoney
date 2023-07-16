@@ -83,39 +83,20 @@ class TransactionDataModel: ObservableObject {
     
     // Reset Index of all Transactions in transaction datalist
     func resetTransactionIndexes() {
-        // Reset internally
-        for (index, _) in transactionDataList.enumerated() {
-            transactionDataList[index].id = index
-        }
-        
-        
         // Reset index in database
         let user = Auth.auth().currentUser
         let databaseRef = Database.database().reference().child("users")
         let userRef = databaseRef.child(user!.uid)
         let transactionsRef = userRef.child("transactions")
         
-        transactionsRef.observeSingleEvent(of: .value) { snapshot in
-            guard snapshot.exists(), let originalData = snapshot.value as? [String: Any] else {
-                return
+        for (index, _) in transactionDataList.enumerated() {
+            if index == transactionDataList.count - 1 {
+                transactionsRef.child(String(index + 1)).removeValue()
             }
-            
-            var newData: [String: Any] = [:]
-            
-            for (index, trans) in self.transactionDataList.enumerated() {
-                newData[String(index)] = trans.toDictionary()
-            }
-            print(newData)
-            
-            // Set the new data structure with reset keys
-            transactionsRef.setValue(newData) { error, _ in
-                if let error = error {
-                    print("Error resetting keys: \(error.localizedDescription)")
-                } else {
-                    print("Keys reset successfully.")
-                }
-            }
+            transactionDataList[index].id = index
+            transactionsRef.child(String(index)).setValue(transactionDataList[index].toDictionary())
         }
+        
     }
     
     // Reduce function to cumulate totalExpenses
@@ -184,11 +165,68 @@ class TransactionDataModel: ObservableObject {
             
         return sortedTransactions
     }
+    
+    func getPastSixMonthsExpenses() -> [(String, Int)] {
+        var monthYearList = getPastMonthYearList()
+        var expenseList : [Double] = []
+        
+        for monthYear in monthYearList {
+            var transactionsMonthYear = filterTransactionsByYearAndMonth(year: monthYear.year, month: monthYear.month)
+            // Filter Expenses only and Sum all Amount up
+            let monthExpenses = transactionsMonthYear.filter {
+                $0.isExpense == true}
+                .map {$0.amount}
+                .reduce(0.0, {
+                    (partialresult, element) in
+                    return partialresult + element
+                })
+            expenseList.append(monthExpenses)
+        }
+        
+        var result : [(String, Int)] = []
+        
+        for i in 0..<6 {
+            let monthYear = monthYearList[i]
+            let year = monthYear.year
+            let month = monthYear.month
+            
+            let expense = expenseList[i]
+            let yearMonthLabel = String(year) + "-" + String(month)
+            result.append((yearMonthLabel, Int(expense)))
+        }
+        
+        return result
+    }
 }
 
 // MARK: Pull Data from Database
-
 var transactionPreviewDataList = [Transaction(id: 0, name: "Sample", date: "01 July 1990", category: utilitiesCategory, amount: 10.00, isExpense: true)]
 
 // MARK: The main DataModel used for holding transactions
 var transactionDataModel = TransactionDataModel(transactionDataList : transactionPreviewDataList)
+
+
+func getPastMonthYearList() -> [(month: Int, year: Int)] {
+    let calendar = Calendar.current
+    let endDate = Date()
+    let startDate = calendar.date(byAdding: .month, value: -5, to: endDate)!
+    
+    var currentDate = startDate
+    var monthYearList: [(month: Int, year: Int)] = []
+    
+    while currentDate <= endDate {
+        let month = calendar.component(.month, from: currentDate)
+        let year = calendar.component(.year, from: currentDate)
+        let monthYear = (month, year)
+        
+        monthYearList.append(monthYear)
+        
+        if let nextDate = calendar.date(byAdding: .month, value: 1, to: currentDate) {
+            currentDate = nextDate
+        } else {
+            break
+        }
+    }
+    
+    return monthYearList
+}

@@ -12,6 +12,8 @@
 		691384AA2A5C4FBA00454D7D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 691384A92A5C4FBA00454D7D /* FirebaseDatabase */; };
 		691384AC2A5C4FBA00454D7D /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 691384AB2A5C4FBA00454D7D /* FirebaseDatabaseSwift */; };
 		691384AE2A5C4FBA00454D7D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 691384AD2A5C4FBA00454D7D /* FirebaseStorage */; };
+		691384C02A5FD75D00454D7D /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 691384BF2A5FD75D00454D7D /* SwiftUICharts */; };
+		691384C32A5FE29B00454D7D /* MainChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691384C22A5FE29B00454D7D /* MainChartView.swift */; };
 		694952832A32D642004F989B /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694952822A32D642004F989B /* CircularProgressView.swift */; };
 		69C8CDF62A332C74004A0382 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDF52A332C74004A0382 /* TransactionModel.swift */; };
 		69C8CDFB2A332DDE004A0382 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */; };
@@ -113,6 +115,7 @@
 		3F36524AFDD4C1673FC448FA /* Pods-SmartMoney-SmartMoneyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney-SmartMoneyUITests.release.xcconfig"; path = "Target Support Files/Pods-SmartMoney-SmartMoneyUITests/Pods-SmartMoney-SmartMoneyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4A1D276909B1BDF6EAB9EF75 /* Pods-SmartMoney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartMoney.release.xcconfig"; path = "Target Support Files/Pods-SmartMoney/Pods-SmartMoney.release.xcconfig"; sourceTree = "<group>"; };
 		691384A42A5543F400454D7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		691384C22A5FE29B00454D7D /* MainChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainChartView.swift; sourceTree = "<group>"; };
 		694952822A32D642004F989B /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		69C8CDF52A332C74004A0382 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
 		69C8CDFA2A332DDE004A0382 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				691384AC2A5C4FBA00454D7D /* FirebaseDatabaseSwift in Frameworks */,
+				691384C02A5FD75D00454D7D /* SwiftUICharts in Frameworks */,
 				C043C2F42A17C85700A1F14D /* MonthYearPicker in Frameworks */,
 				691384A82A5C4FBA00454D7D /* FirebaseAuth in Frameworks */,
 				691384AA2A5C4FBA00454D7D /* FirebaseDatabase in Frameworks */,
@@ -252,6 +256,14 @@
 				89EB2FD2C3E768FF149F85B9 /* Pods-SmartMoneyTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		691384C12A5FE28400454D7D /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				691384C22A5FE29B00454D7D /* MainChartView.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 		69C8CDF72A332D37004A0382 /* ExpenseViews */ = {
@@ -457,6 +469,7 @@
 		C043C2D32A172CAF00A1F14D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				691384C12A5FE28400454D7D /* HomeView */,
 				C0931A3D2A338213001E19B9 /* UnequalExpensesTableViewCell */,
 				C043C2A42A172C4600A1F14D /* Main.storyboard */,
 				C043C2D82A17348A00A1F14D /* Launch Screen.storyboard */,
@@ -548,6 +561,7 @@
 				691384A92A5C4FBA00454D7D /* FirebaseDatabase */,
 				691384AB2A5C4FBA00454D7D /* FirebaseDatabaseSwift */,
 				691384AD2A5C4FBA00454D7D /* FirebaseStorage */,
+				691384BF2A5FD75D00454D7D /* SwiftUICharts */,
 			);
 			productName = SmartMoney;
 			productReference = C043C29B2A172C4600A1F14D /* SmartMoney.app */;
@@ -627,6 +641,7 @@
 			packageReferences = (
 				C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */,
 				691384A62A5C4FBA00454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				691384BE2A5FD75D00454D7D /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = C043C29C2A172C4600A1F14D /* Products */;
 			projectDirPath = "";
@@ -815,6 +830,7 @@
 				69E719A12A39A2CA002EA577 /* categoryHorizontalScrollView.swift in Sources */,
 				C043C2E12A1738E100A1F14D /* GroupsViewController.swift in Sources */,
 				C043C29F2A172C4600A1F14D /* AppDelegate.swift in Sources */,
+				691384C32A5FE29B00454D7D /* MainChartView.swift in Sources */,
 				C06953692A40973E00921FA5 /* SelectedUser.swift in Sources */,
 				C097C9DD2A440211009D3D55 /* GroupExpenseDetailsViewController.swift in Sources */,
 				C021FCB92A3CA1A900091549 /* UserController.swift in Sources */,
@@ -1201,6 +1217,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		691384BE2A5FD75D00454D7D /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/app4g/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		C043C2F22A17C85700A1F14D /* XCRemoteSwiftPackageReference "MonthYearPicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/alexanderedge/MonthYearPicker.git";
@@ -1231,6 +1255,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 691384A62A5C4FBA00454D7D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		691384BF2A5FD75D00454D7D /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 691384BE2A5FD75D00454D7D /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 		C043C2F32A17C85700A1F14D /* MonthYearPicker */ = {
 			isa = XCSwiftPackageProductDependency;

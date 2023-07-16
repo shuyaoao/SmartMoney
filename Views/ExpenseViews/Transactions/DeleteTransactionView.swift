@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DeleteTransactionView: View {
     @ObservedObject var transactiondatamodel : TransactionDataModel
+    weak var mainViewController: ExpensesViewController?
     
     var body: some View {
         NavigationView {
@@ -86,6 +87,10 @@ struct DeleteTransactionView: View {
         
         // Reset the id of all transactions (for future update/delete)
         transactiondatamodel.resetTransactionIndexes()
+        
+        transactionDataModel.updateTotalIncome()
+        transactionDataModel.updateTotalExpenses()
+        mainViewController?.refresh()
     }
     
     

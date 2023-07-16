@@ -18,6 +18,7 @@ class ExpensesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         picker = initYearMonthPicker()
         initNumberTextField()
         
