@@ -17,18 +17,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome, Shuyao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aef-8I-KCd">
-                                <rect key="frame" x="16" y="67" width="234" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome, Shuyao" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aef-8I-KCd">
+                                <rect key="frame" x="16" y="67" width="361" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
                                 <color key="textColor" name="Dark Blue"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YSG-hq-4EY">
+                                <rect key="frame" x="94" y="135" width="204" height="204"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5K-8O-0VS">
+                                <rect key="frame" x="38" y="347" width="317" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUs-WI-9Vk">
+                                <rect key="frame" x="38" y="406" width="317" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Off-white"/>
+                                <color key="tintColor" name="Light Blue"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Update Name" titleAlignment="leading">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" name="Light Blue"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="updateNameButtonPressed:" destination="7jc-gJ-B60" eventType="touchUpInside" id="n03-Ea-HCs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ry-VC-CQu">
+                                <rect key="frame" x="38" y="485" width="317" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Off-white"/>
+                                <color key="tintColor" name="Light Blue"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Update Photo" titleAlignment="leading">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" name="Light Blue"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="importPicture:" destination="7jc-gJ-B60" eventType="touchUpInside" id="A2E-NM-1tU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-dd-atI">
+                                <rect key="frame" x="137" y="733" width="119" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Off-white"/>
+                                <color key="tintColor" name="Light Blue"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Logout" titleAlignment="leading">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                    <color key="baseForegroundColor" name="Off-white"/>
+                                    <color key="baseBackgroundColor" red="0.60785645249999998" green="0.10839181389999999" blue="0.12366236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uw3-Gf-vBa">
+                                <rect key="frame" x="38" y="348" width="317" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="Off-white"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pzn-xH-mOV"/>
                         <color key="backgroundColor" name="Off-white"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="Fpv-cv-byQ"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="d5K-8O-0VS" id="LBa-ER-jgx"/>
+                        <outlet property="profilePicture" destination="YSG-hq-4EY" id="Qt0-cB-gsU"/>
+                        <outlet property="updatedNameTextField" destination="uw3-Gf-vBa" id="seX-ba-gNh"/>
+                        <outlet property="welcomeLabel" destination="Aef-8I-KCd" id="Max-GJ-B8B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mq5-0e-1wt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -49,7 +116,6 @@
                         <segue destination="7jc-gJ-B60" kind="relationship" relationship="viewControllers" id="onl-1N-r7Y"/>
                         <segue destination="YGi-iN-9xP" kind="relationship" relationship="viewControllers" id="SjL-M0-ffd"/>
                         <segue destination="60D-hT-1Zo" kind="relationship" relationship="viewControllers" id="JYa-Be-WWG"/>
-                        <segue destination="16C-w7-DxO" kind="relationship" relationship="viewControllers" id="ifS-zS-Zp0"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3g3-xb-uJR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1545,82 +1611,6 @@
             </objects>
             <point key="canvasLocation" x="2836" y="2603"/>
         </scene>
-        <!--Profile-->
-        <scene sceneID="i56-vo-vZ6">
-            <objects>
-                <viewController id="16C-w7-DxO" customClass="ProfileViewController" customModule="SmartMoney" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bUh-TJ-Eh3">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cat1" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eAf-bY-jmW">
-                                <rect key="frame" x="94" y="124" width="204" height="204"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFZ-AV-RXU">
-                                <rect key="frame" x="140" y="336" width="113" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7e-mO-b40">
-                                <rect key="frame" x="38" y="395" width="317" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Off-white"/>
-                                <color key="tintColor" name="Light Blue"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Name" titleAlignment="leading">
-                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                    <color key="baseBackgroundColor" name="Light Blue"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIc-2s-RHg">
-                                <rect key="frame" x="38" y="474" width="317" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Off-white"/>
-                                <color key="tintColor" name="Light Blue"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Photo" titleAlignment="leading">
-                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                    <color key="baseBackgroundColor" name="Light Blue"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="importPicture:" destination="16C-w7-DxO" eventType="touchUpInside" id="zEs-Pq-nPj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOI-TD-hlj">
-                                <rect key="frame" x="137" y="722" width="119" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Off-white"/>
-                                <color key="tintColor" name="Light Blue"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Logout" titleAlignment="leading">
-                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                    <color key="baseForegroundColor" name="Off-white"/>
-                                    <color key="baseBackgroundColor" red="0.60785645249999998" green="0.10839181389999999" blue="0.12366236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="logoutButtonPressed:" destination="16C-w7-DxO" eventType="touchUpInside" id="4aJ-AO-2jo"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="yqj-Ml-fN3"/>
-                        <color key="backgroundColor" name="Off-white"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="tBm-Bx-AUd"/>
-                    <connections>
-                        <outlet property="nameLabel" destination="RFZ-AV-RXU" id="ibp-YQ-JrL"/>
-                        <outlet property="profilePicture" destination="eAf-bY-jmW" id="xEa-BT-Ued"/>
-                        <segue destination="Ilf-aM-yGN" kind="presentation" identifier="logout" modalPresentationStyle="fullScreen" id="G2L-O9-ur4"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rVk-Yv-yMX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3113.740458015267" y="1104.9295774647887"/>
-        </scene>
         <!--Groups-->
         <scene sceneID="K4N-Yc-aJS">
             <objects>
@@ -1689,7 +1679,6 @@
     <resources>
         <image name="arrow.backward" catalog="system" width="128" height="95"/>
         <image name="borderlessRectangle" width="925" height="394"/>
-        <image name="cat1" width="3024" height="3024"/>
         <image name="dollarsign.circle.fill" catalog="system" width="128" height="123"/>
         <image name="expenseIcon" width="512" height="512"/>
         <image name="food" width="24.5" height="22.5"/>
@@ -1699,7 +1688,7 @@
         <image name="icon" width="1024" height="1024"/>
         <image name="lightBlueAppIcon" width="1024" height="1024"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="Dark Blue">
