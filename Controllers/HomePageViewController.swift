@@ -275,6 +275,30 @@ extension HomePageViewController: UITextFieldDelegate {
     }
 }
 
+extension HomePageViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text != "" {
+            nameLabel.text = textField.text
+            welcomeLabel.text = "Welcome, \(textField.text!)"
+            //update database
+        }
+        self.resignFirstResponder()
+        updatedNameTextField.isHidden = true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text != "" {
+            nameLabel.text = textField.text
+            welcomeLabel.text = "Welcome, \(textField.text!)"
+            //update database
+        }
+        self.resignFirstResponder()
+        updatedNameTextField.isHidden = true
+        return true
+    }
+}
+
 
 
 
