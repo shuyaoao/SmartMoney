@@ -66,7 +66,7 @@ class UnequalGroupExpensesTableViewController: UIViewController, UITableViewDele
         } else {
             for (selectedUser, amount) in splitsDict {
                 for user in (group?.groupMembers)! {
-                    if user.id == selectedUser.id {
+                    if user.id == selectedUser.id && amount > 0 {
                         splits.append(Split(user: (group?.simplifier.userController.getUser(user.name))!, amount: amount))
                     }
                 }

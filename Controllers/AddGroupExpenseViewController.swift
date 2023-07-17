@@ -179,6 +179,14 @@ class AddGroupExpenseViewController: UIViewController, UICollectionViewDelegate,
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        for index in 0..<catDataSource.listofCategories.count {
+            if catDataSource.listofCategories[index].selected == true {
+                category = catDataSource.listofCategories[index]
+            }
+            
+            // Reset all Category Buttons
+            catDataSource.listofCategories[index] = catDataSource.listofCategories[index].buttonunSelected()
+        }
         self.dismiss(animated: true)
     }
     
