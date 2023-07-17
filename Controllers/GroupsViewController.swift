@@ -75,7 +75,7 @@ extension GroupsViewController : CreateGroupViewControllerDelegate {
     func updateData(_ vc: CreateGroupViewController) {
         if let text = vc.groupNameTextField.text {
             let newGroup = Group(text)
-            newGroup.addMember(myself)//to replace with logged in user after database has been implemented
+            newGroup.addMember(myself)
             newGroup.simplifier.userController.addUser(myself)
             for (_, user) in vc.members {
                 newGroup.addMember(user)

@@ -36,36 +36,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUs-WI-9Vk">
-                                <rect key="frame" x="38" y="406" width="317" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Off-white"/>
-                                <color key="tintColor" name="Light Blue"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Name" titleAlignment="leading">
-                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                    <color key="baseBackgroundColor" name="Light Blue"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="updateNameButtonPressed:" destination="7jc-gJ-B60" eventType="touchUpInside" id="n03-Ea-HCs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ry-VC-CQu">
-                                <rect key="frame" x="38" y="485" width="317" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="Off-white"/>
-                                <color key="tintColor" name="Light Blue"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Photo" titleAlignment="leading">
-                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                    <color key="baseBackgroundColor" name="Light Blue"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="importPicture:" destination="7jc-gJ-B60" eventType="touchUpInside" id="A2E-NM-1tU"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-dd-atI">
                                 <rect key="frame" x="137" y="733" width="119" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,13 +48,21 @@
                                     <color key="baseBackgroundColor" red="0.60785645249999998" green="0.10839181389999999" blue="0.12366236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uw3-Gf-vBa">
-                                <rect key="frame" x="38" y="348" width="317" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ry-VC-CQu">
+                                <rect key="frame" x="38" y="423" width="317" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="Off-white"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                            </textField>
+                                <color key="tintColor" name="Light Blue"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="photo.on.rectangle.angled" catalog="system" title="Update Photo" titleAlignment="leading">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <color key="baseBackgroundColor" name="Light Blue"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="importPicture:" destination="7jc-gJ-B60" eventType="touchUpInside" id="A2E-NM-1tU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pzn-xH-mOV"/>
                         <color key="backgroundColor" name="Off-white"/>
@@ -93,7 +71,6 @@
                     <connections>
                         <outlet property="nameLabel" destination="d5K-8O-0VS" id="LBa-ER-jgx"/>
                         <outlet property="profilePicture" destination="YSG-hq-4EY" id="Qt0-cB-gsU"/>
-                        <outlet property="updatedNameTextField" destination="uw3-Gf-vBa" id="seX-ba-gNh"/>
                         <outlet property="welcomeLabel" destination="Aef-8I-KCd" id="Max-GJ-B8B"/>
                     </connections>
                 </viewController>
@@ -1689,6 +1666,7 @@
         <image name="lightBlueAppIcon" width="1024" height="1024"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
+        <image name="photo.on.rectangle.angled" catalog="system" width="128" height="98"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="Dark Blue">

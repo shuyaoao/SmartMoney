@@ -22,7 +22,7 @@ class BalancesTableTableViewController: UITableViewController {
             balances[member] = [Payment]()
         }
         for payment in results {
-            if payment.payer.name != payment.payee.name {
+            if payment.payer.name != payment.payee.name && payment.amount > 0.00 {
                 balances[payment.payer]?.append(payment)
             }
         }

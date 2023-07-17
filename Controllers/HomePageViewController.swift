@@ -19,21 +19,23 @@ class HomePageViewController: UIViewController, UINavigationControllerDelegate, 
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var updatedNameTextField: UITextField!
+    //@IBOutlet weak var updatedNameTextField: UITextField!
     @IBOutlet weak var profilePicture: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //add in function to retrieve name from database
-        updatedNameTextField.isHidden = true
-        updatedNameTextField.delegate = self
+        
+        retrievePhoto()
+        //updatedNameTextField.isHidden = true
+        //updatedNameTextField.delegate = self
         profilePicture.layer.cornerRadius = profilePicture.frame.size.width / 2
         profilePicture.clipsToBounds = true
         profilePicture.layer.borderWidth = 4
         profilePicture.layer.borderColor = UIColor(named: "Dark Blue")?.cgColor
         nameLabel.text = "Shuyao" //to be changed to incoporate user input at welcome page
-        retrievePhoto()
+        
         
         // MARK: Retrieve User Details
         let user = Auth.auth().currentUser
@@ -58,13 +60,7 @@ class HomePageViewController: UIViewController, UINavigationControllerDelegate, 
         
         performSegue(withIdentifier: "logout", sender: self)
     }
-    
-    @IBAction func updateNameButtonPressed(_ sender: Any) {
-        updatedNameTextField.isHidden = false
-        updatedNameTextField.becomeFirstResponder()
-        
-        //
-    }
+
     
     @IBAction func importPicture(_ sender: UIButton) {
         let imagePicker = UIImagePickerController()
@@ -103,8 +99,6 @@ class HomePageViewController: UIViewController, UINavigationControllerDelegate, 
 
                 return
             }
-            
-            
             let user = Auth.auth().currentUser
             let databaseRef = Database.database().reference().child("users")
             let userRef = databaseRef.child(user!.uid)
@@ -130,31 +124,27 @@ class HomePageViewController: UIViewController, UINavigationControllerDelegate, 
                 // Check if snapshot exist
                 if snapshot.exists() {
                     print("profile pic snapshot exists")
-                    // get user profile image url
-                    for child in snapshot.children {
-                        if let userSnapshot = child as? DataSnapshot,
-                           // Get the value of the snapshot
-                           let url = userSnapshot.value as? String {
-                            print("userSnapshot exists")
-                            let storageRef = Storage.storage().reference()
-                            let fileRef = storageRef.child(url)
-                            fileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
-                                if error == nil && data != nil {
-                                    print("no errors")
-                                    let image = UIImage(data: data!)
-                                    DispatchQueue.main.async {
-                                        self.profilePicture.image = image
-                                        print("profile picture set")
-                                    }
-                                }
-                                print("there are errors")
+                    let url = snapshot.value as! String
+                    print(url)
+                    let storageRef = Storage.storage().reference().child(url)
+                    storageRef.getData(maxSize: 1 * 3000 * 3000) { data, error in
+                        if error == nil && data != nil {
+                            print("no errors")
+                            let image = UIImage(data: data!)
+                            DispatchQueue.main.async {
+                                self.profilePicture.image = image
+                                print("profile picture set")
                             }
+                        } else if data == nil && error != nil {
+                            print("no data")
+                        } else {
+                            print("there are errors")
                         }
+                        
                     }
                 } else {
-                    let defaultProfilePicture = UIImage(named: "person.circle")
-                    self.profilePicture.image = defaultProfilePicture
-                    self.uploadPhotoToDatabase()
+                    print("profile pic doesnt exist")
+                    //self.uploadPhotoToDatabase()
                     print("default image uploaded and retrived")
                 }
             })
@@ -206,7 +196,7 @@ extension HomePageViewController: UITextFieldDelegate {
             //update database
         }
         self.resignFirstResponder()
-        updatedNameTextField.isHidden = true
+        //updatedNameTextField.isHidden = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -216,7 +206,7 @@ extension HomePageViewController: UITextFieldDelegate {
             //update database
         }
         self.resignFirstResponder()
-        updatedNameTextField.isHidden = true
+        //updatedNameTextField.isHidden = true
         return true
     }
 }
