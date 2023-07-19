@@ -30,6 +30,7 @@ struct TransactionRow: View {
                         .font(.footnote)
                         .opacity(0.7)
                         .lineLimit(1)
+                        
                 }
                 
                 
@@ -46,10 +47,12 @@ struct TransactionRow: View {
             if transaction.isExpense == true {
                 Text(String(format: "-$%.2f", transaction.amount))
                     .foregroundColor(.red)
+                    .fontWeight(.semibold)
             // If Income
             } else {
                 Text(String(format: "+$%.2f", transaction.amount))
                     .foregroundColor(.green)
+                    .fontWeight(.semibold)
             }
 
         }
