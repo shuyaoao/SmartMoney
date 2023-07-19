@@ -227,6 +227,22 @@ class CustomSegue: UIStoryboardSegue {
     }
 }
 
+class CustomSegue2: UIStoryboardSegue {
+    override func perform() {
+        // Get the source and destination view controllers
+        guard let sourceViewController = source as? ExpensesViewController,
+              let destinationViewController = destination as? DeleteExpenseViewController else {
+            return
+        }
+        
+        // Set the reference to the main view controller in the destination view controller
+        destinationViewController.mainViewController = sourceViewController
+        
+        // Perform the segue
+        sourceViewController.present(destinationViewController, animated: true, completion: nil)
+    }
+}
+
 
 func extractYearAndMonth(from date: Date) -> (year: Int, month: Int) {
     let calendar = Calendar.current

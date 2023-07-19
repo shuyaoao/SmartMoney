@@ -68,7 +68,18 @@ struct DeleteTransactionView: View {
                 .onDelete(perform: delete)
             }
             .background(Color(red: 242/255, green: 242/255, blue: 242/255))
-            .navigationTitle("Transactions")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    VStack {
+                        Text("Transactions")
+                            .font(.system(size: 32))
+                            .fontWeight(.bold)
+                        Text("Swipe to delete")
+                            .font(.system(size: 15))
+                            .foregroundColor(.gray)
+                    }
+                }
+            }
         }
     }
     

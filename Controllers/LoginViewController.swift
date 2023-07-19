@@ -32,19 +32,6 @@ class LoginViewController: UIViewController {
                 self.alertMessage = error!.localizedDescription
                 self.showAlert()
             } else {
-                // MARK: Load all Data of the User
-                print("Loading transactions")
-                loadTransactions()
-                print("Transactions successfully loaded")
-                
-                print("Loading Groups")
-                loadGroups()
-                print("Groups successfully loaded")
-                
-                print("Loading Budget Data")
-                loadBudgets()
-                print("Budgets successfully loaded")
-                
                 self.performSegue(withIdentifier: "goToHomePage", sender: self)
             }
         }

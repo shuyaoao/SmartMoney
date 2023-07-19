@@ -22,6 +22,7 @@ class HomePageViewController: UIViewController, UINavigationControllerDelegate, 
     //@IBOutlet weak var updatedNameTextField: UITextField!
     @IBOutlet weak var profilePicture: UIImageView!
     
+    @IBOutlet weak var emailLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +35,13 @@ class HomePageViewController: UIViewController, UINavigationControllerDelegate, 
         profilePicture.clipsToBounds = true
         profilePicture.layer.borderWidth = 4
         profilePicture.layer.borderColor = UIColor(named: "Dark Blue")?.cgColor
-        nameLabel.text = "Shuyao" //to be changed to incoporate user input at welcome page
+        
         
         
         // MARK: Retrieve User Details
         let user = Auth.auth().currentUser
+        nameLabel.text = user?.displayName //to be changed to incoporate user input at welcome page
+        emailLabel.text = user?.email
         
         // MARK: Load all Data of the User
         print("Loading transactions")
