@@ -36,12 +36,11 @@ class HomePageViewController: UIViewController, UINavigationControllerDelegate, 
         profilePicture.layer.borderWidth = 4
         profilePicture.layer.borderColor = UIColor(named: "Dark Blue")?.cgColor
         
-        
-        
         // MARK: Retrieve User Details
         let user = Auth.auth().currentUser
         nameLabel.text = user?.displayName //to be changed to incoporate user input at welcome page
         emailLabel.text = user?.email
+        myself = User(user!.uid, user!.displayName!)
         
         // MARK: Load all Data of the User
         print("Loading transactions")
@@ -55,7 +54,6 @@ class HomePageViewController: UIViewController, UINavigationControllerDelegate, 
         print("Loading Budget Data")
         loadBudgets()
         print("Budgets successfully loaded")
-
     }
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {

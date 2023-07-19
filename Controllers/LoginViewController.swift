@@ -60,7 +60,7 @@ class LoginViewController: UIViewController {
 }
 
 
-let myself = User(Auth.auth().currentUser!.uid, "Shuyao")
+var myself = User(Auth.auth().currentUser!.uid, "Shuyao")
 
 func loadTransactions() {
     let user = Auth.auth().currentUser
