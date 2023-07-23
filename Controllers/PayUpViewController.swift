@@ -21,6 +21,7 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var payUpAmount: Double?
     var group: Group?
     var prevVC: GroupDetailsViewController?
+    var alertController: UIAlertController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,25 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
         for user in (group?.groupMembers)! {
             array.append(SelectedUser(user))
         }
+    }
+    
+    func showAlert() {
+        alertController = UIAlertController(title: "Invalid Amount", message: "Please check your inputs", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] _ in
+            // Handle OK button action (if needed)
+            self?.dismissAlert()
+        }
+        
+        alertController?.addAction(okAction)
+        
+        // Present the alert controller
+        present(alertController!, animated: true, completion: nil)
+    }
+    
+    func dismissAlert() {
+        alertController?.dismiss(animated: true, completion: nil)
+        alertController = nil
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -119,33 +139,41 @@ class PayUpViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        if amountTextField.text == nil {
+            showAlert()
+        } else if Double(amountTextField.text!) == nil {
+            showAlert()
+        } else if Double(amountTextField.text!)! <= 0 {
+            showAlert()
+        } else {
         //saves the input and updates balances, table view and debts
-        if from != nil && to != nil && amountTextField.text != "" {
-            var payer: User?
-            var payee: User?
-            for user in (group?.groupMembers)! {
-                if user.id == from?.id {
-                    payer = user
+            if from != nil && to != nil && amountTextField.text != "" {
+                var payer: User?
+                var payee: User?
+                for user in (group?.groupMembers)! {
+                    if user.id == from?.id {
+                        payer = user
+                    }
+                    if user.id == to?.id {
+                        payee = user
+                    }
                 }
-                if user.id == to?.id {
-                    payee = user
+                let amount = Double(amountTextField.text!)!
+                let payup = group?.createExpense(payer!, amount, Date(), [Split(user: payee!, amount: amount)])
+                let groupDetailsVC = self.prevVC
+                let groupsVC = self.prevVC?.prevVC
+                var index = 0
+                for ind in 0 ..< (groupsDataModel.count ?? 0) {
+                    if (groupsDataModel[ind].id) == group!.id {
+                        index = ind
+                    }
                 }
+                groupsDataModel[index] = group!
+                groupsVC?.updateData()
+                groupDetailsVC?.updateData()
+                addNewPayupToDatabase(payup!)
+                self.dismiss(animated: true)
             }
-            let amount = Double(amountTextField.text!)!
-            let payup = group?.createExpense(payer!, amount, Date(), [Split(user: payee!, amount: amount)])
-            let groupDetailsVC = self.prevVC
-            let groupsVC = self.prevVC?.prevVC
-            var index = 0
-            for ind in 0 ..< (groupsDataModel.count ?? 0) {
-                if (groupsDataModel[ind].id) == group!.id {
-                    index = ind
-                }
-            }
-            groupsDataModel[index] = group!
-            groupsVC?.updateData()
-            groupDetailsVC?.updateData()
-            addNewPayupToDatabase(payup!)
-            self.dismiss(animated: true)
         }
     }
     
